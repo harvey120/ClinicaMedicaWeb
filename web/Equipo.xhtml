@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <head>
-        <title>Inicio</title>
+        <title> Equipo </title>
+
         <style>
             body {
                 background: url(resourcesFronted/img/dos.png);
@@ -15,8 +17,9 @@
                 height: 100%;
                 position: fixed;
             }
+
         </style>
-        <link href="resourcesFronted/booststrpa-4.0.0-zip/css/animate.css" rel="stylesheet" type="text/css"/>
+         <link href="resourcesFronted/booststrpa-4.0.0-zip/css/animate.css" rel="stylesheet" type="text/css"/>
         <script src="resourcesFronted/booststrpa-4.0.0-zip/jquery-latest.js" type="text/javascript"></script>
         <script src="resourcesFronted/booststrpa-4.0.0-zip/mainparalax.js" type="text/javascript"></script>
         <link href="resourcesFronted/booststrpa-4.0.0-zip/css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -26,31 +29,33 @@
         <script src="resourcesFronted/js/eskju.jquery.scrollflow.min.js" type="text/javascript"></script>
         <link href="resourcesFronted/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
         <script src="resourcesFronted/js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+
+
     </head>
     <body>
-
+       
         <!--=============Menu principal==================-->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="faces/index.xhtml">Inicion</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
+           <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="faces/Valores.xhtml">Valores <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="Valores.xhtml">Valores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="faces/Instalaciones.xhtml">Instalaciones</a>
+                        <a class="nav-link" href="Instalaciones.xhtml">Instalaciones</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link disabled" href="Equipo.xhtml">Equipos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="faces/Equipo.xhtml">Equipos</a>
+                        <a class="nav-link disabled" href="personal.xhtml">Personal<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="faces/personal.xhtml">Personal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="faces/Localicacion.xhtml">Localizanos</a>
+                        <a class="nav-link disabled" href="Localicacion.xhtml">Localizanos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Preguntas</a>
@@ -133,133 +138,109 @@
 
 
         <!--========================Final de Carusel==================================-->
-        <div class="card-footer bg-dark mb-1">
-            <img src="resourcesFronted/img/gifs/puld.gif" width="100%" height="300px"/>
-        </div>
+
 
         <!--========================Contenido de la pagina==================================-->
         <br/><br/><br/><br/><br/><br/>
-        <!--=======================Relleno======================================-->
-        <div class="container-fluid">
-            <div class="row">
 
-                <div class="col-sm-1">
-                    
-                </div>
-                <div class="col-sm-5">
-                    <a href="faces/paginas_de_relleno/Valores.xhtml" class="btn btn-dark scrollflow -slide-right -opacity">
-                        <div class="card bg-dark text-white mb-3 " style="width: 40rem;">
-                            <img class="card-img-top"  src="resourcesFronted/img/Valores.jpg" alt="Card image cap"/>
-                            <div class="card-body">
-                                <h1 class="card-title">Valores</h1>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <br/><br/><br/><br/><br/>
-                <div class="col-sm-1">
-                </div>
-
-                <div class="col-sm-5">
-                    <a href="faces/paginas_de_relleno/Instalaciones.xhtml" class="btn btn-dark scrollflow -slide-left -opacity">
-                        <div class="card bg-dark text-white mb-3" style="width: 40rem;">
-                            <img class="card-img-top" src="resourcesFronted/img/instalacion.jpg" alt="Card image cap"  height="325px"/>
-                            <div class="card-body">
-                                <h1 class="card-title">Instalaciones</h1>
-
-                            </div>
-                        </div>
-                    </a>
-                </div>
+        <div class="jumbotron jumbotron-fluid bg-dark">
+            <div class="container">
+                <h1 class="display-3 text-white">Servicios</h1>
+                <hr class="my-4"/>
+                <h3 class="text-white">Laboratorios, Clinicas, Consultas, Maternidad, Urgencias</h3>
+                <br/>
+                <h3 class="lead text-white">Hablamos de servicio hospitalario cuando designamos un conjunto de servicios médicos especializados reagrupados en un hospital.
+                    Un conjunto de servicios hospitalarios constituye un polo hospitalario y éste último reagrupa, por ejemplo, un servicio de gastroenterología, de nefrología, etc.
+                    Existen polos específicos, por ejemplo el polo quirúrgico que reagrupa varios servicios hospitalarios especializados en cirugía.
+                    Estos servicios están dirigidos por los jefes de servicio hospitalario o coordinados por un jefe de polo hospitalario de actividad.</h3>
             </div>
         </div>
-        <br/><br/><br/><br/><br/>
-        <!--***********************************************************************************************-->
-
-        <div class="card-footer bg-dark mb-1">
-            <img src="resourcesFronted/img/gifs/original.gif" width="100%" height="300px"/>
-        </div>
-        <br/><br/><br/><br/><br/>
-        <!--***********************************************************************************************-->
-        <!--===============-->
         <div class="container-fluid">
             <div class="row">
-
-                <div class="col-sm-1">
-
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div>
+                        <img src="resourcesFronted/img/equipo3.jpg"  width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+                    </div>
                 </div>
-                <div class="col-sm-5">
-                    <a href="faces/paginas_de_relleno/Equipo.xhtml" class="btn btn-dark scrollflow -slide-right -opacity">
-                        <div class="card bg-dark text-white mb-3 " style="width: 40rem;">
-                            <img class="card-img-top" src="resourcesFronted/img/equipo.jpg" alt="Card image cap"/>
-                            <div class="card-body">
-                                <h1 class="card-title">Servicios</h1>
-                            </div>
+                <div class="col-6">
+                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+                        <div class="card-body">
+                            <h4 class="card-title text-white">Card title</h4>
+                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
+                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
-                    </a>
-                </div>    
-                <br/><br/><br/><br/><br/>
-                <div class="col-sm-1">
-                </div>
-                <div class="col-sm-5">
-                    <a href="faces/paginas_de_relleno/personal.xhtml" class="btn btn-dark scrollflow -slide-left -opacity">
-                        <div class="card bg-dark text-white mb-3 " style="width: 40rem;">
-                            <img class="card-img-top" src="resourcesFronted/img/personal.jpg" alt="Card image cap" height="355px"/>
-                            <div class="card-body">
-                                <h1 class="card-title">Personal</h1>                        </div>
-                        </div>
-                    </a>
-                    <br/><br/><br/><br/><br/>
-                </div>       
-            </div>
-        </div>
-        <!--***********************************************************************************************-->
-        <div class="card-footer bg-dark mb-1">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="resourcesFronted/img/gifs/gota.gif" width="100%" height="300px" />
                     </div>
                 </div>
             </div>
         </div>
         <br/><br/><br/><br/><br/>
-        <!--***********************************************************************************************-->
         <div class="container-fluid">
             <div class="row">
-
-                <div class="col-sm-1">
-
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div>
+                        <img src="resourcesFronted/img/equipo6.jpg"  width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+                    </div>
                 </div>
-                <div class="col-sm-5">
-                    <a href="" class="btn btn-dark scrollflow -slide-right -opacity">
-                        <div class="card bg-dark text-white mb-3 " style="width: 40rem;">
-                            <img class="card-img-top" src="resourcesFronted/img/valores2.jpg" alt="Card image cap"/>
-                            <div class="card-body">
-                                <h1 class="card-title">Localicanos</h1>
-                            </div>
+                <div class="col-6">
+                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+                        <div class="card-body">
+                            <h4 class="card-title text-white">Card title</h4>
+                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
+                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>
-                    </a>
-                </div>    
-                <br/><br/><br/><br/><br/>
-                <div class="col-sm-1">
+                    </div>
                 </div>
-                <div class="col-sm-5">
-                    <a href="" class="btn btn-dark scrollflow -slide-left -opacity">
-                        <div class="card bg-dark text-white mb-3 " style="width: 40rem;">
-                            <img class="card-img-top" src="resourcesFronted/img/personal2.jpg" alt="Card image cap" height="340px"/>
-                            <div class="card-body">
-                                <h1 class="card-title">Preguntas Frecuentes</h1>
-                            </div>
-                        </div>
-                    </a>
-                    <br/><br/><br/><br/><br/>
-                </div>       
             </div>
-        </div>    
+        </div>
+        <br/><br/><br/><br/><br/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div>
+                        <img src="resourcesFronted/img/equipo4.jpg" width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+                        <div class="card-body">
+                            <h4 class="card-title text-white">Card title</h4>
+                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
+                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/><br/><br/><br/><br/>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div>
+                        <img src="resourcesFronted/img/equipo9.jpg" width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+                        <div class="card-body">
+                            <h4 class="card-title text-white">Card title</h4>
+                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
+                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/><br/><br/><br/><br/>
+
+
         <!--=======================Fin Relleno======================================-->
+
         <!--===============-->
+
         <div class="card-footer bg-dark mb-2">
             <footer>
                 <p>DEHECK 2017</p>
@@ -267,16 +248,18 @@
             </footer>
         </div>
 
-
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="resourcesFronted/booststrpa-4.0.0-zip/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="resourcesFronted/js/particles.js"></script>
+        <script src="resourcesFronted/particles.js"></script>
         <script src="resourcesFronted/app.js"></script>
-        <script src="booststrpa-4.0.0-zip/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+        <script src="resourcesFronted/booststrpa-4.0.0-zip/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
         <script src="resourcesFronted/booststrpa-4.0.0-zip/bootstrap.min.js" type="text/javascript"></script>
         <script src="resourcesFronted/booststrpa-4.0.0-zip/popper.min.js" type="text/javascript"></script>
     </body>
 </html>
+
+
+
 
