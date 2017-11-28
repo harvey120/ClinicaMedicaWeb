@@ -1,4 +1,4 @@
-package Sesiones;
+package com.ClinicaMedica.Sesiones;
 
 import java.io.IOException;
 import java.io.Serializable;

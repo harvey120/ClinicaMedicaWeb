@@ -1,6 +1,7 @@
-package Sesiones;
+package com.ClinicaMedica.Sesiones;
 
-import com.dao.DAO;
+
+import com.ClinicaMedica.DAO.DAO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 

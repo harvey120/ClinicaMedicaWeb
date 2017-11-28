@@ -1,4 +1,4 @@
-package Sesiones;
+package com.ClinicaMedica.Sesiones;
 
 /**
  * @author Harvey

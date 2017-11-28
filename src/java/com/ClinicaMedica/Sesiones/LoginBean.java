@@ -1,4 +1,4 @@
-package Sesiones;
+package com.ClinicaMedica.Sesiones;
 
 import java.io.Serializable;
 import javax.faces.context.FacesContext;
