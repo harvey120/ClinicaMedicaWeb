@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <!-- Pagina Login principal el cual tendra como funcio realizar la redireccion a las diferentes sesiones 
+        para cada uno de los usuarios -->
+
+    <h:head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link hrel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700"/>
+        <!-- css para el codigo del login -->
+        <link href="resources/css/loger.css" rel="stylesheet" type="text/css"/>
+        <!-- codigo css para tama;no de la pagina-->
+        <link href="resources/css/supersized.css" rel="stylesheet" type="text/css"/>
+        <!-- codigo css al cual resetea los campos al ingresar -->
+        <link href="resources/css/reset.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        <br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/>
+        <h1 class="h1">Inicio Sesion</h1>
+        <div class="page-container connect">
+            <h:form class="form">                 
+                <b:inputText type="text" value="#{loginBean.usuario.usurio}" style="width: 300px;" id="usuario" class="username input" placeholder="Username"/>
+                <b:inputText type="password" value="#{loginBean.usuario.contrasena}" id="contrasena" style="width: 300px;"  class="password input" placeholder="Password"/>
+                <b:commandButton icon="lock" actionListener="#{loginBean.loga()}" value="Ingresar" style="width: 200px; background: #FF4000" class="button"/>
+            </h:form>
+        </div>  
+        <!-- query -->
+        <script src="resources/js/jquery-1.8.2.min.js"></script>
+        <!-- archivo min de supersized que permite realizar el fondo de pantalla -->
+        <script src="resources/js/supersized.3.2.7.min.js"></script>
+        <!-- query que me permite realizar la transicion de las imagenes -->
+        <script src="resources/js/supersized-init.js"></script>
+        <!-- javascript-->
+        <script src="resources/js/scripts.js"></script>
+
+    </h:body>
+</html>
