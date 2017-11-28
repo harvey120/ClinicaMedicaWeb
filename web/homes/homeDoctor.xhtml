@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Panel de Control</title>
+        <!-- Esta pagina representa el panel de control principal de el administrador -->
+
+        <meta charset="UTF-8"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- iconos de la pagina -->        
+        <link rel="Shortcut Icon" type="image/x-icon" href="../resources/assets/icons/book.ico" />
+        <!-- sweet alert de la pagina -->
+        <script src="../resources/js/sweet-alert.min.js"></script>
+        <!-- css sweet alert-->
+        <link rel="stylesheet" href="../resources/css/sweet-alert.css"/>
+        <!-- css Material desing -->
+        <link rel="stylesheet" href="../resources/css/material-design-iconic-font.min.css"/>
+        <!-- css normalize -->
+        <link rel="stylesheet" href="../resources/css/normalize.css"/>
+        <!-- css bootstrap -->
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
+        <!-- css para el scrow de la pagina -->
+        <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
+        <!-- css estilo de la pagina -->
+        <link rel="stylesheet" href="../resources/css/style.css"/>
+
+        <script src="../resources/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+        <!-- js modernizer -->
+        <script src="../resources/js/modernizr.js"></script>
+        <!-- js de bootstrap -->
+        <script src="../resources/js/bootstrap.min.js"></script>
+        <!-- js del scroll de la pagina -->
+        <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- js del main-->
+        <script src="../resources/js/main.js"></script>
+
+    </h:head>
+    <h:body>
+
+        <!-- NavBar lateral de la pagina -->
+        <div class="navbar-lateral full-reset">
+            <div class="visible-xs font-movile-menu mobile-menu-button"></div>
+            <div class="full-reset container-menu-movile custom-scroll-containers">
+                <div class="logo full-reset all-tittles">
+                    <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
+                    Doctor
+                </div>
+                <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
+                    <figure>
+                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                    </figure>
+                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                </div>
+
+
+                <!-- Opciones de Menu laterales -->
+                <div class="full-reset nav-lateral-list-menu">
+                    <ul class="list-unstyled">
+
+
+                        <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+
+                        <li>
+                            <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <ul class="list-unstyled">
+                                <li><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <ul class="list-unstyled">
+                                <li><a href="faces/vistaCruds/PersonaAPaciente.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personas</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <!-- fin Opciones de Menu laterales -->
+
+            </div>
+        </div>
+        <!-- Fin Nav Bar Lateral de la pagina -->
+
+
+
+        <!--  Contenido de la pagina -->
+        <div class="content-page-container full-reset custom-scroll-containers">
+
+            <nav class="navbar-user-top full-reset">     
+                <ul class="list-unstyled full-reset">
+                    <figure>
+                        <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
+                    </figure>
+                    <li style="color:#fff; cursor:default;">
+                        <span class="all-tittles">Admin Name</span>
+                    </li>
+                    <li  class="tooltips-general exit-system-button" data-href="../index.xhtml" data-placement="bottom" title="Salir del sistema">
+                        <i class="zmdi zmdi-power"></i>
+                    </li>
+
+                    <li  class="tooltips-general search-persona-button" data-placement="bottom" title="Ayuda">
+                        <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
+                    </li>
+
+                    <li class="mobile-menu-button visible-xs" style="float: left !important;">
+                        <i class="zmdi zmdi-menu"></i>
+                    </li>
+                </ul>
+            </nav>
+
+
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="all-tittles">Sistema clinica medica <small>Inicio</small></h1>
+                </div>
+            </div>
+
+            <section class="full-reset text-center" style="padding: 40px 0;">
+                
+                <article class="tile">
+                    <a href="../doctor/VistaMedicamento.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/pills.png" width="50" height="50"></img></i></div>
+                        <div class="tile-name all-tittles">Tareas del Día</div>
+                        <div class="tile-num full-reset">7</div>
+                    </a>
+                </article>
+                
+                
+                <article class="tile">
+                    <a href="../doctor/VistaMedicamento.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/pills.png" width="50" height="50"></img></i></div>
+                        <div class="tile-name all-tittles">Buscar Medicamento</div>
+                        <div class="tile-num full-reset">7</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../doctor/VistaPaciente.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../imagen/search-engine.png" width="50" height="50"></img></i></div>
+                        <div class="tile-name all-tittles">Buscar Paciente</div>
+                        <div class="tile-num full-reset">70</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../doctor/VistaHistorialClinico.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi zmdi"><img class="title-icon" src="../imagen/report (1).png" width="50" height="50"></img></i></div>
+                        <div class="tile-name all-tittles">Buscar Historial</div>
+                        <div class="tile-num full-reset">11</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../doctor/IngresoEnfermedad.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi zmdi"><img class="title-icon" src="../doctor/imgDoctor/folder.png" width="50" height="50"></img></i></div>
+                        <div class="tile-name all-tittles" style="width: 90%;">Nuevo Examen</div>
+                        <div class="tile-num full-reset">17</div>
+                    </a>
+                </article>
+                
+             
+                
+                <article class="tile">
+                    <a href="../doctor/VistaExamen.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/microscope.png" width="60" height="60"></img></i></div>
+                        <div class="tile-name all-tittles">Buscar Examen</div>
+                        <div class="tile-num full-reset">21</div>
+                    </a>
+                </article>
+                
+             
+                
+                <article class="tile">
+                    <a href="../doctor/VistaReferenciaClinica.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/hospital.png" width="50" height="50"></img></i></div>
+                        <div class="tile-name all-tittles">Buscar Referencia</div>
+                        <div class="tile-num full-reset">77</div>
+                    </a>
+                </article>  
+
+                <article class="tile">
+                    <a href="../doctor/VistaEnfermedad.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi "><img class="title-icon" src="../doctor/imgDoctor/virus.png" width="50" height="50"></img></i></div>
+                        <div class="tile-name all-tittles">Buscar Enfermedad</div>
+                        <div class="tile-num full-reset">11</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../doctor/BuscarRevisionGeneral.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/x-ray (1).png" width="60" height="60"></img></i></div>
+                        <div class="tile-name all-tittles">Buscar Revisión </div>
+                        <div class="tile-num full-reset">17</div>
+                    </a>
+                </article>
+                
+
+                <article class="tile">
+                    <a href="../doctor/ModificarCita.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/calendar.png" width="60" height="60"></img></i></div>
+                        <div class="tile-name all-tittles">Modificar Citas</div>
+                        <div class="tile-num full-reset">10</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../doctor/BuscarCita.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/calendar (1).png" width="60" height="60"></img></i></div>
+                        <div class="tile-name all-tittles" style="width: 90%;">Buscar Citas</div>
+                        <div class="tile-num full-reset">9</div>
+                    </a>
+                </article>
+
+            </section>
+
+
+
+            <!-- Pie de pagina-->
+            <footer class="footer full-reset">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <h4 class="all-tittles">Acerca de</h4>
+                            <p>
+                                Systema basado y desarrollado completamente en java 
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <h4 class="all-tittles">Desarrolladores</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Evelyn Juarez</li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Harvey Herrera</li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Erick Osoy </li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Daniel Galindo </li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Carlos Coronado </li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Kevin Mazariegos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright full-reset all-tittles">© 2017 Intecap Zona 4 Centro Tics</div>
+            </footer>
+            <!-- Fin del pie de pagina-->
+        </div>
+        <!--Fin del contenido de la pagina -->
+    </h:body>
+</html>
+
