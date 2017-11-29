@@ -35,8 +35,8 @@
         <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <!-- js del main-->
         <script src="../resources/js/main.js"></script>
-
     </h:head>
+    
     <h:body>
 
         <!-- NavBar lateral de la pagina -->
@@ -49,9 +49,9 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../resources/assets/img/logo.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px;">Sistema Super Administrativo</p>
+                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo</p>
                 </div>
 
 
@@ -60,7 +60,7 @@
                     <ul class="list-unstyled">
 
 
-                        <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a href="homeAdmin.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -68,7 +68,6 @@
                                 <li><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
                             </ul>
                         </li>
-
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -96,6 +95,7 @@
                     <figure>
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
+                    
                     <li style="color:#fff; cursor:default;">
                         <span class="all-tittles">Admin Name </span>
                     </li>
@@ -121,18 +121,16 @@
 
             <section class="full-reset text-center" style="padding: 40px 0;">
                 <article class="tile">
-                    <a href="../faces/admin/RegistroEmpleado.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-face"> </i></div>
-                        <div class="tile-name all-tittles">Eventos</div>
-                        <div class="tile-num full-reset">7</div>
+                    <a href="../faces/Administrador/EventosAdmin.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/calendar.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Eventos</div>
                     </a>
                 </article>
 
                 <article class="tile">
                     <a href="../faces">
                         <div class="tile-icon full-reset"><i class="zmdi zmdi-accounts"></i></div>
-                        <div class="tile-name all-tittles">Empleados</div>
-                        <div class="tile-num full-reset">70</div>
+                        <div class="tile-num full-reset">Empleados</div>
                     </a>
                 </article>
 
