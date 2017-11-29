@@ -35,6 +35,7 @@ public class DAO {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             cn = DriverManager.getConnection(server,user,pass);
+            System.out.println("Conexion Realizada con exito a la base de datos");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("No se conecto a la base de datos en el DAO: " + ex);
         }
