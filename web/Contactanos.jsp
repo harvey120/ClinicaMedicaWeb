@@ -29,16 +29,16 @@
                         <a class="nav-link" href="faces/Instalaciones.xhtml">Instalaciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="faces/Equipo.xhtml">Equipos</a>
+                        <a class="nav-link" href="faces/Equipo.xhtml">Equipos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="faces/personal.xhtml">Personal</a>
+                        <a class="nav-link" href="faces/personal.xhtml">Personal</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="faces/Localicacion.xhtml">Localizanos</a>
+                        <a class="nav-link" href="faces/Localicacion.xhtml">Localizanos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="Contactanos.jsp">Contactanos</a>
+                        <a class="nav-link" href="Contactanos.jsp">Contactanos</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
