@@ -1,0 +1,23 @@
+body {
+    background-color: #004085;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#formulario {
+    margin-top: 50px;
+}
+
+#cuerpo {
+    background-color: #218838;
+}
+
+#centrar {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 50%;
+    margin-right: 50%;
+}
