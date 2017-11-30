@@ -9,17 +9,27 @@
         <title>Calendario</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- iconos de la pagina -->        
         <link rel="Shortcut Icon" type="image/x-icon" href="../resources/assets/icons/book.ico" />
-        
-        <script src="js/sweet-alert.min.js"></script>
-
+        <!-- sweet alert de la pagina -->
+        <script src="../resources/js/sweet-alert.min.js"></script>
+        <!-- css sweet alert-->
         <link rel="stylesheet" href="../resources/css/sweet-alert.css"/>
+        <!-- css Material desing -->
         <link rel="stylesheet" href="../resources/css/material-design-iconic-font.min.css"/>
+        <!-- css normalize -->
         <link rel="stylesheet" href="../resources/css/normalize.css"/>
+        <!-- css bootstrap -->
         <link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
+        <!-- css para el scrow de la pagina -->
+        <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
+        <!-- css estilo de la pagina -->
+        <link rel="stylesheet" href="../resources/css/style.css"/>
+
 
         <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
-        <link rel="stylesheet" href="../resources/css/style.css"/>
+        <link rel="stylesheet" href="../resources/  css/style.css"/>
+
         <script src="../resources/js/modernizr.js"></script>
         <script src="../resources/js/bootstrap.min.js"></script>
         <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -53,25 +63,15 @@
                         <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo</p>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Sistema Administrativo</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeAdmin.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
+                        <li><a href="../homes/homeAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
                         
                         <!-- Completar esta parte Para redireccionar al sistema -->
-                        <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
-                            <ul class="list-unstyled">
-                                <li><a href="faces/index.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
-                                <li><a href="faces/Examenes2.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Examen</a></li>
-                                <li><a href="student.html"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo estudiante</a></li>
-                                <li><a href="personal.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo personal administrativo</a></li>
-                            </ul>
-                        </li>
-
                         
                     </ul>
                 </div>
@@ -88,7 +88,7 @@
                     <li style="color:#fff; cursor:default;">
                         <span class="all-tittles">Admin Name</span>
                     </li>
-                    <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
+                    <li  class="tooltips-general exit-system-button" data-href="../faces/index.xhtml" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
                     </li>
                     <li  class="tooltips-general search-persona-button" data-placement="bottom" title="Ayuda">
@@ -100,7 +100,7 @@
                 </ul>
             </nav>
           
-            <div class="container">
+            <div class="container" >
                 <div class="page-header">
                     <h1 class="all-tittles">Sistema Clinicamedica <small> "Calendario"</small></h1>
                 </div>
@@ -108,7 +108,7 @@
             <div class="container-fluid">
                 
                 <ul class="nav nav-justified"  style="font-size: 17px;">
-                    <li role="presentation" class="container" style="text-align: center;"><h1>Eventos del dia</h1></li>
+                    <li role="presentation" class="container" style="text-align: center; font: bold small-caps 120%/200% serif;"><h1>Eventos del dia</h1></li>
                 </ul>
             </div>
            
