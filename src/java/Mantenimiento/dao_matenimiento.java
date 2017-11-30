@@ -133,7 +133,7 @@ public class dao_matenimiento extends DAO {
         Medicamento men = new Medicamento();
         try {
             this.Conectar();
-            sql = "SELECT * FROM medicamento ";
+            sql = "SELECT * FROM medicamento";
             this.pre = this.getCn().prepareStatement(sql);
             rs = pre.executeQuery();
             while (rs.next()) {
