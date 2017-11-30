@@ -6,7 +6,7 @@ public class Medicamento {
     private String descripcion;
     private String fecha;
     private int provedor;
-    private int inventario;
+   
 
     public int getIdmedicamento() {
         return idmedicamento;
@@ -46,15 +46,6 @@ public class Medicamento {
 
     public void setProvedor(int provedor) {
         this.provedor = provedor;
-    }
-
-    public int getInventario() {
-        return inventario;
-    }
-
-    public void setInventario(int inventario) {
-        this.inventario = inventario;
-    }
-    
+    }   
     
 }
