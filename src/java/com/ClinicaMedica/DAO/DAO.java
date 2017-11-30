@@ -13,11 +13,12 @@ public class DAO {
     private String user;
     private String pass;
     private Connection cn;
-    
+
     public DAO() {
 //        server = "jdbc:mysql://localhost/clinicamedica";
 //        user = "root";
 //        pass = "";
+
         server = "jdbc:mysql://192.168.22.35/clinicamedica4";
         user = "DEHECK";
         pass = "1234567890";
@@ -31,10 +32,10 @@ public class DAO {
         this.cn = cn;
     }
 
-    public void Conectar() throws SQLException  {
+    public void Conectar() throws SQLException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cn = DriverManager.getConnection(server,user,pass);
+            cn = DriverManager.getConnection(server, user, pass);
             System.out.println("Conexion Realizada con exito a la base de datos");
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("No se conecto a la base de datos en el DAO: " + ex);
@@ -49,7 +50,7 @@ public class DAO {
                 }
             }
         } catch (Exception e) {
-            System.out.println("No se desconecto de la base de datos en el DAO: "+e);
+            System.out.println("No se desconecto de la base de datos en el DAO: " + e);
         }
     }
 }
