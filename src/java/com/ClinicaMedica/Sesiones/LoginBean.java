@@ -1,6 +1,8 @@
 package com.ClinicaMedica.Sesiones;
 
 import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
@@ -8,8 +10,8 @@ import javax.inject.Named;
 /**
  * @author Harvey
  */
-@Named
-@ViewScoped
+@ManagedBean
+@SessionScoped
 public class LoginBean implements Serializable {
 
     loginModelo usuario = new loginModelo();
@@ -32,7 +34,7 @@ public class LoginBean implements Serializable {
     }
 
     // creo mi metodo para logear una seseion
-    public void loga() {
+    public void logig() {
         LoginDAO log = new LoginDAO(); // llamamos el objeto de tipo dao
 
         try {
@@ -57,7 +59,8 @@ public class LoginBean implements Serializable {
                      */
                     FacesContext context = FacesContext.getCurrentInstance();
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("session", UsuarioSesion);
-                    context.getExternalContext().redirect("faces/homes/homeAdmin.xhtml");
+                    context.getExternalContext().redirect("faces/homes/homeAdmin.xhtml");               
+                    
                 } else {
 
                 }

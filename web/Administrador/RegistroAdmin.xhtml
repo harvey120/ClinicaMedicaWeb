@@ -73,7 +73,7 @@
 
                         <!-- Menu lateral-->
                         <li><a href="../faces/homes/homeAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
-                        <li><a href="faces/../RegistroEmpleado.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo empleado</a></li>
+                        <li><a href="faces/../RegistroAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Administrador</a></li>
                         <li><a href="faces/../RegistroNoExistente.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp;Registro nuevo empleado</a></li>
                         <li><a href="faces/../Mantenimiento.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-alert-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personal</a></li>
                         <!-- FIn del Menu lateral -->
@@ -115,7 +115,7 @@
             </div>
 
             <div class="container-fluid">
-                <h1 align="center" style=" font: bold small-caps 420%/200% serif;">Registro de empleado</h1>
+                <h1 align="center" style=" font: bold small-caps 420%/200% serif;">Registro de Administrador</h1>
             </div>
 
             <br/><br/>
@@ -143,10 +143,9 @@
             </div>
 
 
-
             <div class="container-fluid">
                 <div class="container-flat-form">
-                    <div class="title-flat-form title-flat-blue">Registro de empleado</div>
+                    <div class="title-flat-form title-flat-blue">Registro de Administrador</div>
                     <form autocomplete="off">
                         <div class="row">
                             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -211,7 +210,7 @@
 
                                     <div class="group-material">
                                         <span>Especialidad</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px;" title="Seleccione Especialidad" value="#{vistaBeanEmpleado.empleado.idEspecialidad}">
+                                        <b:selectOneMenu class="tooltips-general material-control" disabled="false" style=" font: bold small-caps 120%/200% serif; height: 50px;" title="Seleccione Especialidad" value="#{vistaBeanEmpleado.empleado.idEspecialidad}">
                                             <f:selectItems value="#{especialidadBean.lstEspecialidad}" var="especialidad" itemLabel="#{especialidad.nombreEspecialidad}" itemValue="#{especialidad.idEspecialidad}" />
                                         </b:selectOneMenu>
                                     </div>
@@ -225,20 +224,26 @@
 
                                     <div class="group-material">
                                         <span>Puesto</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px;" title="Seleccione Puesto " value="#{vistaBeanEmpleado.empleado.idPuesto}" >
+                                        <b:selectOneMenu class="tooltips-general material-control" disabled="false" style=" font: bold small-caps 120%/200% serif; height: 50px;" title="Seleccione Puesto " value="#{vistaBeanEmpleado.empleado.idPuesto}" >
                                             <f:selectItems value="#{puestoBean.lstPuesto}" var="puesto" itemLabel="#{puesto.nombre}" itemValue="#{puesto.idPuesto}" />
                                         </b:selectOneMenu>
                                     </div>
 
                                     <!-- si en dado caso se e necesario agregar el usuario aqui abajo se agrega parte de ese formulario-->
+                                    
+                                    <!-- contenido del formulario de empleado -->
+                                    <div class="title-flat-form title-flat-blue">Datos Usuario</div>
+                                    
+                                    
+                                    
+                                    
+                                    
 
 
                                     <p class="text-center">
                                         <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{vistaBeanEmpleado.registrar()}" />
                                     </p> 
                                 </h:form>
-
-
 
                             </div>
                         </div>
