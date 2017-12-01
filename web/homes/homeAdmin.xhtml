@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Panel de Control</title>
         <!-- Esta pagina representa el panel de control principal de el administrador -->
@@ -38,6 +39,8 @@
     </h:head>
 
     <h:body>
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <!-- NavBar lateral de la pagina -->
         <div class="navbar-lateral full-reset">
@@ -97,7 +100,7 @@
                     </figure>
 
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles"> Admin Name </span>
+                        <span class="all-tittles"> #{controlador.getUsu()} </span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="../index.xhtml" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -136,7 +139,7 @@
 
 
                 <article class="tile">
-                    <a href="">
+                    <a href="../Administrador/nuevoIngresoPaciente.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/chatting.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Pacientes</div>
                     </a>
@@ -173,7 +176,7 @@
                 <article class="tile">
                     <a href="">
                         <div class="tile-icon full-reset"><i class="zmdi zmdi-timer"></i></div>
-                        <div class="tile-num full-reset">Enfermera</div>
+                        <div class="tile-num full-reset">Recepcionista</div>
                     </a>
                 </article>
                 

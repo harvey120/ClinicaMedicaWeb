@@ -37,6 +37,8 @@
         <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <!-- Esta pagina es la inicial de control de registro de empleados -->
 
@@ -207,7 +209,7 @@
                                      print="true"
                                      class="tabla">
 
-                            <b:dataTableColumn class="div-table-cell" value="#{per.idEmpleado}" label="Id Documento"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{per.idEmpleado}" label="Id Empleado"/>
                             <b:dataTableColumn class="div-table-cell" value="#{per.idEspecialidad}" label="Especialidad"/>
                             <b:dataTableColumn class="div-table-cell" value="#{per.consultorio}" label="Consultorio"/>
                             <b:dataTableColumn class="div-table-cell" value="#{per.estado}" label="Estado"/>
