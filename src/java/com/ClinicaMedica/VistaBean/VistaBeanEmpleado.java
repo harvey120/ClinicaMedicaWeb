@@ -58,7 +58,10 @@ public class VistaBeanEmpleado {
 
     public void registrarAdmin() {
         VistaDAOEmpleado dao;
+        
         empleado.setIdEmpleado(persona.getIdPersona());
+        usuario.setIdUsuario(empleado.getIdEmpleado());
+        
         try {
             dao = new VistaDAOEmpleado();
             dao.registrarAdmin(persona, empleado, usuario);
