@@ -4,7 +4,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      >
     <h:head>
         <title>Panel de Control</title>
         <!-- Esta pagina representa el panel de control principal de el administrador -->
@@ -136,7 +137,7 @@
                     <div class="col-xs-12 lead">
                         <ol class="breadcrumb">
                             <li class="active">Regitro Examen</li>
-                            <li><a href="faces/lstExamen.xhtml">Listado de Examen</a></li>
+                            <li><a href="">Listado de Examen</a></li>
                         </ol>
                     </div>
                 </div>
@@ -150,7 +151,7 @@
 
                     <h:form class="div-table-row div-table-head" id="frmTabla">
                         <b:dataTable value="#{bean_mantenimiento_medicamento.lista}" 
-                                     var="per"
+                                     var="men"
                                      id="data"
                                      excel="true"
                                      pdf="true"
@@ -158,14 +159,14 @@
                                      print="true"
                                      class="tabla">
 
-                            <b:dataTableColumn class="div-table-cell" value="#{per.nombre}" label="Nombre"/>
-                            <b:dataTableColumn class="div-table-cell" value="#{per.idmedicamento}" label="ID"/>
-                            <b:dataTableColumn class="div-table-cell" value="#{per.descripcion}" label="Descripcion"/>
-                            <b:dataTableColumn class="div-table-cell" value="#{per.provedor}" label="Provedor"/>
-                            <b:dataTableColumn class="div-table-cell" value="#{per.fecha}" label="fecha de caducacion"/>
-                           
-                            <b:dataTableColumn class="div-table-cell" label="modificar">
-                                <p:commandButton value="modificar" actionListener="#{bean_mantenimiento_medicamento.modificar(per)}"  icon="trash" class="btn btn-danger tooltips-general" title="Eliminar Historial Clinico" />
+                            <b:dataTableColumn class="div-table-cell" value="#{men.nombre}" label="Nombre"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{men.idmedicamento}" label="ID"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{men.descripcion}" label="Descripcion"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{men.provedor}" label="Provedor"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{men.fecha}" label="fecha de caducacion"/>
+                            
+                            <b:dataTableColumn class="div-table-cell" label="Modificar">
+                                <p:commandButton actionListener="#{bean_mantenimiento_medicamento.modificar(men)}" oncomplete="PF('wdlgDatos').show()"  update=":dlgDatos" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento" />
                             </b:dataTableColumn>
 
                         </b:dataTable>
@@ -178,14 +179,13 @@
             
             <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
                 <h:form>
-                    <b:inputText placeholder="Id Examen:" value="#{bean_mantenimiento_medicamento.men.nombre}"/>
-                    <b:inputText placeholder="Nombre: " value="#{bean_mantenimiento_medicamento.men.descripcion}"  />
-                    <b:inputText placeholder="Categoria: " value="#{bean_mantenimiento_medicamento.men.fecha}"  />
-                    <b:inputText placeholder="Categoria: " value="#{bean_mantenimiento_medicamento.men.idmedicamento}"  />
-                    
-                    <b:inputText placeholder="Categoria: " value="#{bean_mantenimiento_medicamento.men.provedor}"  />
+                    <b:inputText placeholder="Nombre:" value="#{bean_mantenimiento_medicamento.men.nombre}"/>
+                    <b:inputText placeholder="Descripcion: " value="#{bean_mantenimiento_medicamento.men.descripcion}"  />
+                    <b:inputText placeholder="Fecha de caducacion: " value="#{bean_mantenimiento_medicamento.men.fecha}"  />
+                    <b:inputText placeholder="Id: " value="#{bean_mantenimiento_medicamento.men.idmedicamento}"  />
+                    <b:inputText placeholder="Provedor: " value="#{bean_mantenimiento_medicamento.men.provedor}"  />
 
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{bean_mantenimiento_medicamento.modificar(per)}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
+                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{bean_mantenimiento_medicamento.modificar(men)}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
                     <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos').hide();" />
 
                 </h:form>

@@ -8,16 +8,9 @@ import javax.faces.bean.ViewScoped;
 @ManagedBean
 @ViewScoped
 public class bean_mantenimiento_medicamento {
-    ArrayList<Medicamento> lista= new ArrayList();
+    
     Medicamento men = new Medicamento();
-
-    public ArrayList<Medicamento> getLista() {
-        return lista;
-    }
-
-    public void setLista(ArrayList<Medicamento> lista) {
-        this.lista = lista;
-    }
+    ArrayList<Medicamento> lista= new ArrayList();
 
     public Medicamento getMen() {
         return men;
@@ -26,6 +19,15 @@ public class bean_mantenimiento_medicamento {
     public void setMen(Medicamento men) {
         this.men = men;
     }
+
+    public ArrayList<Medicamento> getLista() {
+        return lista;
+    }
+
+    public void setLista(ArrayList<Medicamento> lista) {
+        this.lista = lista;
+    }
+    
      public void insertar() {
         dao_matenimiento dao;
         System.out.println("ha ingresado a insertar bn");
@@ -48,6 +50,9 @@ public class bean_mantenimiento_medicamento {
         try {
             dao = new dao_matenimiento();
             lista = dao.listarMedicamento();
+            for (int i = 0; i < lista.size(); i++) {
+                System.out.println("Codigo: " + lista.get(i).getNombre());
+            }
         } catch (Exception e) {
             System.out.println("error listar bn" + e);
         }

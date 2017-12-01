@@ -130,18 +130,17 @@ public class dao_matenimiento extends DAO {
     public ArrayList<Medicamento> listarMedicamento() throws SQLException {
         
         List<Medicamento> me = new ArrayList();
-        Medicamento men = new Medicamento();
         try {
             this.Conectar();
-            sql = "SELECT * FROM medicamento";
-            this.pre = this.getCn().prepareStatement(sql);
+            sql = "SELECT DISTINCT idMedicamento, Nombre, Descripcion, FechaVencimiento, Proveedor_idProveedor FROM medicamento";
+            this.pre = this.getCn().prepareCall(sql);
             rs = pre.executeQuery();
             while (rs.next()) {
+                Medicamento men = new Medicamento();
                 men.setNombre(rs.getString("Nombre"));
                 men.setDescripcion(rs.getString("Descripcion"));
                 men.setFecha(rs.getString("FechaVencimiento"));
                 men.setProvedor(rs.getInt("Proveedor_idProveedor"));
-               
                 men.setIdmedicamento(rs.getInt("idMedicamento"));
                 me.add(men);
             }
@@ -152,16 +151,20 @@ public class dao_matenimiento extends DAO {
         }
         return (ArrayList<Medicamento>) me;
     }
+/*------------------------------------------------------------------------------*/
 
+    /*------------------------------------------------------------------------------*/
+    
     public ArrayList<Ocupacion> listarOcupacion() throws SQLException {
         List<Ocupacion> oc = new ArrayList();
-        Ocupacion ocu = new Ocupacion();
+        
         try {
             this.Conectar();
             sql = "SELECT * FROM ocupacion";
             this.pre = this.getCn().prepareStatement(sql);
             rs = pre.executeQuery();
             while (rs.next()) {                
+                Ocupacion ocu = new Ocupacion();
                 ocu.setIdOcupacion(rs.getInt("IdOcupacion"));
                 ocu.setNombre(rs.getString("Nombre"));
                 oc.add(ocu);
@@ -176,13 +179,14 @@ public class dao_matenimiento extends DAO {
 
     public ArrayList<Enfermedad> listarEnfermedad() throws SQLException {
         List<Enfermedad> en = new ArrayList();
-        Enfermedad enf = new Enfermedad();
+        
         try {
             this.Conectar();
             sql = "SELECT * FROM enfermedad";
             this.pre = this.getCn().prepareStatement(sql);
             rs = pre.executeQuery();
             while (rs.next()) {                
+                Enfermedad enf = new Enfermedad();
                 enf.setIdEnfermedad(rs.getInt("IdEnfermedad"));
                 enf.setNombre(rs.getString("Nombre"));
                 enf.setIdCategoriaEnfermedad(rs.getInt("CategoriaEnfermedad_IdCategoriaE"));
@@ -198,13 +202,14 @@ public class dao_matenimiento extends DAO {
 
     public ArrayList<Religion> listarReligion() throws SQLException {
         List<Religion> re= new ArrayList();
-        Religion reli = new Religion();
+        
         try {
             this.Conectar();
             sql = "SELECT * FROM religion";
             this.pre = this.getCn().prepareStatement(sql); 
             rs=pre.executeQuery();
             while (rs.next()) {                
+                Religion reli = new Religion();
                 reli.setIdReligion(rs.getInt("IdReligion"));
                 reli.setNombre(rs.getString("Nombre"));
                 re.add(reli);
@@ -218,13 +223,14 @@ public class dao_matenimiento extends DAO {
 
     public ArrayList<Examen> listarExamen() throws SQLException {
         List<Examen> exam= new ArrayList();
-        Examen exe = new Examen();
+        
         try {
             this.Conectar();
             sql = "SELECT * FROM examen";
             this.pre = this.getCn().prepareStatement(sql);    
             rs=pre.executeQuery();
             while (rs.next()) {                
+                Examen exe = new Examen();
                 exe.setIdCategoriaExamen(rs.getInt("idCategoriaExamen"));
                 exe.setIdExamen(rs.getInt("IdExamen"));
                 exe.setNombre(rs.getString("Nombre"));
@@ -238,13 +244,14 @@ public class dao_matenimiento extends DAO {
 
     public ArrayList<Turno> listarTurno() throws SQLException {
         List<Turno> t = new ArrayList();
-        Turno tur = new Turno();
+        
         try {
             this.Conectar();
             sql = "SELECT * FROM turno";
             this.pre = this.getCn().prepareStatement(sql); 
             rs = pre.executeQuery();
             while (rs.next()) {                
+                Turno tur = new Turno();
                 tur.setIdturno(rs.getInt("idTurno"));
                 tur.setHorarioEntrada(rs.getString("HorarioEntrada"));
                 tur.setHorarioSalida(rs.getString("HorarioSalida"));

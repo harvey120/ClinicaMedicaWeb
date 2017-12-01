@@ -40,7 +40,7 @@
 
     </h:head>
     <h:body>
-       <!-- NavBar lateral de la pagina -->
+        <!-- NavBar lateral de la pagina -->
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>
             <div class="full-reset container-menu-movile custom-scroll-containers">
@@ -92,7 +92,7 @@
         <!--  Contenido de la pagina -->
         <div class="content-page-container full-reset custom-scroll-containers">
 
-           <nav class="navbar-user-top full-reset">
+            <nav class="navbar-user-top full-reset">
                 <ul class="list-unstyled full-reset">
                     <figure>
                         <img src="assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
@@ -116,7 +116,7 @@
                     <h1 class="all-tittles">Sistema Clinicamedica <small>Administración de pacientes</small></h1>
                 </div>
             </div>
-            
+
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
@@ -138,41 +138,60 @@
                 </div>
             </div>
 
-            
-            
+
+
             <div class="container-fluid">
                 <div class="container-flat-form">
-                    <div class="title-flat-form title-flat-blue">Registrar una nueva Persona</div>
+                    <div class="title-flat-form title-flat-blue">Busqueda de Medicamento</div>
                     <form autocomplete="off">
                         <div class="row">
                             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-
-                                
-                                
                                 <h:form>
                                     <div class="group-material">
-                                        <b:inputText id="Examen" placeholder="Id Examen:" value="#{bean_de_crud.crud.idExamen}" />
+                                        <b:inputText id="Examen" placeholder="Id:" value="#{bean_mantenimiento_medicamento.men.idmedicamento}" />
+                                    </div>
+                                </h:form>
+                                <p class="text-center">
+                                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{bean_mantenimiento_medicamento.buscar()}" />
+                                </p> 
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        
+    
+                <div class="container-flat-form">
+                    <div class="title-flat-form title-flat-blue">Registrar una nueva medicamento</div>
+                    <form autocomplete="off">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                                <h:form>
+                                    <div class="group-material">
+                                        <b:inputText id="Examen" placeholder="Id:" value="#{bean_mantenimiento_medicamento.men.idmedicamento}" />
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="nombre" placeholder="Nombre: " value="#{bean_de_crud.crud.nombre}"/>
+                                        <b:inputText id="nombre" placeholder="Nombre: " value="#{bean_mantenimiento_medicamento.men.nombre}"/>
                                     </div>
-                                    
-                                     <div class="group-material">
-                                         <b:inputText id="Categoria" placeholder="Categoria: " value="#{bean_de_crud.crud.idCategoria}"/>
+
+                                    <div class="group-material">
+                                        <b:inputText id="Categoria" placeholder="Descripcion: " value="#{bean_mantenimiento_medicamento.men.descripcion}"/>
                                     </div>
-                                     <div class="group-material">
-                                         <b:selectOneMenu value="#{bean_de_crud.crud.idCategoria}">
-                                             <f:selectItems value="#{bean_de_crud.este()}"/>
-                                         </b:selectOneMenu>
+                                    <div class="group-material">
+                                        <b:inputText id="nombre" placeholder="Fecha de bencimiento: " value="#{bean_mantenimiento_medicamento.men.fecha}"/>
                                     </div>
-                                      
+
+                                    <div class="group-material">
+                                        <b:inputText id="Categoria" placeholder="Provedor: " value="#{bean_mantenimiento_medicamento.men.provedor}"/>
+                                    </div>
+
+
                                     <p class="text-center">
-                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{bean_de_crud.insertar()}" />
+                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{bean_mantenimiento_medicamento.insertar()}" />
                                     </p> 
                                 </h:form>
 
-                                
-                                
+
+
                             </div>
                         </div>
                     </form>
