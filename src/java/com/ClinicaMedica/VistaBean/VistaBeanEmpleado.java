@@ -2,6 +2,7 @@ package com.ClinicaMedica.VistaBean;
 
 import com.ClinicaMedica.Modelo.Empleado;
 import com.ClinicaMedica.Modelo.Persona;
+import com.ClinicaMedica.Modelo.Usuarios;
 import com.ClinicaMedica.VistaDAO.VistaDAOEmpleado;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -15,6 +16,7 @@ public class VistaBeanEmpleado {
 
     private Persona persona = new Persona();
     private Empleado empleado = new Empleado();
+    private Usuarios usuario = new Usuarios();
 
     public VistaBeanEmpleado() {
     }
@@ -34,19 +36,35 @@ public class VistaBeanEmpleado {
     public void setEmpleado(Empleado empleado) {
         this.empleado = empleado;
     }
-    
-    public void registrar(){
+
+    public Usuarios getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuarios usuario) {
+        this.usuario = usuario;
+    }
+
+    public void registrarEmpleado() {
         VistaDAOEmpleado dao;
-        
         empleado.setIdEmpleado(persona.getIdPersona());
-        
         try {
             dao = new VistaDAOEmpleado();
-            dao.registrar(persona, empleado);
+            dao.registrarEmpleado(persona, empleado);
         } catch (Exception e) {
             System.out.println("No se registro en VistaBeanEmpleado " + e);
         }
-        
+    }
+
+    public void registrarAdmin() {
+        VistaDAOEmpleado dao;
+        empleado.setIdEmpleado(persona.getIdPersona());
+        try {
+            dao = new VistaDAOEmpleado();
+            dao.registrarAdmin(persona, empleado, usuario);
+        } catch (Exception e) {
+            System.out.println("No se registro en VistaBeanEmpleado " + e);
+        }
     }
 
 }

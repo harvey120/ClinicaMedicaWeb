@@ -39,7 +39,9 @@
         <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
-
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+        
         <!-- Esta pagina es la inicial de control de registro de empleados -->
 
         <!-- aqui llevo el control de la listas desplegables al ingresar datos -->

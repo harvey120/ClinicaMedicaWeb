@@ -25,6 +25,8 @@
         <script src="../resources/js/main.js" type="text/javascript"></script>
     </h:head>
     <h:body>
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <f:event type="preRenderView" listener="#{generoBean.listarGenero()}"/>
         <f:event type="preRenderView" listener="#{estadoCivilBean.listarReligion()}"/>

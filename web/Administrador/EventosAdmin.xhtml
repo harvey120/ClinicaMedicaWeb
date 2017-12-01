@@ -50,6 +50,8 @@
     </h:head>
 
     <h:body>
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>

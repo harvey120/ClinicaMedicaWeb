@@ -29,7 +29,7 @@ public class controlador implements Serializable {
             FacesContext context = FacesContext.getCurrentInstance();
             loginModelo usua = (loginModelo) context.getExternalContext().getSessionMap().get("session");
             if (usua == null) {
-                context.getExternalContext().redirect("index.html");
+                context.getExternalContext().redirect("../login.xhtml");
             } else {
                 usu = usua;
             }

@@ -36,7 +36,9 @@
         <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
-
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+        
         <!-- Esta pagina es la inicial de control de registro de empleados -->
 
         <!-- aqui llevo el control de la listas desplegables al ingresar datos -->
@@ -151,15 +153,15 @@
                             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                                 <h:form class="textoAmp">
 
-                                    <div class="group-material">
+<!--                                    <div class="group-material">
                                         <b:inputText id="correo" style=" font: bold small-caps 120%/200% serif; width: 415px;" placeholder="Ingrese nombre o numero de Identificacion"/>
-                                    </div>
+                                    </div>-->
                                     
                                     <!-- contenido del formulario de persona -->
                                     <div class="title-flat-form title-flat-blue">Datos Personales</div>
-                                    <div class="group-material">
+<!--                                    <div class="group-material">
                                         <b:inputText id="idPersona" style=" font: bold small-caps 120%/200% serif;" placeholder="Id Persona:" value="#{vistaBeanEmpleado.persona.idPersona}"/>
-                                    </div>
+                                    </div>-->
                                     <div class="group-material">
                                         <b:inputText id="nombre" style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre: " value="#{vistaBeanEmpleado.persona.nombre}"  />
                                     </div>
@@ -235,13 +237,24 @@
                                     <div class="title-flat-form title-flat-blue">Datos Usuario</div>
                                     
                                     
+                                    <div class="group-material">
+                                        <b:inputText id="Usuario" style=" font: bold small-caps 120%/200% serif;" placeholder="Usuario: " value="#{vistaBeanEmpleado.usuario.usuario}" />
+                                    </div>
+                                    <div class="group-material">
+                                        <b:inputText id="contrasena" type="password" style=" font: bold small-caps 120%/200% serif;" placeholder="Contraseña: " value="#{vistaBeanEmpleado.usuario.contrasenia}" />
+                                    </div>
                                     
-                                    
+                                    <div class="group-material">
+                                        <span>Tipo Usuario</span>
+                                        <b:selectOneMenu class="tooltips-general material-control" disabled="false" style=" font: bold small-caps 120%/200% serif; height: 50px;" title="Seleccione Tipo " value="#{vistaBeanEmpleado.usuario.idEstadoUsuario}" >
+                                            <f:selectItems value="#{estadoUsuarioBean.lstEstadoUsuario}" var="usuario" itemLabel="#{usuario.tipoEstado}" itemValue="#{usuario.idEstadoUsuario}" />
+                                        </b:selectOneMenu>
+                                    </div>
                                     
 
 
                                     <p class="text-center">
-                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{vistaBeanEmpleado.registrar()}" />
+                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{vistaBeanEmpleado.registrarAdmin()}" />
                                     </p> 
                                 </h:form>
 

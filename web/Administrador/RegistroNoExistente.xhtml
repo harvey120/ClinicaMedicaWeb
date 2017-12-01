@@ -36,7 +36,8 @@
         <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
-
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
         <!-- Esta pagina es la inicial de control de registro de empleados -->
 
         <!-- aqui llevo el control de la listas desplegables al ingresar datos -->
@@ -64,7 +65,7 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                         <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
                     <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Sistema Super Administrativo</p>
                 </div>
@@ -162,9 +163,14 @@
                                 <h:form class="textoAmp">
                                     <!-- contenido del formulario de persona -->
                                     <div class="title-flat-form title-flat-blue">Datos Personales</div>
+                                    
+                                    
+                                    <!--                                
                                     <div class="group-material">
-                                        <b:inputText id="idPersona" style=" font: bold small-caps 120%/200% serif;" placeholder="Id Persona:" value="#{vistaBeanEmpleado.persona.idPersona}"/>
-                                    </div>
+                                                                            <b:inputText id="idPersona" style=" font: bold small-caps 120%/200% serif;" placeholder="Id Persona:" value="#{vistaBeanEmpleado.persona.idPersona}"/>
+                                                                        </div>-->
+                                    
+                                    
                                     <div class="group-material">
                                         <b:inputText id="nombre" style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre: " value="#{vistaBeanEmpleado.persona.nombre}"  />
                                     </div>
@@ -238,11 +244,11 @@
 
 
                                     <p class="text-center">
-                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{vistaBeanEmpleado.registrar()}" />
+                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{vistaBeanEmpleado.registrarEmpleado()}" />
                                     </p> 
                                 </h:form>
 
-                                
+
                             </div>
                         </div>
                     </form>
