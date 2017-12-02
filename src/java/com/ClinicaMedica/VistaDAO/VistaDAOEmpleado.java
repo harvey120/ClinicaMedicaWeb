@@ -39,9 +39,8 @@ public class VistaDAOEmpleado extends DAO {
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();
-            retorno = rs.getInt(1);  
+            retorno = rs.getInt(1);
 
-                       
         } catch (Exception e) {
             System.out.println("Revisa personaDAO");
             System.out.println("No se pudo Insertar en VistaDAOEmpleado" + e);
@@ -52,7 +51,6 @@ public class VistaDAOEmpleado extends DAO {
         emp.setIdEmpleado(retorno); //  este es el valor de retorno para la nueva tabla
 
         try {
-            System.out.println("Esta a punto de agregar empleado");
             System.out.println("empleado " + emp.getIdEmpleado());
             this.Conectar();
             String sql = "insert into empleado(idEmpleado, Especialidad_idEspecialidad, Consultorio,"
@@ -97,8 +95,6 @@ public class VistaDAOEmpleado extends DAO {
             rs.next();
             retorno = rs.getInt(1);
 
-          
-            
         } catch (Exception e) {
             System.out.println("Revisa personaDAO");
             System.out.println("No se pudo Insertar en VistaDAOEmpleado" + e);
@@ -114,28 +110,27 @@ public class VistaDAOEmpleado extends DAO {
             this.Conectar();
             String sql = "insert into empleado(idEmpleado, Especialidad_idEspecialidad, Consultorio,"
                     + " Estado, Puesto_idPuesto) value(?,?,?,?,?)";
-            st = this.getCn().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            st = this.getCn().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setInt(1, emp.getIdEmpleado());
             st.setInt(2, emp.getIdEspecialidad());
             st.setString(3, emp.getConsultorio());
             st.setString(4, emp.getEstado());
             st.setInt(5, emp.getIdPuesto());
             st.executeUpdate();
-            
+
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();
             retorno = rs.getInt(1);
-            
+
         } catch (Exception e) {
             System.out.println("Revisa empleadoDAO");
             System.out.println("No se pudo Insertar en VistaDAOEmpleado" + e);
         } finally {
             this.Cerrar();
         }
-        
+
         usu.setIdUsuario(retorno);//  este es el valor de retorno para la nueva tabla   
-        
 
         try {
             this.Conectar();

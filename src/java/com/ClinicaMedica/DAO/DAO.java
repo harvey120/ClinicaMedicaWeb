@@ -15,7 +15,7 @@ public class DAO {
     private Connection cn;
 
     public DAO() {
-        server = "jdbc:mysql://localhost/clinicamedica";
+        server = "jdbc:mysql://localhost/clinicamedica4";
         user = "root";
         pass = "";
 //

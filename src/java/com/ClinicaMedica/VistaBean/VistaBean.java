@@ -3,7 +3,7 @@ package com.ClinicaMedica.VistaBean;
 import com.ClinicaMedica.Modelo.HistorialClinico;
 import com.ClinicaMedica.Modelo.Paciente;
 import com.ClinicaMedica.Modelo.Persona;
-import com.ClinicaMedica.VistaDAO.VistaDAO;
+import com.ClinicaMedica.VistaDAO.VistaDAOPaciente;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -47,7 +47,7 @@ public class VistaBean {
     }
 
     public void registrar() {
-        VistaDAO dao;
+        VistaDAOPaciente dao;
         
         paciente.setIdPaciente(persona.getIdPersona());
         historial.setIdPaciente(paciente.getIdPaciente());
@@ -55,7 +55,7 @@ public class VistaBean {
         // modificar la base de datos y recordar que la tabla historial clinico es autonumerica
         
         try {
-            dao = new VistaDAO();
+            dao = new VistaDAOPaciente();
             dao.registrar(persona,paciente,historial);
 
         } catch (Exception e) {
