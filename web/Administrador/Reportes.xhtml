@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
         <!-- css estilo de la pagina -->
         <link rel="stylesheet" href="../resources/css/style.css"/>
-        
+
         <!-- Librerias para la data table -->
 
 
@@ -39,9 +39,9 @@
         <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
-        
+
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
-        
+
         <!-- Esta pagina es la inicial de control de registro de empleados -->
 
         <!-- aqui llevo el control de la listas desplegables al ingresar datos -->
@@ -69,7 +69,7 @@
                     <figure>
                         <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Sistema Super Administrativo</p>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
@@ -96,7 +96,7 @@
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Admin Name</span>
+                        <span class="all-tittles"> #{controlador.usu.nombre} #{controlador.usu.apellido} </span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="../faces/index.xhtml" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -122,7 +122,7 @@
 
             <br/><br/>
 
-         
+
 
 
             <div class="container-fluid"  style="margin: 50px 0;">
@@ -149,9 +149,10 @@
 
 
             <div class="container-fluid">
-                <h2 class="text-center all-tittles">Lista de Personas</h2>
+
                 <div class="div-table">
                     <h:form class="div-table-row div-table-head" id="frmTabla">
+                        <div class="title-flat-form title-flat-blue">Lista de Personas</div>
                         <b:dataTable value="#{personaBean.lstPersona}" 
                                      var="per"
                                      id="data"
@@ -195,6 +196,7 @@
                         </b:dataTable>
 
                         <br/><br/>
+                        <div class="title-flat-form title-flat-blue">Lista de Empleados</div>
 
                         <b:dataTable value="#{empleadoBean.lstEmpleado}" 
                                      var="per"
@@ -220,6 +222,11 @@
                             </b:dataTableColumn>
 
                         </b:dataTable>
+
+                        <br/><br/>
+                        <div class="title-flat-form title-flat-blue">Lista de Usuarios</div>
+                        
+
 
                     </h:form>
                 </div>        
@@ -263,7 +270,7 @@
                 </h:form>
             </p:dialog>
 
-            <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos1">
+            <p:dialog header="Datos" widgetVar="wdlgDatos1" id="dlgDatos1">
                 <h:form>
 
                     <b:inputText placeholder="Id Documento: " value="#{empleadoBean.ingreso.idEmpleado}"/>
@@ -282,8 +289,10 @@
                         <f:selectItems value="#{puestoBean.lstPuesto}" var="puesto" itemLabel="#{puesto.nombre}" itemValue="#{puesto.idPuesto}" />
                     </b:selectOneMenu>
 
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{empleadoBean.modificar()}"  oncomplete="PF('wdlgDatos1').hide();"  update=":frmTabla:data1"/>
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos1').hide();" />
+                    <b:commandButton class="btn btn-primary tooltips-general" icon="cloud" value="Modificar" actionListener="#{empleadoBean.modificar()}"  oncomplete="PF('wdlgDatos1').hide();"  update=":frmTabla:data"/>
+                    <b:commandButton class="btn btn-danger tooltips-general" icon="lock" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos1').hide();" />
+
+
                 </h:form>
             </p:dialog>
 

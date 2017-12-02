@@ -39,10 +39,9 @@ public class VistaDAOEmpleado extends DAO {
             st.executeUpdate();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();
-            retorno = rs.getInt(1);
+            retorno = rs.getInt(1);  
 
-            System.out.println("valor: " + retorno);
-            
+                       
         } catch (Exception e) {
             System.out.println("Revisa personaDAO");
             System.out.println("No se pudo Insertar en VistaDAOEmpleado" + e);
