@@ -36,10 +36,6 @@
         <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <!-- js del main-->
         <script src="../resources/js/main.js"></script>
-
-        <link rel="stylesheet" href="../resources/css/w3.css"/>
-
-
     </h:head>
 
     <h:body>
@@ -66,18 +62,18 @@
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
-
-                         <!-- Menu lateral-->
+                        <!-- Menu lateral-->
                         <li><a href="../faces/homes/homeAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
                         <li><a href="faces/../RegistroAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Administrador</a></li>
                         <li><a href="faces/../RegistroNoExistente.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp;Registro nuevo empleado</a></li>
                         <li><a href="faces/../Mantenimiento.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-alert-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personal</a></li>
+                        <li><a href="faces/../" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-search zmdi-hc-fw"></i>&nbsp;&nbsp; Busqueda Paciente</a></li>
                         <!-- FIn del Menu lateral -->
-                        
+
                     </ul>
                 </div>
                 <!-- fin Opciones de Menu laterales -->
-                
+
             </div>
         </div>
         <!-- Fin Nav Bar Lateral de la pagina -->
@@ -112,76 +108,109 @@
 
             <div class="container">
                 <div class="page-header">
-                    <h1 class="all-tittles">Sistema Clinicamedica <small>Inicio </small></h1>
+                    <h1 class="all-tittles">Sistema Clinicamedica <small>Reportes Generales </small></h1>
                 </div>
             </div>
 
+
+
             <section class="full-reset text-center" style="padding: 40px 0;">
                 <h:form>
-                    
-                    
-                    <article class="tile">
-                        <a href="#" onclick="document.getElementById('id01').style.display = 'block', limpiar()" class="w3-bar-item w3-button">
-                            <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/equipo.png" width="50" height="50"></img></i></div>
-                            <div class="tile-num full-reset"> Empleados</div>
-                        </a>
-                    </article>
-                    
-                    <article class="tile">
-                        <a href="#" onclick="document.getElementById('id01').style.display = 'block', limpiar()" class="w3-bar-item w3-button">
-                            <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/equipo.png" width="50" height="50"></img></i></div>
-                            <div class="tile-num full-reset"> Pacientes</div>
-                        </a>
-                    </article>
-                    
 
+                    <!-- Opciones de la vista -->
 
+                    <!--Opciones del modal--> 
                     <div id="id01" class="w3-modal w3-animate-opacity">
                         <div class="w3-modal-content w3-card-4">
-                            <h:form>
-                                <header class="w3-container w3-teal"> 
-                                    <span onclick="document.getElementById('id01').style.display = 'none'" class="w3-button w3-large w3-display-topright">&times;</span>
-                                    <h2>Obciones</h2>
-                                </header>
-                                <div class="w3-container">
-                                    <div class="w3-row w3-section">
-                                        <article class="tile">
-                                            <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
-                                            <div class="tile-num full-reset">
-                                                <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesEmpleadoBean.exportarPDF()}"/>
-                                            </div>
-                                        </article>
-                                        <article class="tile">
-                                            <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
-                                            <div class="tile-num full-reset">
-                                                <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesEmpleadoBean.exportarDOC()}"/>
-                                            </div>
-                                        </article>
-                                        <article class="tile">
-                                            <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
-                                            <div class="tile-num full-reset">
-                                                <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesEmpleadoBean.exportarExcel()}"/>
-                                            </div>
-                                        </article>
-                                        <article class="tile">
-                                            <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
-                                            <div class="tile-num full-reset">
-                                                <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesEmpleadoBean.verPDF()}"/>
-                                            </div>
-                                        </article>  
-                                        
-                                    </div>
-                                    <footer class="w3-container w3-teal">
-                                        <p> <input type="button" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" onclick="document.getElementById('id01').style.display = 'none'" value="Cerrar" actionListener="#{serviceClient.ingresogrado(serviceClient.codigo, serviceClient.grado)}"/> </p>
-                                    </footer>
+
+                            <div class="container">
+                                <div class="page-header">
+                                    <h1 class="all-tittles"><small>Reporte General de Empleados </small></h1>
                                 </div>
-                            </h:form>
+                            </div>
+                            <!-- Modal -->
+                            <div class="w3-container">
+                                <div class="w3-row w3-section">
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesEmpleadoBean.exportarPDF()}"/>
+                                        </div>
+                                    </article>
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesEmpleadoBean.exportarDOC()}"/>
+                                        </div>
+                                    </article>
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesEmpleadoBean.exportarExcel()}"/>
+                                        </div>
+                                    </article>
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesEmpleadoBean.verPDF()}"/>
+                                        </div>
+                                    </article>  
+
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
-                    
-                    
-                    
-                    
+                    <!--Opciones del modal--> 
+
+                    <!--Opciones del modal--> 
+                    <div id="id02" class="w3-modal w3-animate-opacity">
+                        <div class="w3-modal-content w3-card-4">
+
+
+                            <div class="container">
+                                <div class="page-header">
+                                    <h1 class="all-tittles"><small>Reporte General de Pacientes </small></h1>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="w3-container">
+                                <div class="w3-row w3-section">
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesPacienteBean.exportarPDF()}" />
+                                        </div>
+                                    </article>  
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesPacienteBean.exportarDOC()}"/>
+                                        </div>
+                                    </article>
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesPacienteBean.exportarExcel()}"/>
+                                        </div>
+                                    </article>
+                                    <article class="tile">
+                                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
+                                        <div class="tile-num full-reset">
+                                            <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesPacienteBean.verPDF()}"/>
+                                        </div>
+                                    </article>  
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--Opciones del modal--> 
+
+
+
                 </h:form>
             </section>
 

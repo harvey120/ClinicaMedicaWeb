@@ -1,7 +1,6 @@
 package com.ClinicaMedica.reportesBean;
 
-import com.ClinicaMedica.Sesiones.controlador;
-import com.ClinicaMedica.reportesDAO.ReportesEmpleadoDAO;
+import com.ClinicaMedica.reportesDAO.ReportesPacienteDAO;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -27,23 +26,24 @@ import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
  */
 @ManagedBean
 @RequestScoped
-public class ReportesEmpleadoBean {
+public class ReportesPacienteBean {
 
-    ReportesEmpleadoDAO dao = new ReportesEmpleadoDAO();
+    ReportesPacienteDAO dao = new ReportesPacienteDAO();
 
     public void exportarPDF() throws JRException, IOException, SQLException {
 
         Map<String, Object> parametros = new HashMap<String, Object>();
-        
-        controlador objeto = new controlador();
+
         parametros.put("txtUsuario", "Harvey Herrera");
 
-        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptEmpleado.jasper"));
+        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptPaciente.jasper"));
+        System.out.println("Resiviendo los datos en el DAO");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(), parametros, new JRBeanCollectionDataSource(dao.listarReporte()));
-
+        System.out.println(" ya se enlistaron los datos");
         HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
-        response.addHeader("Content-disposition", "attachment; filename=ReporteDeEmpleados.pdf");
+        response.addHeader("Content-disposition", "attachment; filename=ReporteDePacientes.pdf");
         ServletOutputStream stream = response.getOutputStream();
+        System.out.println("archivo pdf Creado");
 
         JasperExportManager.exportReportToPdfStream(jasperPrint, stream);
 
@@ -51,17 +51,17 @@ public class ReportesEmpleadoBean {
         stream.close();
         FacesContext.getCurrentInstance().responseComplete();
     }
-
+    
     public void exportarExcel() throws JRException, IOException, SQLException {
 
         Map<String, Object> parametros = new HashMap<String, Object>();
         parametros.put("txtUsuario", "Harvey Herrera");
 
-        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptEmpleado.jasper"));
+        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptPaciente.jasper"));
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(), parametros, new JRBeanCollectionDataSource(dao.listarReporte()));
 
         HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
-        response.addHeader("Content-disposition", "attachment; filename=ReporteDeEmpleados.xls");
+        response.addHeader("Content-disposition", "attachment; filename=ReporteDePacientes.xls");
         ServletOutputStream stream = response.getOutputStream();
 
         JRXlsExporter exporter = new JRXlsExporter();
@@ -79,11 +79,11 @@ public class ReportesEmpleadoBean {
         Map<String, Object> parametros = new HashMap<String, Object>();
         parametros.put("txtUsuario", "Harvey Herrera");
 
-        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptEmpleado.jasper"));
+        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptPaciente.jasper"));
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(), parametros, new JRBeanCollectionDataSource(dao.listarReporte()));
 
         HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
-        response.addHeader("Content-disposition", "attachment; filename=ReporteDeEmpleados.doc");
+        response.addHeader("Content-disposition", "attachment; filename=ReporteDePacientes.doc");
         ServletOutputStream stream = response.getOutputStream();
 
         JRDocxExporter exporter = new JRDocxExporter();
@@ -97,7 +97,7 @@ public class ReportesEmpleadoBean {
     }
 
     public void verPDF() throws Exception {
-        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptEmpleado.jasper"));
+        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptPaciente.jasper"));
 
         byte[] bytes = JasperRunManager.runReportToPdf(jasper.getPath(), null, new JRBeanCollectionDataSource(dao.listarReporte()));
         HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
@@ -110,5 +110,6 @@ public class ReportesEmpleadoBean {
 
         FacesContext.getCurrentInstance().responseComplete();
     }
+
 
 }
