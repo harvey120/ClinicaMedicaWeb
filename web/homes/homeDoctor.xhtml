@@ -14,7 +14,7 @@
         <link rel="Shortcut Icon" type="image/x-icon" href="../resources/assets/icons/book.ico" />
         <!-- sweet alert de la pagina -->
         <script src="../resources/js/sweet-alert.min.js"></script>
-        <!-- css sweet alert-->
+        <!-- css sweet alert--> 
         <link rel="stylesheet" href="../resources/css/sweet-alert.css"/>
         <!-- css Material desing -->
         <link rel="stylesheet" href="../resources/css/material-design-iconic-font.min.css"/>
@@ -36,25 +36,25 @@
         <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <!-- js del main-->
         <script src="../resources/js/main.js"></script>
-
     </h:head>
+
     <h:body>
-        
+
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
-        
+
         <!-- NavBar lateral de la pagina -->
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>
             <div class="full-reset container-menu-movile custom-scroll-containers">
                 <div class="logo full-reset all-tittles">
-                    <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                    Doctor
+                    <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px; font: bold small-caps 120%/200% serif;"></i> 
+                    sistema clinica medica
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p> 
                 </div>
 
 
@@ -63,20 +63,19 @@
                     <ul class="list-unstyled">
 
 
-                        <li><a href="home.html"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a href="homeAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw" ></i>&nbsp;&nbsp; Inicio</a></li>
 
-                        <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                        <li>    
+                            <div style=" font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
+                                <li style=" font: bold small-caps 120%/200% serif;"><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
                             </ul>
                         </li>
 
-
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div style=" font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="faces/vistaCruds/PersonaAPaciente.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personas</a></li>
+                                <li style=" font: bold small-caps 120%/200% serif;"><a href="faces/vistaCruds/PersonaAPaciente.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personas</a></li>
                             </ul>
                         </li>
 
@@ -99,8 +98,9 @@
                     <figure>
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
+
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Admin Name</span>
+                        <span class="all-tittles"> #{controlador.usu.nombre} #{controlador.usu.apellido} </span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="../index.xhtml" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -116,108 +116,85 @@
                 </ul>
             </nav>
 
-
             <div class="container">
                 <div class="page-header">
-                    <h1 class="all-tittles">Sistema clinica medica <small>Inicio</small></h1>
+                    <h1 class="all-tittles">Sistema Clinicamedica <small>Inicio </small></h1>
                 </div>
             </div>
 
             <section class="full-reset text-center" style="padding: 40px 0;">
-                
                 <article class="tile">
-                    <a href="../doctor/VistaMedicamento.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/pills.png" width="50" height="50"></img></i></div>
-                        <div class="tile-name all-tittles">Tareas del Día</div>
-                        <div class="tile-num full-reset">7</div>
-                    </a>
-                </article>
-                
-                
-                <article class="tile">
-                    <a href="../doctor/VistaMedicamento.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/pills.png" width="50" height="50"></img></i></div>
-                        <div class="tile-name all-tittles">Buscar Medicamento</div>
-                        <div class="tile-num full-reset">7</div>
+                    <a href="../faces/Administrador/EventosAdmin.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/wall-calendar.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Eventos</div>
                     </a>
                 </article>
 
                 <article class="tile">
-                    <a href="../doctor/VistaPaciente.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../imagen/search-engine.png" width="50" height="50"></img></i></div>
-                        <div class="tile-name all-tittles">Buscar Paciente</div>
-                        <div class="tile-num full-reset">70</div>
+                    <a href="../faces/Administrador/RegistroNoExistente.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/medicamento.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Medicamentos</div>
+                    </a>
+                </article>
+
+
+                <article class="tile">
+                    <a href="../Administrador/nuevoIngresoPaciente.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/pacientes.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Pacientes</div>
                     </a>
                 </article>
 
                 <article class="tile">
-                    <a href="../doctor/VistaHistorialClinico.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi"><img class="title-icon" src="../imagen/report (1).png" width="50" height="50"></img></i></div>
-                        <div class="tile-name all-tittles">Buscar Historial</div>
-                        <div class="tile-num full-reset">11</div>
+                    <a href="../faces/Administrador/RegistroAdmin.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/Admin.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Historial</div>
                     </a>
                 </article>
 
                 <article class="tile">
-                    <a href="../doctor/IngresoEnfermedad.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi"><img class="title-icon" src="../doctor/imgDoctor/folder.png" width="50" height="50"></img></i></div>
-                        <div class="tile-name all-tittles" style="width: 90%;">Nuevo Examen</div>
-                        <div class="tile-num full-reset">17</div>
+                    <a href="../faces/Administrador/Reportes.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/check-mark.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Examenes</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="homeDoctor.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/doctor.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Recetas</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../faces/Administrador/Reportes.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/nurse.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">ReferenciaClinica</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../faces/Administrador/Reportes.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/reception.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Enfermedades</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../faces/Administrador/Reportes.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/reception.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Revision general</div>
+                    </a>
+                </article>
+
+                <article class="tile">
+                    <a href="../faces/Administrador/Reportes.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/reception.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">Citas</div>
                     </a>
                 </article>
                 
-             
                 
-                <article class="tile">
-                    <a href="../doctor/VistaExamen.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/microscope.png" width="60" height="60"></img></i></div>
-                        <div class="tile-name all-tittles">Buscar Examen</div>
-                        <div class="tile-num full-reset">21</div>
-                    </a>
-                </article>
-                
-             
-                
-                <article class="tile">
-                    <a href="../doctor/VistaReferenciaClinica.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/hospital.png" width="50" height="50"></img></i></div>
-                        <div class="tile-name all-tittles">Buscar Referencia</div>
-                        <div class="tile-num full-reset">77</div>
-                    </a>
-                </article>  
-
-                <article class="tile">
-                    <a href="../doctor/VistaEnfermedad.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi "><img class="title-icon" src="../doctor/imgDoctor/virus.png" width="50" height="50"></img></i></div>
-                        <div class="tile-name all-tittles">Buscar Enfermedad</div>
-                        <div class="tile-num full-reset">11</div>
-                    </a>
-                </article>
-
-                <article class="tile">
-                    <a href="../doctor/BuscarRevisionGeneral.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/x-ray (1).png" width="60" height="60"></img></i></div>
-                        <div class="tile-name all-tittles">Buscar Revisión </div>
-                        <div class="tile-num full-reset">17</div>
-                    </a>
-                </article>
-                
-
-                <article class="tile">
-                    <a href="../doctor/ModificarCita.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/calendar.png" width="60" height="60"></img></i></div>
-                        <div class="tile-name all-tittles">Modificar Citas</div>
-                        <div class="tile-num full-reset">10</div>
-                    </a>
-                </article>
-
-                <article class="tile">
-                    <a href="../doctor/BuscarCita.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../doctor/imgDoctor/calendar (1).png" width="60" height="60"></img></i></div>
-                        <div class="tile-name all-tittles" style="width: 90%;">Buscar Citas</div>
-                        <div class="tile-num full-reset">9</div>
-                    </a>
-                </article>
 
             </section>
 
@@ -230,7 +207,7 @@
                         <div class="col-xs-12 col-sm-6">
                             <h4 class="all-tittles">Acerca de</h4>
                             <p>
-                                Systema basado y desarrollado completamente en java 
+                                Systema basado y desarrollado completamente en java
                             </p>
                         </div>
                         <div class="col-xs-12 col-sm-6">
