@@ -18,6 +18,7 @@ public class VistaBean {
     private Paciente paciente = new Paciente();
     private HistorialClinico historial = new HistorialClinico();
 
+    
     public VistaBean() {
 
     }
@@ -52,14 +53,32 @@ public class VistaBean {
         paciente.setIdPaciente(persona.getIdPersona());
         historial.setIdPaciente(paciente.getIdPaciente());
         
-        // modificar la base de datos y recordar que la tabla historial clinico es autonumerica
-        
         try {
             dao = new VistaDAOPaciente();
             dao.registrar(persona,paciente,historial);
-
+            this.limpiar();
         } catch (Exception e) {
             System.out.println("No se registro en VistaBean " + e);
         }
     }
+    
+    public void limpiar (){
+        persona.setNombre("");
+        persona.setApellido("");
+        persona.setFechaNacimiento("");
+        persona.setTelefono("");
+        persona.setCorreoElectronico("");
+        persona.setNoDocumento("");
+        persona.setIdDocumentoPaciente(0);
+        paciente.setIdDomicilio(0);
+        paciente.setContactoPersona("");
+        paciente.setTelefonoContacto(0);
+        paciente.setIdOcupacion(0);
+        historial.setDescripcion("");
+        historial.setIdReferenciaClinica(0);
+        historial.setIdEnfermedad(0);
+        historial.setFecha("");
+    }
+    
+   
 }
