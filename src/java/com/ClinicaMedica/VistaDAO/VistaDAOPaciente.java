@@ -78,15 +78,18 @@ public class VistaDAOPaciente extends DAO {
         
         try {
             this.Conectar();
-            String sql = "INSERT INTO historialclinico(Descripcion, Paciente_idPacientee, IdReferenciaClinica, Enfermedad_idEnfermedadd, FechaHora)"
-                    + " value(?,?,?,?,?,?)";
-            this.st = this.getCn().prepareStatement(sql);
+            String sql = "INSERT INTO historialclinico(Descripcion, Paciente_idPacientee, IdReferenciaClinica, Enfermedad_idEnfermedadd, Fecha)"
+                    + " value(?,?,?,?,?)";
+            this.st = this.getCn().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, histo.getDescripcion());
             st.setInt(2, histo.getIdPaciente());
             st.setInt(3, histo.getIdReferenciaClinica());
             st.setInt(4, histo.getIdEnfermedad());
             st.setString(5, histo.getFecha());
             st.executeUpdate();
+            ResultSet rs = st.getGeneratedKeys();
+            rs.next();
+            retorno = rs.getInt(1);
         } catch (Exception e) {
             System.out.println("Revisa HistorialClinicoDAO");
             System.out.println("No se pudo Insertar en HistorialClinicoDAO" + e);
