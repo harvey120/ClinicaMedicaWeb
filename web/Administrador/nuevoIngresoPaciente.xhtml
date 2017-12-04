@@ -107,7 +107,7 @@
                     <div class="col-xs-12 col-sm-4 col-md-3">
                         <img src="../resources/assets/img/user01.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
-                    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+                    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead" style=" font: bold small-caps 120%/200% serif;"  >
                         Bienvenido a la sección para registrar nuevas personas del sistema, debes de llenar todos los campos del siguiente formulario para registrar una persona
                     </div>
                 </div>
@@ -123,105 +123,102 @@
 
                                 <h:form >                                   <!-- |personas -->
 
-                                    <h4 class="all-tittles">Personas</h4>
-                                    <br/><br/><br/>
-<!--                                    <div class="group-material">
-                                        <b:inputText id="idPersona" placeholder="Id Persona:" value="#{vistaBean.persona.idPersona}"/>
-                                    </div>-->
+                                    <h4 class="all-tittles title-flat-form title-flat-blue">Personas</h4>
+                                    
                                     <div class="group-material">
-                                        <b:inputText id="nombre" placeholder="Nombre: " value="#{vistaBean.persona.nombre}"  />
+                                        <b:inputText id="nombre" style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre: " value="#{vistaBean.persona.nombre}"  />
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="apellido" placeholder="Apellido: " value="#{vistaBean.persona.apellido}"  />
+                                        <b:inputText id="apellido" style=" font: bold small-caps 120%/200% serif;" placeholder="Apellido: " value="#{vistaBean.persona.apellido}"  />
                                     </div>
                                     <div class="group-material">
-                                        <b:dateTimePicker id="Fecha" placeholder="Fecha de nacimiento:"  value="#{personaBean.persona.fechaNacimiento}"/>
+                                        <b:dateTimePicker id="Fecha" style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de nacimiento:"  value="#{personaBean.persona.fechaNacimiento}"/>
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="telefono" placeholder="Telefono: " value="#{vistaBean.persona.telefono}" />
+                                        <b:inputText id="telefono" style=" font: bold small-caps 120%/200% serif;" placeholder="Telefono: " value="#{vistaBean.persona.telefono}" />
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="correo" placeholder="Correo Electronico: " value="#{vistaBean.persona.correoElectronico}" />
+                                        <b:inputText id="correo" style=" font: bold small-caps 120%/200% serif;" placeholder="Correo Electronico: " value="#{vistaBean.persona.correoElectronico}" />
                                     </div>
                                     <div class="group-material">
                                         <span>Genero</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Genero" value="#{vistaBean.persona.idGenero}">
+                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Genero" value="#{vistaBean.persona.idGenero}">
                                             <f:selectItems value="#{generoBean.lstGenero}" var="genero" itemLabel="#{genero.nombre}" itemValue="#{genero.idSexo}"/>
                                         </b:selectOneMenu>
                                     </div>
 
                                     <div class="group-material">
                                         <span>Estado Civil</span>
-                                        <b:selectOneMenu value="#{vistaBean.persona.idEstadoCivil}" class="tooltips-general material-control" style="height: 40px;" title="Seleccione Su estado civil">
+                                        <b:selectOneMenu value="#{vistaBean.persona.idEstadoCivil}" class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Su estado civil">
                                             <f:selectItems value="#{estadoCivilBean.lstEstadoCivil}" var="estadocivil" itemLabel="#{estadocivil.nombre}" itemValue="#{estadocivil.idEstadoCivil}"/>
                                         </b:selectOneMenu>
                                     </div>
                                     <div class="group-material">
                                         <span>Documento de Identificacion</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Documento de Identificacion" value="#{vistaBean.persona.idDocumentoPaciente}" >
+                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Documento de Identificacion" value="#{vistaBean.persona.idDocumentoPaciente}" >
                                             <f:selectItems value="#{documentoIdentificacionBean.lstDocumentos}" var="documentoPaciente" itemLabel="#{documentoPaciente.tipo}" itemValue="#{documentoPaciente.idDocumento}"/>
                                         </b:selectOneMenu>
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="nodoc" placeholder="No.Documento: " value="#{vistaBean.persona.noDocumento}"/>
+                                        <b:inputText style=" font: bold small-caps 120%/200% serif;" id="nodoc" placeholder="No.Documento: " value="#{vistaBean.persona.noDocumento}"/>
                                     </div>
                                     <div class="group-material">
                                         <span>Religion</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Religion" value="#{vistaBean.persona.idReligion}">
+                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Religion" value="#{vistaBean.persona.idReligion}">
                                             <f:selectItems value="#{religionBean.lstReligion}" var="religion" itemLabel="#{religion.nombre}" itemValue="#{religion.idReligion}"/>
                                         </b:selectOneMenu>
                                     </div>
 
                                     <!-- |Paciientes -->
-                                    <h4 class="all-tittles">Pacientes</h4>
+                                    <h4 class="all-tittles title-flat-form title-flat-blue">Pacientes</h4>
                                     <br/><br/><br/>
                                     <div class="group-material">
                                         <span>Direccion de Domicilio</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Domicilio" value="#{vistaBean.paciente.idDomicilio}">
+                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Domicilio" value="#{vistaBean.paciente.idDomicilio}">
                                             <f:selectItems value="#{domicilioBean.lstDomicilio}" var="domicilio" itemLabel="#{domicilio.descripcion}" itemValue="#{domicilio.idDomicilio}"/>
                                         </b:selectOneMenu>
                                     </div>
 
 
                                     <div class="group-material">
-                                        <b:inputText id="contacto" placeholder="Contacto de Emergencias " value="#{vistaBean.paciente.contactoPersona}"  />
+                                        <b:inputText id="contacto" style=" font: bold small-caps 120%/200% serif;" placeholder="Contacto de Emergencias " value="#{vistaBean.paciente.contactoPersona}"  />
                                     </div>
 
                                     <div class="group-material">
-                                        <b:inputText id="numeroContacto" placeholder="numero de Contacto: " value="#{vistaBean.paciente.telefonoContacto}"  />
+                                        <b:inputText style=" font: bold small-caps 120%/200% serif;" id="numeroContacto" placeholder="numero de Contacto: " value="#{vistaBean.paciente.telefonoContacto}"  />
                                     </div>
 
                                     <div class="group-material">
                                         <span>Ocupacion</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Ocupacion" value="#{vistaBean.paciente.idOcupacion}">
+                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Ocupacion" value="#{vistaBean.paciente.idOcupacion}">
                                             <f:selectItems value="#{ocupacionBean.lstOcupacion}" var="ocupacion" itemLabel="#{ocupacion.nombre}" itemValue="#{ocupacion.idOcupacion}"/>
                                         </b:selectOneMenu>
                                     </div>
 
-                                    <h4 class="all-tittles">Historial</h4>
+                                    <h4 class="all-tittles title-flat-form title-flat-blue">Historial</h4>
                                     <br/><br/><br/>
                                     <!-- |Historial -->
 
                                     <div class="group-material">
-                                        <b:inputTextarea id="descripcion" placeholder="Descripcion: " value="#{vistaBean.historial.descripcion}"  />
+                                        <b:inputTextarea style=" font: bold small-caps 120%/200% serif;" id="descripcion" placeholder="Descripcion: " value="#{vistaBean.historial.descripcion}"  />
                                     </div>
 
                                     <div class="group-material">
                                         <span>Referencia Clinica</span>
-                                        <b:selectOneMenu value="#{vistaBean.historial.idReferenciaClinica}" class="tooltips-general material-control" style="height: 40px;" title="Seleccione Referencia Clinica">
+                                        <b:selectOneMenu value="#{vistaBean.historial.idReferenciaClinica}" class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Referencia Clinica">
                                             <f:selectItems value="#{referenciaClinicaBean.lstReferencia}" var="referencia" itemLabel="#{referencia.nombre}" itemValue="#{referencia.idReferenciaClinica}"/>
                                         </b:selectOneMenu>
                                     </div>
 
                                     <div class="group-material">
                                         <span>Enfermedad</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Enfermedad" value="#{vistaBean.historial.idEnfermedad}" >
+                                        <b:selectOneMenu class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px" title="Seleccione Enfermedad" value="#{vistaBean.historial.idEnfermedad}" >
                                             <f:selectItems value="#{enfermedadBean.lstEnfermedad}" var="enfermedad" itemLabel="#{enfermedad.nombre}" itemValue="#{enfermedad.idEnfermedad}"/>
                                         </b:selectOneMenu>
                                     </div>
 
                                     <div class="group-material">
-                                        <b:dateTimePicker id="Fecha1" placeholder="Fecha de registro:"   value="#{vistaBean.historial.fecha}" />
+                                        <b:dateTimePicker style=" font: bold small-caps 120%/200% serif;" id="Fecha1" placeholder="Fecha de registro:"   value="#{vistaBean.historial.fecha}" />
                                     </div>
 
 <!--                                    <div class="group-material">    
