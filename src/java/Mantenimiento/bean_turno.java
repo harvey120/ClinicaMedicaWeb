@@ -1,40 +1,39 @@
 package Mantenimiento;
 
-import com.ClinicaMedica.Modelo.Medicamento;
+import com.ClinicaMedica.Modelo.Turno;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 @ManagedBean
 @ViewScoped
-public class bean_mantenimiento_medicamento {
-    
-    Medicamento men = new Medicamento();
-    ArrayList<Medicamento> lista= new ArrayList();
+public class bean_turno {
+   Turno turno = new Turno();
+   ArrayList<Turno> lista= new ArrayList();
 
-    public Medicamento getMen() {
-        return men;
-    }
+  public Turno getTurno() {
+    return turno;
+  }
 
-    public void setMen(Medicamento men) {
-        this.men = men;
-    }
+  public void setTurno(Turno turno) {
+    this.turno = turno;
+  }
 
-    public ArrayList<Medicamento> getLista() {
-        return lista;
-    }
+  public ArrayList<Turno> getLista() {
+    return lista;
+  }
 
-    public void setLista(ArrayList<Medicamento> lista) {
-        this.lista = lista;
-    }
-    
-     public void insertar() {
+  public void setLista(ArrayList<Turno> lista) {
+    this.lista = lista;
+  }
+   
+   public void insertar() {
         dao_matenimiento dao;
         System.out.println("ha ingresado a insertar bn");
 
         try {
             dao = new dao_matenimiento();
-            dao.insertarMedicamento(men);
+            dao.insertarTurno(turno);
             this.listar();
         } catch (Exception e) {
             System.out.println("error de insertar bn");
@@ -44,15 +43,13 @@ public class bean_mantenimiento_medicamento {
     }
 
     public void listar() {
-        System.out.println("ha ingresado a lista bn");
+        
         dao_matenimiento dao;
 
         try {
             dao = new dao_matenimiento();
-            lista = dao.listarMedicamento();
-            for (int i = 0; i < lista.size(); i++) {
-                System.out.println("Codigo: " + lista.get(i).getNombre());
-            }
+            lista = dao.listarTurno();
+            System.out.println("ha ingresado a lista bn");
         } catch (Exception e) {
             System.out.println("error listar bn" + e);
         }
@@ -64,7 +61,7 @@ public class bean_mantenimiento_medicamento {
         try {
 
             dao = new dao_matenimiento();
-            dao.modificarMedicamento(men);
+            dao.modificarTurno(turno);
             this.listar();
         } catch (Exception e) {
             System.out.println("error de modificar bn" + e);
@@ -77,7 +74,7 @@ public class bean_mantenimiento_medicamento {
         dao_matenimiento dao;
         try {
             dao = new dao_matenimiento();
-            men=dao.buscarMedicamento(men);
+            turno=dao.buscarTurno(turno);
             
         } catch (Exception e) {
             
@@ -85,12 +82,12 @@ public class bean_mantenimiento_medicamento {
         }
      }
     
-    public void buscar2(Medicamento me) {
+    public void buscar2(Turno me) {
         System.out.println("ha ingresado a lista bn");
         dao_matenimiento dao;
         try {
             dao = new dao_matenimiento();
-            men=dao.buscarMedicamento(me);
+            turno=dao.buscarTurno(me);
             
         } catch (Exception e) {
             
