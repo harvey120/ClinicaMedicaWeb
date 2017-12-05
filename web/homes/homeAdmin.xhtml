@@ -14,7 +14,7 @@
         <link rel="Shortcut Icon" type="image/x-icon" href="../resources/assets/icons/book.ico" />
         <!-- sweet alert de la pagina -->
         <script src="../resources/js/sweet-alert.min.js"></script>
-        <!-- css sweet alert-->
+        <!-- css sweet alert--> 
         <link rel="stylesheet" href="../resources/css/sweet-alert.css"/>
         <!-- css Material desing -->
         <link rel="stylesheet" href="../resources/css/material-design-iconic-font.min.css"/>
@@ -39,7 +39,7 @@
     </h:head>
 
     <h:body>
-        
+
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <!-- NavBar lateral de la pagina -->
@@ -54,7 +54,7 @@
                     <figure>
                         <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Sistema Administrativo</p>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p> 
                 </div>
 
 
@@ -68,9 +68,13 @@
                         <li>    
                             <div style=" font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li style=" font: bold small-caps 120%/200% serif;"><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
+                                <li style=" font: bold small-caps 120%/200% serif;"><a href="../Administrador/EventosAdmin.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Eventos</a></li>
+                                <li style=" font: bold small-caps 120%/200% serif;"><a href="../Administrador/RegistroAdmin.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Administrador</a></li>
+                                <li style=" font: bold small-caps 120%/200% serif;"><a href="../Administrador/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Paciente</a></li>
                             </ul>
                         </li>
+
+                        <li style=" font: bold small-caps 120%/200% serif;"><a href="../Administrador/Reportes.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Reportes</a></li> 
 
                         <li>
                             <div style=" font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -100,7 +104,7 @@
                     </figure>
 
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles"> #{controlador.getUsu()} </span>
+                        <span class="all-tittles"> #{controlador.usu.nombre} #{controlador.usu.apellido} </span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="../index.xhtml" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -160,32 +164,32 @@
                 </article>
 
                 <article class="tile">
-                    <a href="">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-assignment-account"></i></div>
+                    <a href="homeDoctor.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doctor.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Doctor</div>
                     </a>
                 </article>
 
                 <article class="tile">
-                    <a href="">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-timer"></i></div>
+                    <a href="../faces/Administrador/Reportes.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/nurse.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Enfermera</div>
                     </a>
                 </article>
 
                 <article class="tile">
-                    <a href="">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-timer"></i></div>
+                    <a href="../faces/Administrador/Reportes.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/reception.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Recepcionista</div>
                     </a>
                 </article>
-                
-                <article class="tile">
-                    <a href="">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-timer"></i></div>
-                        <div class="tile-num full-reset">Paciente</div>
-                    </a>
-                </article>
+
+                <!--                <article class="tile">
+                                    <a href="">
+                                        <div class="tile-icon full-reset"><i class="zmdi zmdi-timer"></i></div>
+                                        <div class="tile-num full-reset">Paciente</div>
+                                    </a>
+                                </article>-->
 
 
 

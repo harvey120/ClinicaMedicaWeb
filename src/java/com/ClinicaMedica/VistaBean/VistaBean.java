@@ -3,7 +3,7 @@ package com.ClinicaMedica.VistaBean;
 import com.ClinicaMedica.Modelo.HistorialClinico;
 import com.ClinicaMedica.Modelo.Paciente;
 import com.ClinicaMedica.Modelo.Persona;
-import com.ClinicaMedica.VistaDAO.VistaDAO;
+import com.ClinicaMedica.VistaDAO.VistaDAOPaciente;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -18,6 +18,7 @@ public class VistaBean {
     private Paciente paciente = new Paciente();
     private HistorialClinico historial = new HistorialClinico();
 
+    
     public VistaBean() {
 
     }
@@ -47,19 +48,37 @@ public class VistaBean {
     }
 
     public void registrar() {
-        VistaDAO dao;
+        VistaDAOPaciente dao;
         
         paciente.setIdPaciente(persona.getIdPersona());
         historial.setIdPaciente(paciente.getIdPaciente());
         
-        // modificar la base de datos y recordar que la tabla historial clinico es autonumerica
-        
         try {
-            dao = new VistaDAO();
+            dao = new VistaDAOPaciente();
             dao.registrar(persona,paciente,historial);
-
+            this.limpiar();
         } catch (Exception e) {
             System.out.println("No se registro en VistaBean " + e);
         }
     }
+    
+    public void limpiar (){
+        persona.setNombre("");
+        persona.setApellido("");
+        persona.setFechaNacimiento("");
+        persona.setTelefono("");
+        persona.setCorreoElectronico("");
+        persona.setNoDocumento("");
+        persona.setIdDocumentoPaciente(0);
+        paciente.setIdDomicilio(0);
+        paciente.setContactoPersona("");
+        paciente.setTelefonoContacto(0);
+        paciente.setIdOcupacion(0);
+        historial.setDescripcion("");
+        historial.setIdReferenciaClinica(0);
+        historial.setIdEnfermedad(0);
+        historial.setFecha("");
+    }
+    
+   
 }

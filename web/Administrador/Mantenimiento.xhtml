@@ -27,6 +27,8 @@
         <!-- css estilo de la pagina -->
         <link rel="stylesheet" href="../resources/css/style.css"/>
 
+        <!-- Librerias para la data table -->
+
 
         <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
         <link rel="stylesheet" href="../resources/  css/style.css"/>
@@ -37,7 +39,7 @@
         <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
-        
+
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <!-- Esta pagina es la inicial de control de registro de empleados -->
@@ -53,6 +55,7 @@
         <f:event listener="#{pacienteBean.listarPaciente()}" type="preRenderView"/>
         <f:event type="preRenderView" listener="#{documentoIdentificacionBean.listarDocumentos()}"/>
         <f:event listener="#{religionBean.listarReligion()}" type="preRenderView"/>
+        <f:event listener="#{usuarioBean.listar()}" type="preRenderView"/>
         <!-- fin de control de la listas desplegables al ingresar datos -->
 
         <!-- nav del top de la pagina  -->
@@ -67,7 +70,7 @@
                     <figure>
                         <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Sistema Super Administrativo</p>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
@@ -94,7 +97,7 @@
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Admin Name</span>
+                        <span class="all-tittles"> #{controlador.usu.nombre} #{controlador.usu.apellido} </span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="../faces/index.xhtml" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -115,7 +118,7 @@
             </div>
 
             <div class="container-fluid">
-                <h1 align="center" style=" font: bold small-caps 420%/200% serif;">Mantenimiento de empleados</h1>
+                <h1 align="center" style=" font: bold small-caps 420%/200% serif;">Reporte de empleados</h1>
             </div>
 
             <br/><br/>
@@ -134,8 +137,7 @@
                         <img src="../resources/assets/img/user01.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead" style=" font: bold small-caps 120%/200% serif;">
-                        Bienvenido a la seccion de Mantenimiento en el area de empleados, en el cual tendra la posibilidad de modificar los campos que desee
-                        respecto de sus datos personales
+                        Bienvenido a la seccion de reportes al cual podra obtener informacion total de los siguiente modulos.
                     </div>
                 </div>
             </div>
@@ -153,9 +155,10 @@
 
 
             <div class="container-fluid">
-                <h2 class="text-center all-tittles">Lista de Personas</h2>
+
                 <div class="div-table">
                     <h:form class="div-table-row div-table-head" id="frmTabla">
+                        <div class="title-flat-form title-flat-blue">Lista de Personas</div>
                         <b:dataTable value="#{personaBean.lstPersona}" 
                                      var="per"
                                      id="data"
@@ -199,6 +202,7 @@
                         </b:dataTable>
 
                         <br/><br/>
+                        <div class="title-flat-form title-flat-blue">Lista de Empleados</div>
 
                         <b:dataTable value="#{empleadoBean.lstEmpleado}" 
                                      var="per"
@@ -209,7 +213,7 @@
                                      print="true"
                                      class="tabla">
 
-                            <b:dataTableColumn class="div-table-cell" value="#{per.idEmpleado}" label="Id Empleado"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{per.idEmpleado}" label="Id Documento"/>
                             <b:dataTableColumn class="div-table-cell" value="#{per.idEspecialidad}" label="Especialidad"/>
                             <b:dataTableColumn class="div-table-cell" value="#{per.consultorio}" label="Consultorio"/>
                             <b:dataTableColumn class="div-table-cell" value="#{per.estado}" label="Estado"/>
@@ -225,7 +229,29 @@
 
                         </b:dataTable>
 
+<!--                        <br/><br/>
+                        <div class="title-flat-form title-flat-blue">Lista de Usuarios</div>
+
+                        <b:dataTable value="#{usuarioBean.lstUsuarios}" 
+                                     var="usu"
+                                     id="data1"
+                                     excel="true"
+                                     pdf="true"
+                                     columnVisibility="true"
+                                     print="true"
+                                     class="tabla">
+
+                            <b:dataTableColumn class="div-table-cell" value="#{usu.idUsuario}" label="Id Usuario"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{usu.usuario}" label="Nombre Usuario"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{usu.contrasenia}" label="Contrasena"/>
+                            <b:dataTableColumn class="div-table-cell" value="#{usu.idEstadoUsuario}" label="Estado"/>
+
+                        </b:dataTable>-->
+
                     </h:form>
+                    
+                    
+                    
                 </div>        
             </div>
 
@@ -267,7 +293,7 @@
                 </h:form>
             </p:dialog>
 
-            <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos1">
+            <p:dialog header="Datos" widgetVar="wdlgDatos1" id="dlgDatos1">
                 <h:form>
 
                     <b:inputText placeholder="Id Documento: " value="#{empleadoBean.ingreso.idEmpleado}"/>
@@ -286,8 +312,10 @@
                         <f:selectItems value="#{puestoBean.lstPuesto}" var="puesto" itemLabel="#{puesto.nombre}" itemValue="#{puesto.idPuesto}" />
                     </b:selectOneMenu>
 
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{empleadoBean.modificar()}"  oncomplete="PF('wdlgDatos1').hide();"  update=":frmTabla:data1"/>
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos1').hide();" />
+                    <b:commandButton class="btn btn-primary tooltips-general" icon="cloud" value="Modificar" actionListener="#{empleadoBean.modificar()}"  oncomplete="PF('wdlgDatos1').hide();"  update=":frmTabla:data"/>
+                    <b:commandButton class="btn btn-danger tooltips-general" icon="lock" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos1').hide();" />
+
+
                 </h:form>
             </p:dialog>
 
