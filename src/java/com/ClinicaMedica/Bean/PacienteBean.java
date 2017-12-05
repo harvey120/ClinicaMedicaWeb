@@ -83,7 +83,7 @@ public class PacienteBean {
             System.out.println("No se pudo Modificar en PacienteBean" + e);
         }
     }
-
+    
     public void eliminar(Paciente per) {
         PacienteDAO dao;
        
@@ -95,5 +95,17 @@ public class PacienteBean {
             System.out.println("No se Eliminar en PacienteBean" + e);
         }
     }
+   
+     public void listar() {
+        System.out.println("ha ingresado a Buscar Paciente Bean");
+        PacienteDAO dao;
+        try {
+            dao = new PacienteDAO();
+            paciente = dao.listado(paciente);
 
+        } catch (Exception e) {
+
+            System.out.println("error Buscar Paciente Bean" + e);
+        }
+    }
 }

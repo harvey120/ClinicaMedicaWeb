@@ -2,8 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:b="http://bootsfaces.net/ui">
     <h:head>
 
@@ -39,29 +37,24 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="ClinicaMedica" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Doctor #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
+                        <li><a href="../homes/homeDoctor.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <li><a href="faces/index.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
                                 <li><a href="faces/Examenes2.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Examen</a></li>
-                                <li><a href="student.html"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo estudiante</a></li>
-                                <li><a href="personal.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo personal administrativo</a></li>
                             </ul>
                         </li>
-
-
-
                     </ul>
                 </div>
             </div>
@@ -74,7 +67,7 @@
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Admin Name</span>
+                        <span class="all-tittles">#{controlador.usu.nombre} #{controlador.usu.apellido}</span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -102,7 +95,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../imagen/magnifying-glass.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/magnifying-glass.png" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección Busqueda de Medicamento del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar un medicamento
@@ -125,7 +118,7 @@
                                         <div class="col-lg-3">  
                                             <label> Código  Medicamento</label>
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{medicamentoBean.med.idMedicamento}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{medicamentoBean.med.idmedicamento}" />
 
 
                                             </div>
@@ -158,7 +151,7 @@
                                         <h:form>
                                             <label>Código</label>
                                             <div class="group-material">
-                                                <b:inputText   value="#{medicamentoBean.med.idMedicamento}"  readonly="true"/>
+                                                <b:inputText   value="#{medicamentoBean.med.idmedicamento}"  readonly="true"/>
                                             </div>  
                                             <label>Nombre</label>
                                             <div class="group-material">
@@ -170,15 +163,15 @@
                                             </div>
                                             <label>Fecha de Vencimiento</label>
                                             <div class="group-material">
-                                                <b:inputText   value="#{medicamentoBean.med.fechaVencimiento}" readonly="true"/>
+                                                <b:inputText   value="#{medicamentoBean.med.fecha}" readonly="true"/>
                                             </div>
                                             <label>Proveedor</label>
                                             <div class="group-material">
-                                                <b:inputText   value="#{medicamentoBean.med.proveedor_idProveedor}" readonly="true"/>
+                                                <b:inputText   value="#{medicamentoBean.med.provedor}" readonly="true"/>
                                             </div>
                                             <label>Inventario</label>
                                             <div class="group-material">
-                                                <b:inputText   value="#{medicamentoBean.med.inventario_idInventario}" readonly="true"/>
+                                                <b:inputText   value="#{medicamentoBean.med.idInventario}" readonly="true"/>
                                             </div>
 
 

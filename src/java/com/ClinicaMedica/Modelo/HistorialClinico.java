@@ -11,8 +11,6 @@ public class HistorialClinico {
     private int idReferenciaClinica;
     private int idEnfermedad;
     private String fecha;
-    private String hora;
-    private int idEmpleado;
         
     public HistorialClinico() {
         this.idHistorialClinico = 0;
@@ -21,8 +19,6 @@ public class HistorialClinico {
         this.idReferenciaClinica = 0;
         this.idEnfermedad = 0;
         this.fecha = "";
-        this.hora = "";
-        this.idEmpleado = 0;
     }
 
     public int getIdHistorialClinico() {
@@ -72,22 +68,4 @@ public class HistorialClinico {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
-    public int getIdEmpleado() {
-        return idEmpleado;
-    }
-
-    public void setIdEmpleado(int idEmpleado) {
-        this.idEmpleado = idEmpleado;
-    }
-    
-    
 }

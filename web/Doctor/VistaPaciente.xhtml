@@ -2,8 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:b="http://bootsfaces.net/ui">
     <h:head>
 
@@ -39,10 +37,10 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
@@ -74,7 +72,7 @@
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Admin Name</span>
+                        <span class="all-tittles">#{controlador.usu.nombre} #{controlador.usu.apellido}</span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -102,7 +100,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../imagen/worker.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/worker.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección Busqueda de Pacientes del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar un Paciente
@@ -124,12 +122,12 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{pacienteBean2.med.idPaciente}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{pacienteBean.paciente.idPaciente}" />
 
                                                 
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{pacienteBean2.listar()}" />
+                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{pacienteBean.listar()}" />
                                                 </p> 
                                         </div>
                                     </h:form> 
@@ -156,19 +154,19 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{pacienteBean2.med.idPaciente}" readonly="true"/>
+                                                <b:inputText  placeholder="Codigo :" value="#{pacienteBean.paciente.idPaciente}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Domicilio :" value="#{pacienteBean2.med.idDomicilio}" readonly="true"/>
+                                                <b:inputText  placeholder="Domicilio :" value="#{pacienteBean.paciente.idDomicilio}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Contacto Emergencia :" value="#{pacienteBean2.med.contactoPersona}" readonly="true"/>
+                                                <b:inputText  placeholder="Contacto Emergencia :" value="#{pacienteBean.paciente.contactoPersona}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Telefono Contacto :" value="#{pacienteBean2.med.telefonoContacto}" readonly="true"/>
+                                                <b:inputText  placeholder="Telefono Contacto :" value="#{pacienteBean.paciente.telefonoContacto}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Ocupacion:" value="#{pacienteBean2.med.idOcupacion}" readonly="true"/>
+                                                <b:inputText  placeholder="Ocupacion:" value="#{pacienteBean.paciente.idOcupacion}" readonly="true"/>
                                             </div>
                                             
                                         </h:form>

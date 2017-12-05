@@ -25,8 +25,6 @@ public class HistorialClinicoDAO extends DAO {
             st.setInt(3, histo.getIdReferenciaClinica());
             st.setInt(4, histo.getIdEnfermedad());
             st.setString(5, histo.getFecha());
-            st.setString(6, histo.getHora());
-            st.setInt(7, histo.getIdEmpleado());
             st.executeUpdate();
         } catch (Exception e) {
             System.out.println("Revisa HistorialClinicoDAO");
@@ -54,8 +52,6 @@ public class HistorialClinicoDAO extends DAO {
                 histo.setIdReferenciaClinica(rs.getInt("IdReferenciaClinica"));
                 histo.setIdEnfermedad(rs.getInt("Enfermedad_idEnfermedadd"));
                 histo.setFecha(rs.getString("Fecha"));
-                histo.setHora(rs.getString("Hora"));
-                histo.setIdEmpleado(rs.getInt("IdEmpleado"));
                 lista.add(histo);
             }
         } catch (Exception e) {
@@ -86,8 +82,6 @@ public class HistorialClinicoDAO extends DAO {
                 histor.setIdReferenciaClinica(rs.getInt("IdReferenciaClinica"));
                 histor.setIdEnfermedad(rs.getInt("Enfermedad_idEnfermedadd"));
                 histor.setFecha(rs.getString("Fecha"));
-                histor.setHora(rs.getString("Hora"));
-                histor.setIdEmpleado(rs.getInt("IdEmpleado"));
             }
         } catch (Exception e) {
             System.out.println("Revisa HistorialClinicoDAO");
@@ -110,8 +104,6 @@ public class HistorialClinicoDAO extends DAO {
             st.setInt(3, histo.getIdReferenciaClinica());
             st.setInt(4, histo.getIdEnfermedad());
             st.setString(5, histo.getFecha());
-            st.setString(6, histo.getHora());
-            st.setInt(7, histo.getIdEmpleado());
             st.setInt(8, histo.getIdHistorialClinico());
              
             st.executeUpdate();
@@ -138,4 +130,35 @@ public class HistorialClinicoDAO extends DAO {
         }
     }
 
+    public HistorialClinico listado(HistorialClinico topp) throws SQLException{
+         ResultSet rs;
+        //clase con los 4 atributos
+        HistorialClinico topo = new HistorialClinico();
+        
+        try {
+            System.out.println("ingreso a listar HistorialClinico:");
+            this.Conectar();
+            //sql = "SELECT * FROM Examenesdetalles";
+            String sql = "SELECT * FROM historialclinico where idHistorialClinico = ?";
+            st = this.getCn().prepareStatement(sql);
+            st.setInt(1, topp.getIdHistorialClinico());
+            rs = st.executeQuery();            
+            while (rs.next()) {
+                
+                topo.setDescripcion(rs.getString("Descripcion"));
+                topo.setIdPaciente(rs.getInt("Paciente_idPacientee"));
+                topo.setIdReferenciaClinica(rs.getInt("IdReferenciaClinica"));
+                topo.setIdEnfermedad(rs.getInt("Enfermedad_idEnfermedadd"));
+                topo.setFecha(rs.getString("FechaHora"));
+                topo.setIdHistorialClinico(rs.getInt("idHistorialClinico"));
+            
+
+            }
+        } catch (Exception e) {
+            System.out.println("error de lista: " + e);
+        } finally {
+            this.Cerrar();
+        }
+        return topo;
+    }
 }

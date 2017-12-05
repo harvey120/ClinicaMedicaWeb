@@ -29,7 +29,7 @@
     </h:head>
 
     <h:body>
-
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>
             <div class="full-reset container-menu-movile custom-scroll-containers">
@@ -39,10 +39,10 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="ClinicaMedica" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                    <p class="text-center" style=" font: bold small-caps 120%/200% serif;padding-top: 15px;">Doctor #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
@@ -55,8 +55,6 @@
                             <ul class="list-unstyled">
                                 <li><a href="faces/index.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
                                 <li><a href="faces/Examenes2.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Examen</a></li>
-                                <li><a href="student.html"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo estudiante</a></li>
-                                <li><a href="personal.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo personal administrativo</a></li>
                             </ul>
                         </li>
 
@@ -74,7 +72,7 @@
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Admin Name</span>
+                        <span class="all-tittles">#{controlador.usu.nombre} #{controlador.usu.apellido}</span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -102,7 +100,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../imagen/report.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/report.png" alt="BusquedaHistorialClinico" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección Busqueda de Historales Clinicos del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar un Historale Clinico
@@ -111,7 +109,7 @@
             </div>
 
 
-            <h2 class="text-center all-tittles">Código de Historial</h2>
+            <h2 class="text-center all-tittles" style=" font: bold small-caps 120%/200% serif;">Código de Historial</h2>
 
             <div class="container-fluid">
                 <div class="container-flat-form">
@@ -124,12 +122,12 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{historialBean2.his.idHistorialClinico}" />
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif; width: 300px" id="Buscar" placeholder="Buscar :" value="#{historialBean.his.idHistorialClinico}" />
 
 
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{historialBean2.listar()}" />
+                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{historialBean.listar()}" />
                                             </p> 
                                         </div>
                                     </h:form> 
@@ -156,28 +154,21 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{historialBean2.his.idHistorialClinico}" readonly="true"/>
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText  placeholder="Descripcion :" value="#{historialBean2.his.descripcion}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Descripcion :" value="#{historialBean.his.descripcion}" readonly="true"/>
                                             </div>
 
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Paciente :" value="#{historialBean2.his.idPaciente}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Paciente :" value="#{historialBean.his.idPaciente}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Referencia Clinica :" value="#{historialBean2.his.idReferenciaClinica}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Referencia Clinica :" value="#{historialBean.his.idReferenciaClinica}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Enfermedad:" value="#{historialBean2.his.idEnfermedad}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Enfermedad:" value="#{historialBean.his.idEnfermedad}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Fecha :" value="#{historialBean2.his.fecha}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha :" value="#{historialBean.his.fecha}" readonly="true"/>
                                             </div>
-                                            <div class="group-material">
-                                                <b:inputText  placeholder="Empleado :" value="#{historialBean2.his.idEmpleado}" readonly="true"/>
-                                            </div>
-
                                         </h:form>
 
 
