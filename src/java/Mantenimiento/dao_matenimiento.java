@@ -20,13 +20,13 @@ public class dao_matenimiento extends DAO {
     ResultSet rs;
 
     /*-----------------------------------------insertar---------------------------------------------*/
-    public void insertarMedicamento() throws SQLException {
+    public void insertarMedicamento(Medicamento med) throws SQLException {
         try {
             this.Conectar();
-            sql = "INSERT INTO medicamento(idMedicamento, Nombre, Descripcion, FechaVencimiento, Proveedor_idProveedor, Inventario_idInventario)"
-                    + " VALUES (?,?,?,?,?,?)";
+            sql = "INSERT INTO medicamento(idMedicamento, Nombre, Descripcion, FechaVencimiento, Proveedor_idProveedor)"
+                    + " VALUES (?,?,?,?,?)";
             this.pre = this.getCn().prepareStatement(sql);
-            Medicamento med = new Medicamento();
+            //Medicamento med = new Medicamento();
             pre.setInt(1, med.getIdmedicamento());
             pre.setString(2, med.getNombre());
             pre.setString(3, med.getDescripcion());
@@ -41,12 +41,11 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void insertarOcupacion() throws SQLException {
+    public void insertarOcupacion(Ocupacion ocu) throws SQLException {
         try {
             this.Conectar();
             sql = "INSERT INTO ocupacion (IdOcupacion, Nombre) VALUES (?,?)";
             this.pre = this.getCn().prepareStatement(sql);
-            Ocupacion ocu = new Ocupacion();
             pre.setInt(1, ocu.getIdOcupacion());
             pre.setString(2, ocu.getNombre());
             pre.executeUpdate();
@@ -57,12 +56,11 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void insertarEnfermedad() throws SQLException {
+    public void insertarEnfermedad(Enfermedad enf) throws SQLException {
         try {
             this.Conectar();
             sql = "INSERT INTO enfermedad(IdEnfermedad, Nombre, CategoriaEnfermedad_IdCategoriaE) VALUES (?,?,?)";
             this.pre = this.getCn().prepareStatement(sql);
-            Enfermedad enf = new Enfermedad();
             pre.setInt(1, enf.getIdEnfermedad());
             pre.setInt(2, enf.getIdCategoriaEnfermedad());
             pre.setString(3, enf.getNombre());
@@ -74,12 +72,11 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void insertarReligion() throws SQLException {
+    public void insertarReligion(Religion reli) throws SQLException {
         try {
             this.Conectar();
             sql = "INSERT INTO religion(IdReligion, Nombre) VALUES (?,?)";
             this.pre = this.getCn().prepareStatement(sql);
-            Religion reli = new Religion();
             pre.setInt(1, reli.getIdReligion());
             pre.setString(2, reli.getNombre());
             pre.executeUpdate();
@@ -90,29 +87,26 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void insertarExamen() throws SQLException {
+    public void insertarExamen(Examen ex) throws SQLException {
         try {
             this.Conectar();
             sql = "INSERT INTO `examen`(`IdExamen`, `Nombre`, `idCategoriaExamen`) VALUES (?,?,?))";
-            this.pre = this.getCn().prepareStatement(sql);
-            Examen ex = new Examen();
             pre.setInt(1, ex.getIdExamen());
             pre.setString(2, ex.getNombre());
             pre.setInt(3, ex.getIdCategoriaExamen());
             pre.executeUpdate();
-        } catch (SQLException ex) {
-            System.out.println("no inserta Examen: " + ex);
+        } catch (SQLException exe) {
+            System.out.println("no inserta Examen: " + exe);
         } finally {
             this.Cerrar();
         }
     }
 
-    public void insertarTurno() throws SQLException {
+    public void insertarTurno(Turno tur) throws SQLException {
         try {
             this.Conectar();
             sql = "INSERT INTO turno(idTurno, HorarioEntrada, HorarioSalida) VALUES (?,?,?)";
             this.pre = this.getCn().prepareStatement(sql);
-            Turno tur = new Turno();
             pre.setInt(1, tur.getIdturno());
             pre.setString(2, tur.getHorarioEntrada());
             pre.setString(3, tur.getHorarioSalida());
@@ -234,6 +228,7 @@ public class dao_matenimiento extends DAO {
                 exe.setIdCategoriaExamen(rs.getInt("idCategoriaExamen"));
                 exe.setIdExamen(rs.getInt("IdExamen"));
                 exe.setNombre(rs.getString("Nombre"));
+                exam.add(exe);
             }
         } catch (SQLException ex) {
             System.out.println("no inserta Examen: " + ex);
@@ -248,13 +243,14 @@ public class dao_matenimiento extends DAO {
         try {
             this.Conectar();
             sql = "SELECT * FROM turno";
-            this.pre = this.getCn().prepareStatement(sql); 
+            this.pre = this.getCn().prepareCall(sql); 
             rs = pre.executeQuery();
             while (rs.next()) {                
                 Turno tur = new Turno();
                 tur.setIdturno(rs.getInt("idTurno"));
                 tur.setHorarioEntrada(rs.getString("HorarioEntrada"));
                 tur.setHorarioSalida(rs.getString("HorarioSalida"));
+                t.add(tur);
             }
         } catch (SQLException ex) {
             System.out.println("no inserta ocupacion: " + ex);
@@ -267,19 +263,19 @@ public class dao_matenimiento extends DAO {
  
     
     /*-----------------------------------------Modificar---------------------------------------------*/
-    public void modificarMedicamento() throws SQLException {
+    public void modificarMedicamento(Medicamento med) throws SQLException {
         try {
             this.Conectar();
             sql = "UPDATE medicamento SET  Nombre=?, Descripcion=?,FechaVencimiento=?,"
-                    + "Proveedor_idProveedor=?,Inventario_idInventario=? WHERE idMedicamento=?";
+                    + "Proveedor_idProveedor=? WHERE idMedicamento=?";
             this.pre = this.getCn().prepareStatement(sql);
-            Medicamento med = new Medicamento();
+            //Medicamento med = new Medicamento();
             pre.setString(1, med.getNombre());
             pre.setString(2, med.getDescripcion());
             pre.setString(3, med.getFecha());
             pre.setInt(4, med.getProvedor());
             
-            pre.setInt(6, med.getIdmedicamento());
+            pre.setInt(5, med.getIdmedicamento());
             pre.executeUpdate();
         } catch (SQLException ex) {
             System.out.println("no modifico medicamento: " + ex);
@@ -288,12 +284,11 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void modificarOcupacion() throws SQLException {
+    public void modificarOcupacion(Ocupacion ocu) throws SQLException {
         try {
             this.Conectar();
             sql = "UPDATE ocupacion SET Nombre=? WHERE IdOcupacion=?";
             this.pre = this.getCn().prepareStatement(sql);
-            Ocupacion ocu = new Ocupacion();
             pre.setString(1, ocu.getNombre());
             pre.setInt(2, ocu.getIdOcupacion());
             pre.executeUpdate();
@@ -304,12 +299,11 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void modificarEnfermedad() throws SQLException {
+    public void modificarEnfermedad(Enfermedad enf) throws SQLException {
         try {
             this.Conectar();
             sql = "UPDATE enfermedad SET Nombre=?,CategoriaEnfermedad_IdCategoriaE=? WHERE IdEnfermedad=?";
             this.pre = this.getCn().prepareStatement(sql);
-            Enfermedad enf = new Enfermedad();
             pre.setInt(1, enf.getIdCategoriaEnfermedad());
             pre.setString(2, enf.getNombre());
             pre.setInt(3, enf.getIdEnfermedad());
@@ -321,12 +315,11 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void modificarReligion() throws SQLException {
+    public void modificarReligion(Religion reli) throws SQLException {
         try {
             this.Conectar();
             sql = "UPDATE religion SET Nombre = ? WHERE IdReligion = ? ";
             this.pre = this.getCn().prepareStatement(sql);
-            Religion reli = new Religion();
             pre.setString(1, reli.getNombre());
             pre.setInt(2, reli.getIdReligion());
             pre.executeUpdate();
@@ -337,29 +330,27 @@ public class dao_matenimiento extends DAO {
         }
     }
 
-    public void modificarExamen() throws SQLException {
+    public void modificarExamen(Examen ex) throws SQLException {
         try {
             this.Conectar();
             sql = "UPDATE examen SET Nombre=?,idCategoriaExamen=? WHERE IdExamen=?";
             this.pre = this.getCn().prepareStatement(sql);
-            Examen ex = new Examen();
             pre.setString(1, ex.getNombre());
             pre.setInt(2, ex.getIdCategoriaExamen());
             pre.setInt(3, ex.getIdExamen());
             pre.executeUpdate();
-        } catch (SQLException ex) {
-            System.out.println("no inserta Examen: " + ex);
+        } catch (SQLException exe) {
+            System.out.println("no inserta Examen: " + exe);
         } finally {
             this.Cerrar();
         }
     }
 
-    public void modificarTurno() throws SQLException {
+    public void modificarTurno(Turno tur) throws SQLException {
         try {
             this.Conectar();
             sql = "UPDATE turno SET HorarioEntrada=?, HorarioSalida=? WHERE idTurno=?";
             this.pre = this.getCn().prepareStatement(sql);
-            Turno tur = new Turno();
             pre.setString(1, tur.getHorarioEntrada());
             pre.setString(2, tur.getHorarioSalida());
             pre.setInt(3, tur.getIdturno());

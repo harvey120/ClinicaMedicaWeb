@@ -132,7 +132,7 @@
           <div class="col-xs-12 lead">
             <ol class="breadcrumb">
               <li class="active">Regitro Medicamento</li>
-              <li><a href="listaMedicamento.xhtml">Listado de Medicamento</a></li>
+              <li><a href="listaTurno.xhtml">Listado de Medicamento</a></li>
             </ol>
           </div>
         </div>
@@ -142,16 +142,16 @@
 
       <div class="container-fluid">
         <div class="container-flat-form">
-          <div class="title-flat-form title-flat-blue">Busqueda de Medicam</div>
+          <div class="title-flat-form title-flat-blue">Busqueda de turno</div>
           <form autocomplete="off">
             <div class="row">
               <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                 <h:form>
                   <div class="group-material">
-                    <b:inputText id="id"  style=" font: bold small-caps 120%/200% serif;" placeholder="Consulta: "  value="#{bean_mantenimiento_medicamento.men.idmedicamento}" />
+                    <b:inputText id="id"  style=" font: bold small-caps 120%/200% serif;" placeholder="Consulta: "  value="#{bean_turno.turno.idturno}" />
                   </div>
                   <p class="text-center">
-                    <b:commandButton class="btn btn-primary" value="Buscar" action="#{bean_mantenimiento_medicamento.buscar()}" />
+                    <b:commandButton class="btn btn-primary" value="Buscar" action="#{bean_turno.buscar()}" />
                   </p> 
                 </h:form>
               </div>
@@ -163,32 +163,23 @@
 
       <div class="container-fluid">
         <div class="container-flat-form">
-          <div class="title-flat-form title-flat-blue">Registrar una nueva medicamento</div>
+          <div class="title-flat-form title-flat-blue">Registrar una nuevo Turno</div>
           <form autocomplete="off">
             <div class="row">
               <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                 <h:form>
                   <div class="group-material">
-                    <b:inputText id="Examen" style=" font: bold small-caps 120%/200% serif;" placeholder="Id:" value="#{bean_mantenimiento_medicamento.men.idmedicamento}" />
+                    <b:inputText id="Examen" style=" font: bold small-caps 120%/200% serif;" placeholder="Id:" value="#{bean_turno.turno.idturno}" />
                   </div>
                   <div class="group-material">
-                    <b:inputText id="nombre" style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre: " value="#{bean_mantenimiento_medicamento.men.nombre}"/>
+                    <b:inputText id="nombre" style=" font: bold small-caps 120%/200% serif;" placeholder="Entrada: " value="#{bean_turno.turno.horarioEntrada}"/>
                   </div>
 
                   <div class="group-material">
-                    <b:inputText id="Descripcion" style=" font: bold small-caps 120%/200% serif;" placeholder="Descripcion: " value="#{bean_mantenimiento_medicamento.men.descripcion}"/>
+                    <b:inputText id="Descripcion" style=" font: bold small-caps 120%/200% serif;" placeholder="Salida: " value="#{bean_turno.turno.horarioSalida}"/>
                   </div>
-                  <div class="group-material">
-                    <b:inputText id="Fecha" style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de bencimiento: " value="#{bean_mantenimiento_medicamento.men.fecha}"/>
-                  </div>
-
-                  <div class="group-material">
-                    <b:inputText id="Categoria" style=" font: bold small-caps 120%/200% serif;" placeholder="Provedor: " value="#{bean_mantenimiento_medicamento.men.provedor}"/>
-                  </div>
-
-
                   <p class="text-center">
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{bean_mantenimiento_medicamento.insertar()}" />
+                    <b:commandButton class="btn btn-primary" value="Buscar" action="#{bean_turno.insertar()}" />
                   </p> 
                 </h:form>
 
