@@ -22,23 +22,19 @@
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="207" y="32" width="422" height="57" uuid="74dcc1ec-d919-4caf-ba8a-e13ce4ea0cb8"/>
+				<reportElement x="190" y="32" width="422" height="57" uuid="74dcc1ec-d919-4caf-ba8a-e13ce4ea0cb8"/>
 				<textElement textAlignment="Center">
 					<font size="38" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Reporte Empleados]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="278" y="106" width="292" height="20" uuid="15a1e14a-b81a-4a2e-907a-b79fd02c44c6"/>
+				<reportElement x="263" y="109" width="292" height="20" uuid="15a1e14a-b81a-4a2e-907a-b79fd02c44c6"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Clinca Medica]]></text>
 			</staticText>
-			<image>
-				<reportElement x="0" y="0" width="123" height="140" uuid="55a9e53b-0e45-4722-b4c3-5bc7de58c41b"/>
-				<imageExpression><![CDATA["C:\\Users\\javam\\Downloads\\logo.jpeg"]]></imageExpression>
-			</image>
 		</band>
 	</title>
 	<pageHeader>

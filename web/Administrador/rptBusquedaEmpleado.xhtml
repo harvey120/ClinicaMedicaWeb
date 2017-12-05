@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Panel de Control</title>
+        <!-- Esta pagina representa el panel de control principal de el administrador -->
+
+        <meta charset="UTF-8"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- iconos de la pagina -->        
+        <link rel="Shortcut Icon" type="image/x-icon" href="../resources/assets/icons/book.ico" />
+        <!-- sweet alert de la pagina -->
+        <script src="../resources/js/sweet-alert.min.js"></script>
+        <!-- css sweet alert--> 
+        <link rel="stylesheet" href="../resources/css/sweet-alert.css"/>
+        <!-- css Material desing -->
+        <link rel="stylesheet" href="../resources/css/material-design-iconic-font.min.css"/>
+        <!-- css normalize -->
+        <link rel="stylesheet" href="../resources/css/normalize.css"/>
+        <!-- css bootstrap -->
+        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
+        <!-- css para el scrow de la pagina -->
+        <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
+        <!-- css estilo de la pagina -->
+        <link rel="stylesheet" href="../resources/css/style.css"/>
+
+        <script src="../resources/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+        <!-- js modernizer -->
+        <script src="../resources/js/modernizr.js"></script>
+        <!-- js de bootstrap -->
+        <script src="../resources/js/bootstrap.min.js"></script>
+        <!-- js del scroll de la pagina -->
+        <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- js del main-->
+        <script src="../resources/js/main.js"></script>
+    </h:head>
+
+    <h:body>
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+
+        <!-- NavBar lateral de la pagina -->
+        <div class="navbar-lateral full-reset">
+            <div class="visible-xs font-movile-menu mobile-menu-button"></div>
+            <div class="full-reset container-menu-movile custom-scroll-containers">
+                <div class="logo full-reset all-tittles">
+                    <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px; font: bold small-caps 120%/200% serif;"></i> 
+                    sistema clinica medica
+                </div>
+                <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
+                    <figure>
+                        <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
+                    </figure>
+                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p> 
+                </div>
+
+
+                <!-- Opciones de Menu laterales -->
+                <div class="full-reset nav-lateral-list-menu">
+                    <ul class="list-unstyled">
+
+                        <!-- Menu lateral-->
+                        <li><a href="../faces/homes/homeAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a href="faces/../RegistroAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Administrador</a></li>
+                        <li><a href="faces/../RegistroNoExistente.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp;Registro nuevo empleado</a></li>
+                        <li><a href="faces/../Mantenimiento.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-alert-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personal</a></li>
+                        <li><a href="faces/../rptBusquedaEmpleado.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-search zmdi-hc-fw"></i>&nbsp;&nbsp; Busqueda Empleados</a></li>
+                        <!-- FIn del Menu lateral -->
+
+                    </ul>
+                </div>
+                <!-- fin Opciones de Menu laterales -->
+
+            </div>
+        </div>
+        <!-- Fin Nav Bar Lateral de la pagina -->
+
+
+
+        <!--  Contenido de la pagina -->
+        <div class="content-page-container full-reset custom-scroll-containers">
+
+            <nav class="navbar-user-top full-reset">     
+                <ul class="list-unstyled full-reset">
+                    <figure>
+                        <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
+                    </figure>
+
+                    <li style="color:#fff; cursor:default;">
+                        <span class="all-tittles"> #{controlador.usu.nombre} #{controlador.usu.apellido} </span>
+                    </li>
+                    <li  class="tooltips-general exit-system-button" data-href="../index.xhtml" data-placement="bottom" title="Salir del sistema">
+                        <i class="zmdi zmdi-power"></i>
+                    </li>
+
+                    <li  class="tooltips-general search-persona-button" data-placement="bottom" title="Ayuda">
+                        <i class="zmdi zmdi-help-outline zmdi-hc-fw"></i>
+                    </li>
+
+                    <li class="mobile-menu-button visible-xs" style="float: left !important;">
+                        <i class="zmdi zmdi-menu"></i>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="all-tittles">Sistema Clinicamedica <small>Reportes Generales </small></h1>
+                </div>
+            </div>
+
+
+
+            <section class="full-reset text-center" style="padding: 40px 0;">
+                <h:form>
+
+                    <!-- Opciones de la vista -->
+                    <div class="container">
+                        <div class="page-header">
+                            <h1 class="all-tittles">Informacion a buscar: </h1>
+                        </div>
+                    </div>
+
+                    <!-- Informacion a Buscar --> 
+
+                    <div class="container-fluid">
+                        <div class="container-flat-form">
+                            <div class="title-flat-form title-flat-blue">Registro de Administrador</div>
+                            <form autocomplete="off">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                                        <h:form class="textoAmp">
+
+                                            <div class="group-material">
+                                                <b:inputText id="correo" style=" font: bold small-caps 120%/200% serif; width: 415px;" value="#{reportesBusquedaEmpleadoBean.rptBs.noDocumento}" placeholder="Ingrese numero de Identificacion: "/>
+                                                <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Buscar" action="#{reportesBusquedaEmpleadoBean.listarDocumentos()}" />
+
+                                            </div>
+
+                                            <!-- contenido del formulario de persona -->
+                                            <div class="title-flat-form title-flat-blue">Historial del Empleado</div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre Completo" value="#{reportesBusquedaEmpleadoBean.rptBs.nombreCompleto}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de Nacimiento " value="#{reportesBusquedaEmpleadoBean.rptBs.fechaNacimiento}" /> 
+                                            </div>
+
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Telefono de Contacto " value="#{reportesBusquedaEmpleadoBean.rptBs.telefonoDeContacto}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Correo Electronico" value="#{reportesBusquedaEmpleadoBean.rptBs.correo}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Genero " value="#{reportesBusquedaEmpleadoBean.rptBs.sexo}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Estado Civil " value="#{reportesBusquedaEmpleadoBean.rptBs.civil}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Documento de identificacion " value="#{reportesBusquedaEmpleadoBean.rptBs.documentoIdentificacion}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Especialidad " value="#{reportesBusquedaEmpleadoBean.rptBs.especialidad}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Consultorio " value="#{reportesBusquedaEmpleadoBean.rptBs.consultorio}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Estado de citatorio " value="#{reportesBusquedaEmpleadoBean.rptBs.estadoCita}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Puesto del empleado " value="#{reportesBusquedaEmpleadoBean.rptBs.puesto}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Usuario " value="#{reportesBusquedaEmpleadoBean.rptBs.usuario}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Contrasena " value="#{reportesBusquedaEmpleadoBean.rptBs.contrasena}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Estado de Usuario " value="#{reportesBusquedaEmpleadoBean.rptBs.estado}" /> 
+                                            </div>
+                                            
+                                            <div class="container">
+                                                    <div class="page-header">
+                                                        <h1 class="all-tittles"><small>Convertir: </small></h1>
+                                                    </div>
+                                                </div>
+
+                                                <!-- obciones de conversion -->
+                                                <article class="tile">
+                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
+                                                    <div class="tile-num full-reset">
+                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesBusquedaEmpleadoBean.exportarPDF()}"/>
+                                                    </div>
+                                                </article>
+
+                                                <article class="tile">
+                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
+                                                    <div class="tile-num full-reset">
+                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesBusquedaEmpleadoBean.exportarDOC()}"/>
+                                                    </div>
+                                                </article>
+                                                <article class="tile">
+                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
+                                                    <div class="tile-num full-reset">
+                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesBusquedaEmpleadoBean.exportarExcel()}"/>
+                                                    </div>
+                                                </article>
+                                                <article class="tile">
+                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
+                                                    <div class="tile-num full-reset">
+                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesBusquedaEmpleadoBean.verPDF()}"/>
+                                                    </div>
+                                                </article>  
+
+                                                <!--Opciones del conversion--> 
+
+
+                                        </h:form>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+                </h:form>
+            </section>
+
+
+
+            <!-- Pie de pagina-->
+            <footer class="footer full-reset">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <h4 class="all-tittles">Acerca de</h4>
+                            <p>
+                                Systema basado y desarrollado completamente en java
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <h4 class="all-tittles">Desarrolladores</h4>
+                            <ul class="list-unstyled">
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Evelyn Juarez</li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Harvey Herrera</li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Erick Osoy </li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Daniel Galindo </li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Carlos Coronado </li>
+                                <li><i class="zmdi zmdi-check zmdi-hc-fw"></i>&nbsp; Kevin Mazariegos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright full-reset all-tittles">© 2017 Intecap Zona 4 Centro Tics</div>
+            </footer>
+            <!-- Fin del pie de pagina-->
+        </div>
+        <!--Fin del contenido de la pagina -->
+    </h:body>
+</html>
+
