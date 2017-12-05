@@ -17,19 +17,15 @@
 	</background>
 	<title>
 		<band height="176" splitType="Stretch">
-			<image>
-				<reportElement x="0" y="0" width="123" height="140" uuid="a9e47ebd-21e7-4003-afba-17e641369fb2"/>
-				<imageExpression><![CDATA["C:\\Users\\javam\\Downloads\\logo.jpeg"]]></imageExpression>
-			</image>
 			<staticText>
-				<reportElement x="225" y="99" width="292" height="20" uuid="33b207a6-0b82-4c62-bd69-c2d3430d414e"/>
+				<reportElement x="218" y="113" width="292" height="20" uuid="33b207a6-0b82-4c62-bd69-c2d3430d414e"/>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Clinca Medica]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="168" y="21" width="422" height="57" uuid="a3ec26a2-67d2-48c0-b567-1d16141262d6"/>
+				<reportElement x="155" y="41" width="422" height="57" uuid="a3ec26a2-67d2-48c0-b567-1d16141262d6"/>
 				<textElement textAlignment="Center">
 					<font size="38" isBold="true"/>
 				</textElement>
