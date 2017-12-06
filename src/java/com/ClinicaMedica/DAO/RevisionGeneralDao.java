@@ -126,4 +126,37 @@ public class RevisionGeneralDao extends DAO{
             this.Cerrar();
         }
     }
+    
+    //ver si funciona el metodo leer id de la misma forma que este
+    public RevisionGeneral listado(RevisionGeneral topp) throws SQLException{
+         ResultSet rs;
+        //clase con los 4 atributos
+        RevisionGeneral topo = new RevisionGeneral();
+        
+        try {
+            System.out.println("ingreso a listar RevisionGeneral:");
+            this.Conectar();
+            //sql = "SELECT * FROM Examenesdetalles";
+            String sql = "SELECT * FROM revisiongeneral where IdExamenGeneral = ?";
+            PreparedStatement st = this.getCn().prepareStatement(sql);
+            st.setInt(1, topp.getIdExamenGeneral());
+            rs = st.executeQuery();            
+            while (rs.next()) {
+                
+                topo.setPresion(rs.getString("Presion"));
+                topo.setTemperatura(rs.getString("Temperatura"));
+                topo.setPeso(rs.getString("Peso"));
+                topo.setEstatura(rs.getString("Estatura"));
+                topo.setTalla(rs.getString("Talla"));
+                topo.setCita_IdCitaa(rs.getInt("Cita_IdCitaa"));
+                topo.setIdExamenGeneral(rs.getInt("IdExamenGeneral"));
+                
+            }
+        } catch (Exception e) {
+            System.out.println("error de lista: " + e);
+        } finally {
+            this.Cerrar();
+        }
+        return topo;
+    }
 }

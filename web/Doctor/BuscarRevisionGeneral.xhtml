@@ -39,7 +39,7 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="ClinicaMedica" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
                     <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
@@ -48,15 +48,13 @@
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
+                        <li><a style=" font: bold small-caps 120%/200% serif;" href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <li><a href="faces/index.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
                                 <li><a href="faces/Examenes2.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Examen</a></li>
-                                <li><a href="student.html"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo estudiante</a></li>
-                                <li><a href="personal.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo personal administrativo</a></li>
                             </ul>
                         </li>
 
@@ -102,7 +100,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../doctor/imgDoctor/x-ray (1).png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/xray.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección Busqueda de Revisión General del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar una Revisión General
@@ -124,12 +122,12 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{revisionGeneralBean2.rev.idExamenGeneral}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style=" font: bold small-caps 120%/200% serif; width: 300px" value="#{revisionGeneralBean.rev.idExamenGeneral}" />
 
                                                 
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{revisionGeneralBean2.listar()}" />
+                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{revisionGeneralBean.listar()}" />
                                                 </p> 
                                         </div>
                                     </h:form> 
@@ -156,25 +154,25 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{revisionGeneralBean2.rev.idExamenGeneral}" readonly="true"/>
+                                                <b:inputText  placeholder="Codigo :" value="#{revisionGeneralBean.rev.idExamenGeneral}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Presión :" value="#{revisionGeneralBean2.rev.presion}" readonly="true"/>
+                                                <b:inputText  placeholder="Presión :" value="#{revisionGeneralBean.rev.presion}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Temperatura :" value="#{revisionGeneralBean2.rev.temperatura}" readonly="true"/>
+                                                <b:inputText  placeholder="Temperatura :" value="#{revisionGeneralBean.rev.temperatura}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Peso :" value="#{revisionGeneralBean2.rev.peso}" readonly="true"/>
+                                                <b:inputText  placeholder="Peso :" value="#{revisionGeneralBean.rev.peso}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Estatura :" value="#{revisionGeneralBean2.rev.estatura}" readonly="true"/>
+                                                <b:inputText  placeholder="Estatura :" value="#{revisionGeneralBean.rev.estatura}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Talla :" value="#{revisionGeneralBean2.rev.talla}" readonly="true"/>
+                                                <b:inputText  placeholder="Talla :" value="#{revisionGeneralBean.rev.talla}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Cita :" value="#{revisionGeneralBean2.rev.cita_IdCitaa}" readonly="true"/>
+                                                <b:inputText  placeholder="Cita :" value="#{revisionGeneralBean.rev.cita_IdCitaa}" readonly="true"/>
                                             </div>
 
 

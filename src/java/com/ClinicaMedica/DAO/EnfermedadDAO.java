@@ -10,9 +10,9 @@ import java.util.List;
 /**
  * @author Harvey
  */
-public class EnfermedadDAO extends DAO{
-    
-      public void insertar(Enfermedad ne) throws SQLException{
+public class EnfermedadDAO extends DAO {
+
+    public void insertar(Enfermedad ne) throws SQLException {
         try {
             this.Conectar();
             String sql = "INSERT INTO enfermedad VALUES (?,?,?)";
@@ -20,14 +20,14 @@ public class EnfermedadDAO extends DAO{
             ns.setInt(1, ne.getIdEnfermedad());
             ns.setString(2, ne.getNombre());
             ns.setInt(3, ne.getIdCategoriaEnfermedad());
-            ns.executeUpdate();            
+            ns.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error EnfermedadDao insertar: "+e);
+            System.out.println("Error EnfermedadDao insertar: " + e);
         } finally {
             this.Cerrar();
         }
     }
-      
+
     public List<Enfermedad> listar() throws SQLException {
         List<Enfermedad> lista = null;
         ResultSet rs;
@@ -52,30 +52,32 @@ public class EnfermedadDAO extends DAO{
         }
         return lista;
     }
-      public Enfermedad leerID(Enfermedad en) throws SQLException{
+
+    public Enfermedad leerID(Enfermedad en) throws SQLException {
         Enfermedad ne = null;
         ResultSet nr;
-        
+
         try {
             this.Conectar();
             String sql = "SELECT * FROM enfermedad WHERE IdEnfermedad = ?";
             PreparedStatement ns = this.getCn().prepareStatement(sql);
             ns.setInt(1, en.getIdEnfermedad());
             nr = ns.executeQuery();
-            
-            while (nr.next()){
+
+            while (nr.next()) {
                 ne = new Enfermedad();
                 ne.setIdEnfermedad(nr.getInt("IdEnfermedad"));
                 ne.setNombre(nr.getString("Nombre"));
                 ne.setIdCategoriaEnfermedad(nr.getInt("CategoriaEnfermedad_IdCategoriaE"));
             }
         } catch (SQLException e) {
-            System.out.println("ERROR EnfermedadDAO leerID: "+e);
+            System.out.println("ERROR EnfermedadDAO leerID: " + e);
         } finally {
             this.Cerrar();
-        } return ne;
+        }
+        return ne;
     }
-    
+
     public void modificar(Enfermedad en) throws SQLException {
         try {
             this.Conectar();
@@ -84,15 +86,15 @@ public class EnfermedadDAO extends DAO{
             ns.setString(1, en.getNombre());
             ns.setInt(2, en.getIdCategoriaEnfermedad());
             ns.setInt(3, en.getIdEnfermedad());
-            ns.executeUpdate(); 
+            ns.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error Enfermedad modificar: "+e);
+            System.out.println("Error Enfermedad modificar: " + e);
         } finally {
             this.Cerrar();
         }
     }
-    
-    public void eliminar (Enfermedad el) throws SQLException{
+
+    public void eliminar(Enfermedad el) throws SQLException {
         try {
             this.Conectar();
             String sql = "DELETE FROM enfermedad WHERE idEnfermedad = ?";
@@ -100,9 +102,36 @@ public class EnfermedadDAO extends DAO{
             ns.setInt(1, el.getIdEnfermedad());
             ns.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error EnfermedadDao eliminar: "+e);
+            System.out.println("Error EnfermedadDao eliminar: " + e);
         } finally {
             this.Cerrar();
         }
+    }
+
+    public Enfermedad listado(Enfermedad topp) throws SQLException {
+        ResultSet rs;
+        //clase con los 4 atributos
+        Enfermedad topo = new Enfermedad();
+
+        try {
+            System.out.println("ingreso a listar Enfermedad:");
+            this.Conectar();
+            //sql = "SELECT * FROM Examenesdetalles";
+            String sql = "SELECT * FROM enfermedad where IdEnfermedad = ?";
+            PreparedStatement st = this.getCn().prepareStatement(sql);
+            st.setInt(1, topp.getIdEnfermedad());
+            rs = st.executeQuery();
+            while (rs.next()) {
+
+                topo.setNombre(rs.getString("Nombre"));
+                topo.setIdCategoriaEnfermedad(rs.getInt("CategoriaEnfermedad_IdCategoriaE"));
+                topo.setIdEnfermedad(rs.getInt("IdEnfermedad"));
+            }
+        } catch (Exception e) {
+            System.out.println("error de lista Enfermedad: " + e);
+        } finally {
+            this.Cerrar();
+        }
+        return topo;
     }
 }

@@ -100,4 +100,16 @@ public class EnfermedadBean {
         }
     }
 
+    public void listar() {
+        System.out.println("ha ingresado a lista bn Enfermedad2DAO");
+        EnfermedadDAO dao;
+        try {
+            dao = new EnfermedadDAO();
+            enfermedad = dao.listado(enfermedad);
+
+        } catch (Exception e) {
+
+            System.out.println("error listar bn Enfermedad2DAO" + e);
+        }
+    }
 }

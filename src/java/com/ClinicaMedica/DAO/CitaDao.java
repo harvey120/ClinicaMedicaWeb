@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ClinicaMedica.DAO;
 
 import com.ClinicaMedica.Modelo.Cita;
@@ -129,5 +124,38 @@ public class CitaDao extends DAO {
         } finally {
             this.Cerrar();
         }
+    }
+    //revisar este Metodo listarCitas()
+    public List<Cita> listarCitas() throws Exception {
+        List<Cita> lista = new ArrayList();
+        ResultSet rs;
+        int i = -1;
+        try {
+            System.out.println("daolistar Cita");
+            this.Conectar();
+            String sql = "SELECT * FROM cita";
+            PreparedStatement st = this.getCn().prepareStatement(sql);
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+                i++;
+
+                Cita ex = new Cita();
+                ex.setIdCita(rs.getInt("idCita"));
+                ex.setFecha(rs.getString("Fecha"));
+                ex.setHorario(rs.getString("Horario"));
+                ex.setEmpleado_idEmpleado(rs.getInt("Empleado_idEmpleado"));
+                ex.setEstadoCita_idEstadoCita(rs.getInt("EstadoCita_idEstadoCita"));
+                ex.setPaciente_idPaciente(rs.getInt("Paciente_idPaciente"));
+                lista.add(ex);
+                //System.out.println(lista.get(i).getCodigo());
+            }
+
+        } catch (Exception e) {
+            System.out.println("error listar Citas dao" + e);
+        } finally {
+            this.Cerrar();
+        }
+        return lista;
     }
 }

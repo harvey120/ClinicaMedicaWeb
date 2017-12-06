@@ -31,7 +31,7 @@
 
     </h:head>
     <h:body>
-        <f:event type="preRenderView" listener="#{citaBean2.listarCita()}"/>
+        <f:event type="preRenderView" listener="#{citaBean.listarCita()}"/>
         
 
 
@@ -44,23 +44,20 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                    <p class="text-center" style=" font: bold small-caps 120%/200% serif; padding-top: 15px">Sistema Administrativo Doctor</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a style=" font: bold small-caps 120%/200% serif;" href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
-                                <li><a href="faces/../Personas.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
-                                <li><a href="faces/../DocumentoIdentificacion.xhtml"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Documento Identificación</a></li>
-                                
                             </ul>
                         </li>
 
@@ -105,7 +102,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../doctor/imgDoctor/calendar.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/calendar.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección donde se encuentra el listado de Citas, puedes modificar los datos de Las Citas Existentes en el sistema
@@ -129,7 +126,7 @@
                 <div class="div-table">
 
                     <h:form class="div-table-row div-table-head" id="frmTabla">
-                        <b:dataTable value="#{citaBean2.lstCita}" 
+                        <b:dataTable value="#{citaBean.lstCita}" 
                                      var="per"
                                      id="data"
                                      excel="true"
@@ -138,22 +135,22 @@
                                      print="true"
                                      class="tabla">
 
-                            <b:dataTableColumn class="div-table-cell" value="#{per.idCita}" label="Código"/>
+                            <b:dataTableColumn style=" font: bold small-caps 120%/200% serif;" class="div-table-cell" value="#{per.idCita}" label="Código"/>
 
-                            <b:dataTableColumn class="div-table-cell" value="#{per.fecha}" label="Fecha"/>
+                            <b:dataTableColumn style=" font: bold small-caps 120%/200% serif;" class="div-table-cell" value="#{per.fecha}" label="Fecha"/>
                             
-                            <b:dataTableColumn class="div-table-cell" value="#{per.horario}" label="Horario"/>
+                            <b:dataTableColumn style=" font: bold small-caps 120%/200% serif;" class="div-table-cell" value="#{per.horario}" label="Horario"/>
                             
-                            <b:dataTableColumn class="div-table-cell" value="#{per.empleado_idEmpleado}" label="Empleado"/>
+                            <b:dataTableColumn style=" font: bold small-caps 120%/200% serif;" class="div-table-cell" value="#{per.empleado_idEmpleado}" label="Empleado"/>
                             
-                            <b:dataTableColumn class="div-table-cell" value="#{per.estadoCita_idEstadoCita}" label="Estado"/>
+                            <b:dataTableColumn style=" font: bold small-caps 120%/200% serif;" class="div-table-cell" value="#{per.estadoCita_idEstadoCita}" label="Estado"/>
                             
-                            <b:dataTableColumn class="div-table-cell" value="#{per.paciente_idPaciente}" label="Paciente"/>
+                            <b:dataTableColumn style=" font: bold small-caps 120%/200% serif;" class="div-table-cell" value="#{per.paciente_idPaciente}" label="Paciente"/>
                             
                             
 
                              <b:dataTableColumn class="div-table-cell" label="Modificar">
-                                 <p:commandButton actionListener="#{citaBean2.leerID(per)}" oncomplete="PF('wdlgDatos').show()" update=":dlgDatos"  value="Modificar" icon="edit" class="btn btn-info tooltips-general" title="Modificar Historial Clinico" />
+                                 <p:commandButton actionListener="#{citaBean.leerID(per)}" oncomplete="PF('wdlgDatos').show()" update=":dlgDatos"  value="Modificar" icon="edit" class="btn btn-info tooltips-general" title="Modificar Historial Clinico" />
                             </b:dataTableColumn>
 
                            
@@ -168,14 +165,14 @@
             <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
                 <h:form>
                     
-                    <b:inputText placeholder="Código: " value="#{citaBean2.ingreso.idCita}"/>
-                    <b:inputText placeholder="Nombre: " value="#{citaBean2.ingreso.fecha}"  />
-                    <b:inputText placeholder="Categoria: " value="#{citaBean2.ingreso.horario}"  />
-                    <b:inputText placeholder="Categoria: " value="#{citaBean2.ingreso.empleado_idEmpleado}"  />
-                    <b:inputText placeholder="Categoria: " value="#{citaBean2.ingreso.estadoCita_idEstadoCita}"  />
-                    <b:inputText placeholder="Categoria: " value="#{citaBean2.ingreso.paciente_idPaciente}"  />
+                    <b:inputText placeholder="Código: " value="#{citaBean.ingreso.idCita}"/>
+                    <b:inputText placeholder="Nombre: " value="#{citaBean.ingreso.fecha}"  />
+                    <b:inputText placeholder="Categoria: " value="#{citaBean.ingreso.horario}"  />
+                    <b:inputText placeholder="Categoria: " value="#{citaBean.ingreso.empleado_idEmpleado}"  />
+                    <b:inputText placeholder="Categoria: " value="#{citaBean.ingreso.estadoCita_idEstadoCita}"  />
+                    <b:inputText placeholder="Categoria: " value="#{citaBean.ingreso.paciente_idPaciente}"  />
                     
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{citaBean2.modificar()}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
+                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{citaBean.modificar()}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
                     <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos').hide();" />
                 </h:form>
             </p:dialog>
