@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ClinicaMedica.DAO;
 
 import com.ClinicaMedica.Modelo.CategoriaExamen;
@@ -17,6 +12,7 @@ import java.util.List;
  * @author javam
  */
 public class CategoriaExamenDao extends DAO{
+    
     public List<CategoriaExamen> listar() throws SQLException {
         List<CategoriaExamen> lista = null;
         ResultSet rs;

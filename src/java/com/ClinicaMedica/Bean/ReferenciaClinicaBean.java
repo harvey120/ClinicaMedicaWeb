@@ -2,6 +2,7 @@ package com.ClinicaMedica.Bean;
 
 import com.ClinicaMedica.DAO.ReferenciaClinicaDAO;
 import com.ClinicaMedica.Modelo.ReferenciaClinica;
+import java.sql.SQLException;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -40,8 +41,21 @@ public class ReferenciaClinicaBean {
         try {
             dao = new ReferenciaClinicaDAO();
             lstReferencia = dao.listar();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("No de desplego informacion en ReferenciaClinicaBean" + e);
+        }
+    }
+    
+    public void listar() {
+        System.out.println("ha ingresado a lista ReferenciaClinicaBean");
+        ReferenciaClinicaDAO dao;
+        try {
+            dao = new ReferenciaClinicaDAO() ;
+            referenciaclinica = dao.listado(referenciaclinica);
+            
+        } catch (SQLException e) {
+            
+            System.out.println("error listar ReferenciaClinicaBean" + e);
         }
     }
 }

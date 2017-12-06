@@ -1,4 +1,3 @@
-
 package com.ClinicaMedica.Modelo;
 
 public class Examen {

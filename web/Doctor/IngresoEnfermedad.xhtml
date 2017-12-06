@@ -28,7 +28,7 @@
     </h:head>
     <h:body>
 
-        <f:event type="preRenderView" listener="#{examenBean2.listarExamen()}"/>
+        <f:event type="preRenderView" listener="#{examenBean.listarExamen()}"/>
         <f:event type="preRenderView" listener="#{categoriaExamenBean.listarCategoriaExamen()}"/>
 
 
@@ -41,7 +41,7 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="ClinicaMedica" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
                     <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
                 </div>
@@ -49,15 +49,12 @@
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a href="../homes/homeDoctor.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <li><a href="faces/index.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
-                                <li><a href="faces/../Personas.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
-                                <li><a href="faces/../DocumentoIdentificacion.xhtml"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Documento Identificación</a></li>
-                                <li><a href="personal.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo personal administrativo</a></li>
                             </ul>
                         </li>
 
@@ -102,9 +99,9 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../imagen/brain.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/brain.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
-                    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+                    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead" >
                         Bienvenido a la sección Ingreso de Examenes del sistema, debes de llenar todos los campos del siguiente formulario para registrar un nuevo Examen
                     </div>
                 </div>
@@ -133,20 +130,20 @@
 
                                 <h:form>
                                     <div class="group-material">
-                                        <b:inputText id="idExamen" placeholder="Código" value="#{examenBean2.ingreso.idExamen}" />
+                                        <b:inputText id="idExamen" style="font: bold small-caps 120%/200% serif;" placeholder="Código" value="#{examenBean.ingreso.idExamen}" />
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="nombre" placeholder="Nombre" value="#{examenBean2.ingreso.nombre}"  />
+                                        <b:inputText id="nombre" style="font: bold small-caps 120%/200% serif;" placeholder="Nombre" value="#{examenBean.ingreso.nombre}"  />
                                     </div>
-                                    <div class="group-material">
-                                        <b:selectOneMenu  value="#{examenBean2.ingreso.idCategoriaExamen}">
+                                    <div class="group-material" style="font: bold small-caps 120%/200% serif;">
+                                        <b:selectOneMenu  value="#{examenBean.ingreso.idCategoriaExamen}">
                                             <f:selectItems value="#{categoriaExamenBean.lstCategoriaExamenDAO}" var="categoria" itemLabel="#{categoria.nombreCategoria}" itemValue="#{categoria.idCategoriaExamen}" />
                                         </b:selectOneMenu>
                                     </div>
 
 
                                     <p class="text-center">
-                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{examenBean2.insertar()}"/>
+                                        <b:commandButton  class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{examenBean.insertar()}"/>
                                     </p> 
                                 </h:form>
 

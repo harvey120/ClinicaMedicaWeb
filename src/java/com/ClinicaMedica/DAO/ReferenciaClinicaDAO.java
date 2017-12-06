@@ -88,4 +88,32 @@ public class ReferenciaClinicaDAO extends DAO {
             this.Cerrar();
         } return ne;
     }
+     
+      public ReferenciaClinica listado(ReferenciaClinica topp) throws SQLException{
+         ResultSet rs;
+        //clase con los 4 atributos
+        ReferenciaClinica topo = new ReferenciaClinica();
+        
+        try {
+            System.out.println("ingreso a listar ReferenciaClinica:");
+            this.Conectar();
+            //sql = "SELECT * FROM Examenesdetalles";
+            String sql = "SELECT * FROM referenciaclinica where IdReferenciaClinica = ?";
+            st = this.getCn().prepareStatement(sql);
+            st.setInt(1, topp.getIdReferenciaClinica());
+            rs = st.executeQuery();            
+            while (rs.next()) {
+                
+                topo.setNombre(rs.getString("Nombre"));
+                topo.setIdReferenciaClinica(rs.getInt("IdReferenciaClinica"));
+
+            }
+        } catch (Exception e) {
+            System.out.println("error de lista ReferenciaClinica: " + e);
+        } finally {
+            this.Cerrar();
+        }
+        return topo;
+    }
+     
 }

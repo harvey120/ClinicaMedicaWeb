@@ -2,8 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:b="http://bootsfaces.net/ui">
     <h:head>
 
@@ -39,7 +37,7 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
                     <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
@@ -102,7 +100,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../doctor/imgDoctor/book.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/book.png" alt="ClinicaMedica" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección Busqueda de Referencias Clinicas del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar una Referencia Clinica
@@ -124,12 +122,12 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{referenciaClinicaBean2.ref.idReferenciaClinica}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{referenciaClinicaBean.referenciaclinica.idReferenciaClinica}" />
 
                                                 
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar Referencia" action="#{referenciaClinicaBean2.listar()}" />
+                                                <b:commandButton class="btn btn-primary " value="Buscar Referencia" action="#{referenciaClinicaBean.listar()}" />
                                                 </p> 
                                         </div>
                                     </h:form> 
@@ -156,10 +154,10 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{referenciaClinicaBean2.ref.idReferenciaClinica}" readonly="true"/>
+                                                <b:inputText  placeholder="Codigo :" value="#{referenciaClinicaBean.referenciaclinica.idReferenciaClinica}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Nombre :" value="#{referenciaClinicaBean2.ref.nombre}" readonly="true"/>
+                                                <b:inputText  placeholder="Nombre :" value="#{referenciaClinicaBean.referenciaclinica.nombre}" readonly="true"/>
                                             </div>
                                             
                                         </h:form>

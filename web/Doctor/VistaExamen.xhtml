@@ -39,7 +39,7 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="ClinicaMedica" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
                     <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
@@ -48,7 +48,7 @@
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
+                        <li><a href="../homes/homeDoctor.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -102,7 +102,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../doctor/imgDoctor/cardiogram.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/cardiogram.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección Busqueda de Examenes del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar un Examen 
@@ -124,7 +124,7 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{vistaExamenBean.exa.idExamen}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style="font: bold small-caps 120%/200% serif; width: 300px" value="#{vistaExamenBean.exa.idExamen}" />
 
                                                 
                                             </div>
@@ -156,13 +156,13 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{vistaExamenBean.exa.idExamen}" readonly="true"/>
+                                                <b:inputText style="font: bold small-caps 120%/200% serif;" placeholder="Codigo :" value="#{vistaExamenBean.exa.idExamen}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Nombre :" value="#{vistaExamenBean.exa.nombre}" readonly="true"/>
+                                                <b:inputText style="font: bold small-caps 120%/200% serif;" placeholder="Nombre :" value="#{vistaExamenBean.exa.nombre}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Categoria :" value="#{vistaExamenBean.exa.idCategoriaExamen}" readonly="true"/>
+                                                <b:inputText style="font: bold small-caps 120%/200% serif;" placeholder="Categoria :" value="#{vistaExamenBean.exa.idCategoriaExamen}" readonly="true"/>
                                             </div>
                                             
                                         </h:form>

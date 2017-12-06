@@ -31,7 +31,7 @@
 
     </h:head>
     <h:body>
-        <f:event type="preRenderView" listener="#{examenBean2.listarExamen()}"/>
+        <f:event type="preRenderView" listener="#{examenBean.listarExamen()}"/>
         
 
 
@@ -44,7 +44,7 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
                     <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
                 </div>
@@ -105,7 +105,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../doctor/imgDoctor/dna.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/dna.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección donde se encuentra el listado de Examenes, puedes modificar o eliminar los datos de Los Examenes Existentes en el sistema
@@ -130,7 +130,7 @@
                 <div class="div-table">
 
                     <h:form class="div-table-row div-table-head" id="frmTabla">
-                        <b:dataTable value="#{examenBean2.lstExamenes}" 
+                        <b:dataTable value="#{examenBean.lstExamenes}" 
                                      var="per"
                                      id="data"
                                      excel="true"
