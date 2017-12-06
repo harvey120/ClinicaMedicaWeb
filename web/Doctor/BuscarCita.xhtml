@@ -2,8 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:b="http://bootsfaces.net/ui">
     <h:head>
 
@@ -39,7 +37,7 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../imagen/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Doctor/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
                     <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
@@ -48,15 +46,13 @@
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
+                        <li><a style=" font: bold small-caps 120%/200% serif;" href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <li><a href="faces/index.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
                                 <li><a href="faces/Examenes2.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Examen</a></li>
-                                <li><a href="student.html"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo estudiante</a></li>
-                                <li><a href="personal.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo personal administrativo</a></li>
                             </ul>
                         </li>
 
@@ -102,7 +98,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../doctor/imgDoctor/list.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Doctor/list.png" alt="ClnicaMedica" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección Busqueda de Citas del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar una Cita
@@ -124,12 +120,12 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{buscarCita.cita.idCita}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style=" font: bold small-caps 120%/200% serif; width: 300px" value="#{buscarCitaBean.cita.idCita}" />
 
                                                 
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{buscarCita.listar()}" />
+                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{buscarCitaBean.listar()}" />
                                                 </p> 
                                         </div>
                                     </h:form> 
@@ -156,25 +152,23 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{buscarCita.cita.idCita}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Codigo :" value="#{buscarCitaBean.cita.idCita}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Nombre :" value="#{buscarCita.cita.fecha}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre :" value="#{buscarCitaBean.cita.fecha}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Descripcion :" value="#{buscarCita.cita.horario}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Descripcion :" value="#{buscarCitaBean.cita.horario}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Fecha :" value="#{buscarCita.cita.empleado_idEmpleado}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha :" value="#{buscarCitaBean.cita.empleado_idEmpleado}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Proveefor:" value="#{buscarCita.cita.estadoCita_idEstadoCita}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Proveefor:" value="#{buscarCitaBean.cita.estadoCita_idEstadoCita}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Inventario :" value="#{buscarCita.cita.paciente_idPaciente}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Inventario :" value="#{buscarCitaBean.cita.paciente_idPaciente}" readonly="true"/>
                                             </div>
-
-
                                         </h:form>
 
 
