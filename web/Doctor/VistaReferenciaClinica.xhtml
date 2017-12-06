@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
 
         <title>Historiales Clinicos</title>
@@ -27,7 +28,9 @@
     </h:head>
 
     <h:body>
-
+        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+        
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>
             <div class="full-reset container-menu-movile custom-scroll-containers">
@@ -40,13 +43,13 @@
                         <img src="../resources/imgs/Doctor/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
 
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                    <p class="text-center" style="font: bold small-caps 120%/200% serif; padding-top: 15px">Doctor #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
+                        <li><a style="font: bold small-caps 120%/200% serif;" href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Registro de usuarios <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -72,7 +75,7 @@
                         <img src="../resources/assets/img/user01.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Admin Name</span>
+                        <span class="all-tittles">#{controlador.usu.nombre} #{controlador.usu.apellido}</span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -122,7 +125,7 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{referenciaClinicaBean.referenciaclinica.idReferenciaClinica}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style="font: bold small-caps 120%/200% serif; width: 300px" value="#{referenciaClinicaBean.referenciaclinica.idReferenciaClinica}" />
 
                                                 
                                             </div>
@@ -154,10 +157,10 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{referenciaClinicaBean.referenciaclinica.idReferenciaClinica}" readonly="true"/>
+                                                <b:inputText style="font: bold small-caps 120%/200% serif;" placeholder="Codigo :" value="#{referenciaClinicaBean.referenciaclinica.idReferenciaClinica}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Nombre :" value="#{referenciaClinicaBean.referenciaclinica.nombre}" readonly="true"/>
+                                                <b:inputText style="font: bold small-caps 120%/200% serif;" placeholder="Nombre :" value="#{referenciaClinicaBean.referenciaclinica.nombre}" readonly="true"/>
                                             </div>
                                             
                                         </h:form>
