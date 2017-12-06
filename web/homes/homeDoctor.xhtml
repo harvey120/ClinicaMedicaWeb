@@ -60,22 +60,35 @@
                     <ul class="list-unstyled">
 
 
-                        <li><a href="homeAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
+                        <li><a href="homeAdmin.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div class="dropdown-menu-button" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-lamp zmdi-hc-fw"></i>&nbsp;&nbsp; Registros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/IngresoEnfermedad.xhtml"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Examen</a></li>
                             </ul>
                         </li>
 
 
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div style="font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-search zmdi-hc-fw"></i>&nbsp;&nbsp; Busquedas <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="faces/vistaCruds/PersonaAPaciente.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personas</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaMedicamento.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamentos</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaPaciente.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Pacientes</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaHistorialClinico.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaEnfermedad.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedades</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarCita.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
                             </ul>
                         </li>
 
+                        <li>
+                            <div style="font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-refresh zmdi-hc-fw"></i>&nbsp;&nbsp; Modificaciones <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <ul class="list-unstyled">
+                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/ModificarCita.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>
@@ -120,15 +133,15 @@
             </div>
 
             <section class="full-reset text-center" style="padding: 40px 0;">
-                
+
                 <article class="tile">
                     <a href="../Doctor/Calendario.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/calendar.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Tareas del Día</div>
                     </a>
                 </article>
-               
-                
+
+
                 <article class="tile">
                     <a href="../Doctor/VistaMedicamento.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/pills.png" width="50" height="50"></img></i></div>
@@ -156,18 +169,18 @@
                         <div class="tile-num full-reset">Nuevo Examen</div>
                     </a>
                 </article>
-                
-             
-                
+
+
+
                 <article class="tile">
                     <a href="../Doctor/VistaExamen.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/microscope.png" width="60" height="60"></img></i></div>
                         <div class="tile-num full-reset">Buscar Examen</div>
                     </a>
                 </article>
-                
-             
-                
+
+
+
                 <article class="tile">
                     <a href="../Doctor/VistaReferenciaClinica.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/hospital.png" width="50" height="50"></img></i></div>
@@ -188,7 +201,7 @@
                         <div class="tile-num full-reset">Revisión</div>
                     </a>
                 </article>
-                
+
 
                 <article class="tile">
                     <a href="../Doctor/ModificarCita.xhtml">
