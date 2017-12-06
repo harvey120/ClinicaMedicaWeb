@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="91105358-4b74-4d7e-836a-6fa6c70f5e83">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="33"/>
 	<parameter name="txtEmpleado" class="java.lang.String"/>
 	<parameter name="txtUsuario" class="java.lang.String"/>
 	<field name="nombreCompleto" class="java.lang.String"/>
@@ -24,23 +24,29 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="77" splitType="Stretch">
-			<staticText>
-				<reportElement x="219" y="15" width="144" height="24" uuid="02d2416a-28ad-43be-86dd-58aed70fdc48"/>
-				<textElement textAlignment="Center">
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Historial del Empleado]]></text>
-			</staticText>
+		<band height="107" splitType="Stretch">
 			<textField>
-				<reportElement x="244" y="39" width="100" height="20" uuid="3d6d7c86-632b-4e69-ab7b-1ac42ec408d8"/>
+				<reportElement x="232" y="62" width="100" height="20" uuid="3d6d7c86-632b-4e69-ab7b-1ac42ec408d8"/>
+				<box>
+					<bottomPen lineWidth="3.0"/>
+				</box>
 				<textFieldExpression><![CDATA[$P{txtEmpleado}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="71" width="555" height="1" uuid="9bf01159-4e95-4673-b5f4-03141c87b47b"/>
+				<reportElement x="0" y="106" width="555" height="1" uuid="9bf01159-4e95-4673-b5f4-03141c87b47b"/>
 			</line>
+			<staticText>
+				<reportElement x="90" y="15" width="396" height="47" uuid="0989758e-c25a-4288-ba8e-9d5977c57e6a"/>
+				<box>
+					<bottomPen lineWidth="3.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Historial de Empleado]]></text>
+			</staticText>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="432" y="15" width="100" height="20" uuid="e0133a13-727d-4753-bc88-06f85e511095"/>
+				<reportElement x="411" y="0" width="144" height="20" uuid="23c59b68-f2e6-46e4-bda2-6da9617acd58"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>
@@ -52,10 +58,24 @@
 		<band height="22" splitType="Stretch">
 			<textField>
 				<reportElement x="119" y="0" width="100" height="20" uuid="9224c594-f4ee-4c65-af0b-425171c646ab"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$P{txtUsuario}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="19" y="0" width="100" height="20" uuid="a797baf1-9640-4bfc-a664-4941692ed330"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -70,6 +90,13 @@
 		<band height="423" splitType="Stretch">
 			<staticText>
 				<reportElement x="23" y="32" width="111" height="20" uuid="b5a8d30c-7646-411f-a034-81ca64381a2d"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -77,10 +104,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="163" y="32" width="100" height="20" uuid="5fe79110-a657-4d05-93bd-883bebd43200"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{nombreCompleto}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="38" y="133" width="125" height="20" uuid="c003f255-4a4d-480b-8843-277a6019c01a"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -88,10 +129,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="171" y="133" width="100" height="20" uuid="6783f006-7b30-4691-a1b8-1a8135ee026c"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{fechaNacimiento}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="23" y="64" width="134" height="20" uuid="2a67f0c9-deb5-4971-ad7f-e96fafc56526"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -99,10 +154,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="163" y="64" width="123" height="20" uuid="2859031d-1c1f-4fa0-a5cb-b21e231647cb"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{telefonoDeContacto}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="332" y="32" width="154" height="20" uuid="506ea3a8-dffc-4aa4-8577-614ccfffeea2"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -110,10 +179,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="334" y="64" width="152" height="20" uuid="d60447bb-a32e-4f37-a88a-67c2dd876a0d"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="38" y="164" width="100" height="20" uuid="fa3cd778-6c3d-4005-8622-802ab227936a"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -121,10 +204,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="171" y="164" width="100" height="20" uuid="5cda878b-a1b1-4950-a5bf-9d6089dd886a"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="286" y="164" width="100" height="20" uuid="8784cf17-6038-4c7b-96be-cb25bd68df6f"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -132,21 +229,49 @@
 			</staticText>
 			<textField>
 				<reportElement x="411" y="164" width="100" height="20" uuid="babecdf9-42f7-49b2-9af0-fb26413d2f19"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{civil}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="38" y="199" width="181" height="20" uuid="c28f8561-200e-4a65-a456-f10119a2ca8d"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[documento de identificacion:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="195" y="199" width="178" height="20" uuid="a3388533-d23a-45e2-a3f2-8b0e0f0023f2"/>
+				<reportElement x="219" y="199" width="178" height="20" uuid="a3388533-d23a-45e2-a3f2-8b0e0f0023f2"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{documentoIdentificacion}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="38" y="230" width="100" height="20" uuid="bb462e93-ed82-419b-ba3b-bc90faf2e4ae"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -154,10 +279,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="171" y="230" width="87" height="20" uuid="f141ad7a-eb4b-4052-832a-3b9ae4e59ddb"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{noDocumento}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="38" y="264" width="117" height="20" uuid="2c8c5e97-0ca2-466a-8bf8-17197688da35"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -165,10 +304,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="171" y="264" width="100" height="20" uuid="c2694c65-682d-45d0-8761-7fb87b6c9a74"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{especialidad}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="286" y="250" width="100" height="20" uuid="e9021489-e0bf-4830-a72f-e100a01909de"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -176,10 +329,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="411" y="250" width="100" height="20" uuid="e49d9ee9-e9ad-4c4f-b604-08d4c8b9b127"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{consultorio}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="38" y="301" width="100" height="20" uuid="71503212-4548-4d78-8929-43a029b2a2af"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -187,10 +354,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="171" y="301" width="100" height="20" uuid="93a79a58-c9a1-4d6c-830d-d80fb41d6077"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{estadoCita}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="286" y="284" width="100" height="20" uuid="4c4e815b-d98b-4be3-95a2-ea91f2b7265f"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -198,10 +379,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="411" y="284" width="100" height="20" uuid="2157ba39-a69b-4eb4-9f59-296ede64414d"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{puesto}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="286" y="321" width="100" height="20" uuid="48ff9f3f-7473-4c68-b47d-1b970e7244a8"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -209,10 +404,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="411" y="321" width="100" height="20" uuid="6cf46ebc-9010-4841-aa84-85d601f7f78d"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="286" y="360" width="100" height="20" uuid="4b99e58c-39ac-43ee-b166-a99d59507e10"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -220,10 +429,24 @@
 			</staticText>
 			<textField>
 				<reportElement x="411" y="360" width="100" height="20" uuid="c9e8a419-b4dc-4d7c-a3fb-75a374bb3f32"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{contrasena}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="46" y="340" width="100" height="20" uuid="b4d48fc8-64f2-4566-9136-f6326e11e3ab"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -231,10 +454,17 @@
 			</staticText>
 			<textField>
 				<reportElement x="172" y="340" width="100" height="20" uuid="5d0cd085-3c12-4469-85ba-7a20f881f3ad"/>
+				<box>
+					<pen lineWidth="1.75"/>
+					<topPen lineWidth="1.75"/>
+					<leftPen lineWidth="1.75"/>
+					<bottomPen lineWidth="1.75"/>
+					<rightPen lineWidth="1.75"/>
+				</box>
 				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement x="19" y="22" width="513" height="75" uuid="7a77eee6-2a4e-4e14-b33b-1e62ac59c886"/>
+				<reportElement x="19" y="20" width="513" height="75" uuid="7a77eee6-2a4e-4e14-b33b-1e62ac59c886"/>
 				<box leftPadding="0">
 					<pen lineWidth="0.0" lineStyle="Dotted" lineColor="#333333"/>
 					<topPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
@@ -244,7 +474,7 @@
 				</box>
 			</frame>
 			<frame>
-				<reportElement x="23" y="117" width="527" height="306" uuid="d53e376d-8514-4390-95c8-dc48d2f62b77"/>
+				<reportElement x="19" y="123" width="531" height="300" uuid="d53e376d-8514-4390-95c8-dc48d2f62b77"/>
 				<box leftPadding="0">
 					<pen lineWidth="0.0" lineStyle="Dotted" lineColor="#333333"/>
 					<topPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
@@ -252,20 +482,20 @@
 					<bottomPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
 					<rightPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
 				</box>
+				<frame>
+					<reportElement x="258" y="113" width="260" height="183" uuid="1a9f19a3-021d-4ade-9401-40ef9a4a3aa8"/>
+					<box leftPadding="0">
+						<pen lineWidth="0.0" lineStyle="Dotted" lineColor="#333333"/>
+						<topPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
+						<leftPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
+						<bottomPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
+						<rightPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
+					</box>
+				</frame>
 			</frame>
 			<line>
 				<reportElement x="20" y="110" width="512" height="1" uuid="79ca0e1b-7eb1-4354-a2c4-9b5bb73931f3"/>
 			</line>
-			<frame>
-				<reportElement x="272" y="230" width="260" height="183" uuid="1a9f19a3-021d-4ade-9401-40ef9a4a3aa8"/>
-				<box leftPadding="0">
-					<pen lineWidth="0.0" lineStyle="Dotted" lineColor="#333333"/>
-					<topPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
-					<leftPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
-					<bottomPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
-					<rightPen lineWidth="2.75" lineStyle="Dashed" lineColor="#333333"/>
-				</box>
-			</frame>
 		</band>
 	</detail>
 	<columnFooter>

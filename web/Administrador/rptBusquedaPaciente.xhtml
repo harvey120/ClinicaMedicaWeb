@@ -40,6 +40,7 @@
     </h:head>
 
     <h:body>
+
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <!-- NavBar lateral de la pagina -->
@@ -136,98 +137,101 @@
                                         <h:form class="textoAmp">
 
                                             <div class="group-material">
-                                                <b:inputText id="correo" style=" font: bold small-caps 120%/200% serif; width: 415px;" value="#{reportesBusquedaEmpleadoBean.rptBs.noDocumento}" placeholder="Ingrese numero de Identificacion: "/>
-                                                <b:commandButton class="btn btn-primary zmdi zmdi-search-for" value="Buscar" action="#{reportesBusquedaEmpleadoBean.listarDocumentos()}" />
+                                                <b:inputText id="correo" style=" font: bold small-caps 120%/200% serif; width: 415px;" value="#{reportesBusquedaPacienteBean.rptBs.noDocumento}" placeholder="Ingrese numero de Identificacion: "/>
+                                                <b:commandButton class="btn btn-primary zmdi zmdi-search" value="Buscar" action="#{reportesBusquedaPacienteBean.listarDocumentos()}" />
 
                                             </div>
 
                                             <!-- contenido del formulario de persona -->
-                                            <div class="title-flat-form title-flat-blue">Historial del Empleado</div>
+                                            <div class="title-flat-form title-flat-blue">Historial de Paciente</div>
 
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre Completo" value="#{reportesBusquedaEmpleadoBean.rptBs.nombreCompleto}" /> 
-                                            </div>
-
-                                            <div class="group-material">
-                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de Nacimiento " value="#{reportesBusquedaEmpleadoBean.rptBs.fechaNacimiento}" /> 
-                                            </div>
-
-
-                                            <div class="group-material">
-                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Telefono de Contacto " value="#{reportesBusquedaEmpleadoBean.rptBs.telefonoDeContacto}" /> 
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre Paciente" value="#{reportesBusquedaPacienteBean.rptBs.nombrePaciente}" /> 
                                             </div>
 
                                             <div class="group-material">
-                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Correo Electronico" value="#{reportesBusquedaEmpleadoBean.rptBs.correo}" /> 
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Genero " value="#{reportesBusquedaEmpleadoBean.rptBs.sexo}" /> 
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Estado Civil " value="#{reportesBusquedaEmpleadoBean.rptBs.civil}" /> 
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Documento de identificacion " value="#{reportesBusquedaEmpleadoBean.rptBs.documentoIdentificacion}" /> 
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Especialidad " value="#{reportesBusquedaEmpleadoBean.rptBs.especialidad}" /> 
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Consultorio " value="#{reportesBusquedaEmpleadoBean.rptBs.consultorio}" /> 
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Estado de citatorio " value="#{reportesBusquedaEmpleadoBean.rptBs.estadoCita}" /> 
-                                            </div>
-                                            <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Puesto del empleado " value="#{reportesBusquedaEmpleadoBean.rptBs.puesto}" /> 
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de Nacimiento " value="#{reportesBusquedaPacienteBean.rptBs.fechaNacimiento}" /> 
                                             </div>
 
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Usuario " value="#{reportesBusquedaEmpleadoBean.rptBs.usuario}" /> 
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Telefono de Contacto " value="#{reportesBusquedaPacienteBean.rptBs.telefono}" /> 
                                             </div>
 
                                             <div class="group-material">
-                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Contrasena " value="#{reportesBusquedaEmpleadoBean.rptBs.contrasena}" /> 
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Correo Electronico" value="#{reportesBusquedaPacienteBean.rptBs.correo}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Genero " value="#{reportesBusquedaPacienteBean.rptBs.genero}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Estado Civil " value="#{reportesBusquedaPacienteBean.rptBs.civil}" /> 
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Estado de Usuario " value="#{reportesBusquedaEmpleadoBean.rptBs.estado}" /> 
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Documento de identificacion " value="#{reportesBusquedaPacienteBean.rptBs.documento}" /> 
                                             </div>
-                                            
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Religion " value="#{reportesBusquedaPacienteBean.rptBs.religion}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Direccion de vivienda" value="#{reportesBusquedaPacienteBean.rptBs.direccion}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Detalle de vivienda" value="#{reportesBusquedaPacienteBean.rptBs.detalleVivienda}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Ocupacion del paciente" value="#{reportesBusquedaPacienteBean.rptBs.ocupacion}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Codigo de Historial " value="#{reportesBusquedaPacienteBean.rptBs.codigoHistorial}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Description de Historial " value="#{reportesBusquedaPacienteBean.rptBs.descripcion}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de Historial " value="#{reportesBusquedaPacienteBean.rptBs.fechaIngreso}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Referencia Clinica " value="#{reportesBusquedaPacienteBean.rptBs.referenciaClinica}" /> 
+                                            </div>
+
                                             <div class="container">
-                                                    <div class="page-header">
-                                                        <h1 class="all-tittles"><small>Convertir: </small></h1>
-                                                    </div>
+                                                <div class="page-header">
+                                                    <h1 class="all-tittles"><small>Convertir: </small></h1>
                                                 </div>
+                                            </div>
 
-                                                <!-- obciones de conversion -->
-                                                <article class="tile">
-                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
-                                                    <div class="tile-num full-reset">
-                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesBusquedaEmpleadoBean.exportarPDF()}"/>
-                                                    </div>
-                                                </article>
+                                            <!-- obciones de conversion -->
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesBusquedaPacienteBean.exportarPDF()}"/>
+                                                </div>
+                                            </article>
 
-                                                <article class="tile">
-                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
-                                                    <div class="tile-num full-reset">
-                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesBusquedaEmpleadoBean.exportarDOC()}"/>
-                                                    </div>
-                                                </article>
-                                                <article class="tile">
-                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
-                                                    <div class="tile-num full-reset">
-                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesBusquedaEmpleadoBean.exportarExcel()}"/>
-                                                    </div>
-                                                </article>
-                                                <article class="tile">
-                                                    <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
-                                                    <div class="tile-num full-reset">
-                                                        <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesBusquedaEmpleadoBean.verPDF()}"/>
-                                                    </div>
-                                                </article>  
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesBusquedaPacienteBean.exportarDOC()}"/>
+                                                </div>
+                                            </article>
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesBusquedaPacienteBean.exportarExcel()}"/>
+                                                </div>
+                                            </article>
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesBusquedaPacienteBean.verPDF()}"/>
+                                                </div>
+                                            </article>  
 
-                                                <!--Opciones del conversion--> 
-
+                                            <!--Opciones del conversion--> 
 
                                         </h:form>
 
