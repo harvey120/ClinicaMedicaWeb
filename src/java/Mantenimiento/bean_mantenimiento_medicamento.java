@@ -1,6 +1,7 @@
 package Mantenimiento;
 
 import com.ClinicaMedica.Modelo.Medicamento;
+import com.ClinicaMedica.Modelo.Provedor;
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -8,10 +9,29 @@ import javax.faces.bean.ViewScoped;
 @ManagedBean
 @ViewScoped
 public class bean_mantenimiento_medicamento {
-    
+    Provedor pro = new Provedor();
     Medicamento men = new Medicamento();
     ArrayList<Medicamento> lista= new ArrayList();
+    ArrayList<Provedor> listo= new ArrayList();
 
+  public Provedor getPro() {
+    return pro;
+  }
+
+  public void setPro(Provedor pro) {
+    this.pro = pro;
+  }
+
+  public ArrayList<Provedor> getListo() {
+    return listo;
+  }
+
+  public void setListo(ArrayList<Provedor> listo) {
+    this.listo = listo;
+  }
+
+    
+    
     public Medicamento getMen() {
         return men;
     }
@@ -97,4 +117,17 @@ public class bean_mantenimiento_medicamento {
             System.out.println("error listar bn" + e);
         }
      }
+    
+    public void listarnuevo() {
+        System.out.println("ha ingresado a lista bn");
+        dao_listas da;
+
+        try {
+            da = new dao_listas();
+            listo = da.listarunico();
+            
+        } catch (Exception e) {
+            System.out.println("error listar bn" + e);
+        }
+    }
 }

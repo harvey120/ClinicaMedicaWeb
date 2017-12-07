@@ -41,6 +41,11 @@
   </h:head>
   <h:body>
     <!-- NavBar lateral de la pagina -->
+    
+    
+    <f:event listener="#{bean_mantenimiento_medicamento.listarnuevo()}" type="preRenderView"/>
+    
+    
     <div class="navbar-lateral full-reset">
       <div class="visible-xs font-movile-menu mobile-menu-button"></div>
       <div class="full-reset container-menu-movile custom-scroll-containers">
@@ -183,16 +188,16 @@
                   </div>
 
                   <div class="group-material">
-                    <b:inputText id="Categoria" style=" font: bold small-caps 120%/200% serif;" placeholder="Provedor: " value="#{bean_mantenimiento_medicamento.men.provedor}"/>
+                    <span>Provedor</span>
+                    <b:selectOneMenu value="#{bean_mantenimiento_medicamento.men.provedor}" class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px;" title="Seleccione Su estado civil">
+                      <f:selectItems value="#{bean_mantenimiento_medicamento.listo}" var="es" itemLabel="#{es.nombre}" itemValue="#{es.idprovedor}"/>
+                    </b:selectOneMenu>
                   </div>
-
 
                   <p class="text-center">
                     <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{bean_mantenimiento_medicamento.insertar()}" />
                   </p> 
                 </h:form>
-
-
 
               </div>
             </div>
