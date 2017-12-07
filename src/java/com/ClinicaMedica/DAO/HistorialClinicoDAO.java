@@ -104,7 +104,7 @@ public class HistorialClinicoDAO extends DAO {
             st.setInt(3, histo.getIdReferenciaClinica());
             st.setInt(4, histo.getIdEnfermedad());
             st.setString(5, histo.getFecha());
-            st.setInt(8, histo.getIdHistorialClinico());
+            st.setInt(6, histo.getIdHistorialClinico());
              
             st.executeUpdate();
         } catch (Exception e) {

@@ -45,17 +45,59 @@ public class ReferenciaClinicaBean {
             System.out.println("No de desplego informacion en ReferenciaClinicaBean" + e);
         }
     }
-    
+
     public void listar() {
         System.out.println("ha ingresado a lista ReferenciaClinicaBean");
         ReferenciaClinicaDAO dao;
         try {
-            dao = new ReferenciaClinicaDAO() ;
+            dao = new ReferenciaClinicaDAO();
             referenciaclinica = dao.listado(referenciaclinica);
-            
+
         } catch (SQLException e) {
-            
+
             System.out.println("error listar ReferenciaClinicaBean" + e);
         }
+    }
+
+    public void insertar() {
+        ReferenciaClinicaDAO ree;
+        try {
+            ree = new ReferenciaClinicaDAO();
+            ree.insertar(referenciaclinica);
+            this.limpiar();
+            this.listarReferenciaClinica();
+        } catch (SQLException e) {
+            System.out.println("Error ReferenciaClinica insertar: " + e);
+        }
+    }
+
+    public void modificar() {
+        ReferenciaClinicaDAO rf;
+        try {
+            rf = new ReferenciaClinicaDAO();
+            rf.modificar(referenciaclinica);
+            this.listarReferenciaClinica();
+        } catch (SQLException e) {
+            System.out.println("Error ReferenciaClinicaBean modificar: " + e);
+        }
+    }
+
+    public void leerID(ReferenciaClinica enf) {
+        ReferenciaClinicaDAO ne;
+        ReferenciaClinica temp;
+
+        try {
+            ne = new ReferenciaClinicaDAO();
+            temp = ne.leerID(enf);
+            if (temp != null) {
+                this.referenciaclinica = temp;
+            }
+        } catch (SQLException e) {
+        }
+    }
+
+    public void limpiar() {
+        referenciaclinica.setIdReferenciaClinica(0);
+        referenciaclinica.setNombre("");
     }
 }
