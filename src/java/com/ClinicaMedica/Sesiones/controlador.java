@@ -37,4 +37,19 @@ public class controlador implements Serializable {
             System.out.println("Aqui es el eerror");
         }
     }
+
+    public String verificarDireccion() {
+        String a;
+        return a = "../Doctor/Calendario";
+    }
+
+    public int Validador() {
+        int respuesta = 2;
+
+        System.out.println("respuesta: " + usu.getIdPuesto());
+        System.out.println("Nombre:" + usu.getNombre());
+        
+        return respuesta;
+    }
+
 }

@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Panel de Control</title>
         <!-- Esta pagina representa el panel de control principal de el administrador -->
@@ -59,8 +60,10 @@
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
-
-                        <li><a href="homeAdmin.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
+                        <c:if test="#{controlador.Validador() == 1}">
+                            <li><a href="homeAdmin.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
+                        </c:if>
+                        
                         <li>
                             <div class="dropdown-menu-button" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-lamp zmdi-hc-fw"></i>&nbsp;&nbsp; Registros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
@@ -141,8 +144,9 @@
                     </a>
                 </article>
 
-
-                <article class="tile">
+                
+                
+<!--                <article class="tile">
                     <a href="../Doctor/VistaMedicamento.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/pills.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Medicamentos</div>
@@ -154,15 +158,16 @@
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/search-engine.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Pacientes</div>
                     </a>
-                </article>
+                </article>-->
 
                 <article class="tile">
                     <a href="../Doctor/VistaHistorialClinico.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi zmdi"><img class="title-icon" src="../resources/imgs/Doctor/report (1).png" width="50" height="50"></img></i></div>
-                        <div class="tile-num full-reset">Historial</div>
+                        <div class="tile-num full-reset">Historial Medico</div>
                     </a>
                 </article>
-
+                
+                
                 <article class="tile">
                     <a href="../Doctor/IngresoEnfermedad.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi zmdi"><img class="title-icon" src="../resources/imgs/Doctor/folder.png" width="50" height="50"></img></i></div>
@@ -170,9 +175,9 @@
                     </a>
                 </article>
 
+                
 
-
-                <article class="tile">
+<!--                <article class="tile">
                     <a href="../Doctor/VistaExamen.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/microscope.png" width="60" height="60"></img></i></div>
                         <div class="tile-num full-reset">Buscar Examen</div>
@@ -200,7 +205,7 @@
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/xray.png" width="60" height="60"></img></i></div>
                         <div class="tile-num full-reset">Revisión</div>
                     </a>
-                </article>
+                </article>-->
 
 
                 <article class="tile">
@@ -209,13 +214,13 @@
                         <div class="tile-num full-reset">Modificar Citas</div>
                     </a>
                 </article>
-
-                <article class="tile">
+                
+<!--                <article class="tile">
                     <a href="../Doctor/BuscarCita.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/calendar.png" width="60" height="60"></img></i></div>
                         <div class="tile-num full-reset">Buscar Citas</div>
                     </a>
-                </article>
+                </article>-->
 
             </section>
 

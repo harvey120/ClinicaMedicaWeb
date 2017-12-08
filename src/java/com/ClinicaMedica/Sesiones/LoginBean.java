@@ -33,6 +33,8 @@ public class LoginBean implements Serializable {
         this.UsuarioSesion = UsuarioSesion;
     }
 
+    
+
     // creo mi metodo para logear una seseion
     public void logig() {
         LoginDAO log = new LoginDAO(); // llamamos el objeto de tipo dao
@@ -59,18 +61,19 @@ public class LoginBean implements Serializable {
                      */
                     FacesContext context = FacesContext.getCurrentInstance();
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("session", UsuarioSesion);
-                    context.getExternalContext().redirect("faces/homes/homeAdmin.xhtml");               
-                    
+                    context.getExternalContext().redirect("faces/homes/homeAdmin.xhtml");
+
                 } else {
 
                 }
 
-                if (UsuarioSesion.getIdPuesto() == 4 && UsuarioSesion.getIdEstadoUsuario() == 1) {
+                if (UsuarioSesion.getIdPuesto() == 2 && UsuarioSesion.getIdEstadoUsuario() == 1) {
                     FacesContext context = FacesContext.getCurrentInstance();
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("session", UsuarioSesion);
-                    context.getExternalContext().redirect("faces/vistaCruds/Pacientes.xhtml");
-                } else {
+                    context.getExternalContext().redirect("faces/homes/homeDoctor.xhtml");
 
+                } else {
+                    System.out.println("no tiene acceso a esa");
                 }
 
                 // aqui termina la validacion de sesiones 

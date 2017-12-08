@@ -15,7 +15,7 @@ public class rptHistorialMedicoDAO extends DAO {
 
     private PreparedStatement st;
 
-    public List<rptHistorialMedico> listarReporte() throws SQLException {
+    public List<rptHistorialMedico> listarReporte(rptHistorialMedico objeto) throws SQLException {
         List<rptHistorialMedico> lista = null;
         rptHistorialMedico rep = null;
         ResultSet rs;
@@ -23,8 +23,10 @@ public class rptHistorialMedicoDAO extends DAO {
         try {
             this.Conectar();
             String sql = "SELECT * FROM historialmedico where noDocumento = ?";
-            st = this.getCn().prepareCall(sql);
+            st = this.getCn().prepareStatement(sql);
+            st.setString(1, objeto.getNoDocumento());
             rs = st.executeQuery();
+            
             lista = new ArrayList();
             while (rs.next()) {
                 rep = new rptHistorialMedico();
@@ -37,6 +39,7 @@ public class rptHistorialMedicoDAO extends DAO {
                 rep.setDocumento(rs.getString("documento"));
                 rep.setNoDocumento(rs.getString("noDocumento"));
                 rep.setReligion(rs.getString("religion"));
+                rep.setDireccion(rs.getString("direccion"));
                 rep.setDetalleVivienda(rs.getString("detalleVivienda"));
                 rep.setPersonaEncargada(rs.getString("personaEncargada"));
                 rep.setContactoDeEmergencia(rs.getString("contactoDeEmergencia"));
@@ -48,7 +51,7 @@ public class rptHistorialMedicoDAO extends DAO {
                 rep.setTipoEnfermedad(rs.getString("tipoEnfermedad"));
                 rep.setMotivoConsulta(rs.getString("motivoConsulta"));
                 rep.setDescripcion(rs.getString("descripcion"));
-                rep.setExamenDiagnositcado(rs.getString("examenDiagnostico"));
+                rep.setExamenDiagnositcado(rs.getString("examenDiagnosticado"));
                 rep.setTipoExamen(rs.getString("tipoExamen"));
                 rep.setFechaCita(rs.getString("fechaCita"));
                 rep.setHoraCita(rs.getString("horaCita"));

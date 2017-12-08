@@ -4,7 +4,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
 
         <title>Historiales Clinicos</title>
@@ -50,7 +51,7 @@
 
                         <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
-                       <li>
+                        <li>
                             <div class="dropdown-menu-button" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-lamp zmdi-hc-fw"></i>&nbsp;&nbsp; Registros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/IngresoEnfermedad.xhtml"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Examen</a></li>
@@ -103,104 +104,159 @@
                     </li>
                 </ul>
             </nav>
+
+
+
             <div class="container">
                 <div class="page-header">
-                    <h1 class="all-tittles">Sistema Clinicamedica <small> "Busqueda de Historiales Clinicos"</small></h1>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
-                    <li role="presentation" class="active"><a href="">Historial Clinico</a></li>
-
-
-                </ul>
-            </div>
-            <div class="container-fluid"  style="margin: 50px 0;">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../resources/imgs/Doctor/report.png" alt="BusquedaHistorialClinico" class="img-responsive center-box" style="max-width: 110px;"/>
-                    </div>
-                    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                        Bienvenido a la sección Busqueda de Historales Clinicos del sistema, debes de llenar todos los campos del siguiente formulario para poder buscar un Historale Clinico
-                    </div>
+                    <h1 class="all-tittles">Sistema Clinicamedica <small>Reporte General Historial Medico </small></h1>
                 </div>
             </div>
 
 
-            <h2 class="text-center all-tittles" style=" font: bold small-caps 120%/200% serif;">Código de Historial</h2>
 
-            <div class="container-fluid">
-                <div class="container-flat-form">
-                    <form autocomplete="off">
-                        <div class="row">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <section class="full-reset text-center" style="padding: 40px 0;">
+                <h:form>
 
-                                    <h:form>
-                                        <div class="col-lg-2">                   
-
-                                            <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif; width: 300px" id="Buscar" placeholder="Buscar :" value="#{historialBean.his.idHistorialClinico}" />
-
-
-                                            </div>
-                                            <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{historialBean.listar()}" />
-                                            </p> 
-                                        </div>
-                                    </h:form> 
-                                </div>
-                            </div>
+                    <!-- Opciones de la vista -->
+                    <div class="container">
+                        <div class="page-header">
+                            <h1 class="all-tittles">Informacion a buscar: </h1>
                         </div>
-                    </form>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="container-flat-form">
-                    <div class="title-flat-form title-flat-blue">Datos de Historial</div>
-                    <form autocomplete="off">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                    </div>
 
+                    <!-- Informacion a Buscar --> 
+
+                    <div class="container-fluid">
+                        <div class="container-flat-form">
+                            <div class="title-flat-form title-flat-blue">Registro del Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}  #{controlador.usu.nombre}  </div>
+                            <form autocomplete="off">
                                 <div class="row">
+                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                                        <h:form class="textoAmp">
 
-                                    <div class="col-lg-1">
-
-                                    </div>
-
-
-                                    <div class="col-lg-10">
-                                        <h:form>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Descripcion :" value="#{historialBean.his.descripcion}" readonly="true"/>
+                                                <b:inputText id="correo" style=" font: bold small-caps 120%/200% serif; width: 415px;" value="#{rptHistorialMedicoBean.rptBs.noDocumento}" placeholder="Ingrese numero de Identificacion: "/>
+                                                <b:commandButton class="btn btn-primary zmdi zmdi-search" value="Buscar" action="#{rptHistorialMedicoBean.listarDocumentos()}" />
+
+                                            </div>
+
+                                            <!-- contenido del formulario de persona -->
+                                            <div class="title-flat-form title-flat-blue">Historial Medico de Paciente</div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre Paciente" value="#{rptHistorialMedicoBean.rptBs.nombrePaciente}" /> 
                                             </div>
 
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Paciente :" value="#{historialBean.his.idPaciente}" readonly="true"/>
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de Nacimiento " value="#{rptHistorialMedicoBean.rptBs.fechaNacimiento}" /> 
                                             </div>
+
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Referencia Clinica :" value="#{historialBean.his.idReferenciaClinica}" readonly="true"/>
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Telefono de Contacto " value="#{rptHistorialMedicoBean.rptBs.telefono}" /> 
                                             </div>
+
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Enfermedad:" value="#{historialBean.his.idEnfermedad}" readonly="true"/>
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Correo Electronico" value="#{rptHistorialMedicoBean.rptBs.correo}" /> 
                                             </div>
+
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha :" value="#{historialBean.his.fecha}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Genero " value="#{rptHistorialMedicoBean.rptBs.sexo}" /> 
                                             </div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Estado Civil " value="#{rptHistorialMedicoBean.rptBs.civil}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Documento de identificacion " value="#{rptHistorialMedicoBean.rptBs.documento}" /> 
+                                            </div>
+
+                                            <!--                                            <div class="group-material">
+                                                                                            <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="No. de identificacion " value="#{rptHistorialMedicoBean.rptBs.noDocumento}" /> 
+                                                                                        </div>-->
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Religion " value="#{rptHistorialMedicoBean.rptBs.religion}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Direccion Ciudadana " value="#{rptHistorialMedicoBean.rptBs.direccion}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Detalle de vivienda " value="#{rptHistorialMedicoBean.rptBs.detalleVivienda}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Persona a cargo " value="#{rptHistorialMedicoBean.rptBs.personaEncargada}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Contacto de Emergencia" value="#{rptHistorialMedicoBean.rptBs.contactoDeEmergencia}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Ocupacion del Paciente" value="#{rptHistorialMedicoBean.rptBs.ocupacionPaciente}" /> 
+                                            </div>s
+                                            
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Codigo de Historial" value="#{rptHistorialMedicoBean.rptBs.codigoHistorial}" /> 
+                                            </div>
+                                            
+                                            
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Descripcion de Historial" value="#{rptHistorialMedicoBean.rptBs.descripcionHistorial}" /> 
+                                            </div>
+                                            
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Clinica proveniente" value="#{rptHistorialMedicoBean.rptBs.clinicaProveniente}" /> 
+                                            </div>
+                                            
+                                            
+                                            
+                                            <!-- obciones de conversion -->
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesBusquedaPacienteBean.exportarPDF()}"/>
+                                                </div>
+                                            </article>
+
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesBusquedaPacienteBean.exportarDOC()}"/>
+                                                </div>
+                                            </article>
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesBusquedaPacienteBean.exportarExcel()}"/>
+                                                </div>
+                                            </article>
+                                            <article class="tile">
+                                                <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
+                                                <div class="tile-num full-reset">
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesBusquedaPacienteBean.verPDF()}"/>
+                                                </div>
+                                            </article>  
+
+                                            <!--Opciones del conversion--> 
+
                                         </h:form>
 
-
                                     </div>
                                 </div>
-
-
-                            </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-            </div>
+                    </div>
 
 
+
+
+                </h:form>
+            </section>
 
 
 
