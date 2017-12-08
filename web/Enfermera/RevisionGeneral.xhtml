@@ -29,6 +29,7 @@
     <h:body>
 
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+        
         <f:event type="preRenderView" listener="#{pacienteBean.listarPaciente()}"/>
         <f:event type="preRenderView" listener="#{referenciaClinicaBean.listarReferenciaClinica()}"/>
         <f:event type="preRenderView" listener="#{enfermedadBean.listarEnfermedad()}"/>
@@ -112,7 +113,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../resources/imgs/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección para registrar nueva  Revision General al sistema, debes de llenar todos los campos del siguiente formulario para registrar una Revision General

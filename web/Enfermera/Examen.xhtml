@@ -27,10 +27,10 @@
 
     </h:head>
     <h:body>
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
-        
         <f:event type="preRenderView" listener="#{pacienteBean.listarPaciente()}"/>
-        <f:event type="preRenderView" listener="#{categoriaExamenBean.listar()}"/>
+        <f:event type="preRenderView" listener="#{categoriaExamenBean.listarCategoriaExamen()}"/>
         <f:event type="preRenderView" listener="#{referenciaClinicaBean.listarReferenciaClinica()}"/>
         <f:event type="preRenderView" listener="#{enfermedadBean.listarEnfermedad()}"/>
         <f:event type="preRenderView" listener="#{citaBean.listarCita()}"/>
@@ -48,15 +48,15 @@
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../resources/imgs/en.png" alt="Enfermera" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="Enfermera" class="img-responsive center-box img-circle" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px;">Enfermera</p>
+                    <p class="text-center" style="font: bold small-caps 120%/200% serif;padding-top: 15px">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a style="font: bold small-caps 120%/200% serif" href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Permisos <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -82,10 +82,10 @@
             <nav class="navbar-user-top full-reset">
                 <ul class="list-unstyled full-reset">
                     <figure>
-                        <img src="../resources/imgs/en.png" alt="user-picture" class="img-responsive img-circle center-box"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Enfermera</span>
+                        <span class="all-tittles">#{controlador.usu.nombre} #{controlador.usu.apellido}</span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -107,14 +107,14 @@
                 <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
                     <li role="presentation" class="active"><a href="faces/Examen.xhtml">Examen</a></li>
                     <li role="presentation"><a href="faces/../ModificarExamen.xhtml">Modificar</a></li>
-                    
+
 
                 </ul>
             </div>
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../resources/imgs/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección para registrar nuevo  Examen al sistema, debes de llenar todos los campos del siguiente formulario para registrar un Examen
@@ -143,19 +143,19 @@
 
                                 <h:form>
                                     <div class="group-material">
-                                        <b:inputText id="idExamen" placeholder="Id Examen" value="#{examenBean.examen.idExamen}" />
+                                        <b:inputText style="font: bold small-caps 120%/200% serif" id="idExamen" placeholder="Id Examen" value="#{examenBean.ingreso.idExamen}" />
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="nombre" placeholder="Nombre" value="#{examenBean.examen.nombre}"  />
+                                        <b:inputText style="font: bold small-caps 120%/200% serif" id="nombre" placeholder="Nombre" value="#{examenBean.ingreso.nombre}"  />
                                     </div>
                                     <div class="group-material">
                                         <span>Id Categoria Examen</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Ocupacion" value="#{examenBean.examen.idCategoriaExamen}" >
-                                            <f:selectItems value="#{categoriaExamenBean.lstCategoriaExamen}" var="ce" itemLabel="#{ce.nombreCategoria}" itemValue="#{ce.idCategoriaExamen}"/>
+                                        <b:selectOneMenu class="tooltips-general material-control" style="font: bold small-caps 120%/200% serif;height: 40px" title="Seleccione Ocupacion" value="#{examenBean.ingreso.idCategoriaExamen}" >
+                                            <f:selectItems value="#{categoriaExamenBean.lstCategoriaExamenDAO}" var="ce" itemLabel="#{ce.nombreCategoria}" itemValue="#{ce.idCategoriaExamen}"/>
                                         </b:selectOneMenu>
                                     </div>
-                                   
-                                    
+
+
                                     <p class="text-center">
                                         <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{examenBean.insertar()}"/>
                                     </p>
@@ -167,7 +167,7 @@
                     </form>
                 </div>
             </div>
- <footer class="footer full-reset">
+            <footer class="footer full-reset">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">

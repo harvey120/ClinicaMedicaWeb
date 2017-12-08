@@ -27,8 +27,8 @@
 
     </h:head>
     <h:body>
-
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+        
         <f:event type="preRenderView" listener="#{pacienteBean.listarPaciente()}"/>
         <f:event type="preRenderView" listener="#{referenciaClinicaBean.listarReferenciaClinica()}"/>
         <f:event type="preRenderView" listener="#{enfermedadBean.listarEnfermedad()}"/>
@@ -48,13 +48,13 @@
                     <figure>
                         <img src="../resources/imgs/Enfermera/en.png" alt="Enfermera" class="img-responsive center-box img-circle" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px;">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                    <p class="text-center" style="font: bold small-caps 120%/200% serif;padding-top: 15px">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a style="font: bold small-caps 120%/200% serif;" href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Permisos <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -112,7 +112,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../resources/imgs/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección para registrar nuevo  Historial Clinico al sistema, debes de llenar todos los campos del siguiente formulario para registrar un  Historial Clinico
@@ -141,28 +141,28 @@
 
                                 <h:form>
                                     <div class="group-material">
-                                        <b:inputText id="descripcion" placeholder="Descripcion" value="#{historialClinicoBean.historial.descripcion}"  />
+                                        <b:inputText style="font: bold small-caps 120%/200% serif;" id="descripcion" placeholder="Descripcion" value="#{historialClinicoBean.historial.descripcion}"  />
                                     </div>
                                     <div class="group-material">
                                         <span>Id Paciente</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Ocupacion" value="#{historialClinicoBean.historial.idPaciente}" >
+                                        <b:selectOneMenu class="tooltips-general material-control" style="font: bold small-caps 120%/200% serif;height:  40px" title="Seleccione Ocupacion" value="#{historialClinicoBean.historial.idPaciente}" >
                                             <f:selectItems value="#{pacienteBean.lstPaciente}" var="paciente" itemLabel="#{paciente.idPaciente}" itemValue="#{paciente.idPaciente}"/>
                                         </b:selectOneMenu>
                                     </div>
                                     <div class="group-material">
                                         <span>Id Referencia Clinica</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Ocupacion" value="#{historialClinicoBean.historial.idReferenciaClinica}" >
+                                        <b:selectOneMenu class="tooltips-general material-control" style="font: bold small-caps 120%/200% serif;height: 40px" title="Seleccione Ocupacion" value="#{historialClinicoBean.historial.idReferenciaClinica}" >
                                             <f:selectItems value="#{referenciaClinicaBean.lstReferencia}" var="re" itemLabel="#{re.nombre}" itemValue="#{re.idReferenciaClinica}"/>
                                         </b:selectOneMenu>
                                     </div>
                                     <div class="group-material">
                                         <span>Id Enfermedad</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Ocupacion" value="#{historialClinicoBean.historial.idEnfermedad}" >
+                                        <b:selectOneMenu class="tooltips-general material-control" style="font: bold small-caps 120%/200% serif;height: 40px" title="Seleccione Ocupacion" value="#{historialClinicoBean.historial.idEnfermedad}" >
                                             <f:selectItems value="#{enfermedadBean.lstEnfermedad}" var="es" itemLabel="#{es.nombre}" itemValue="#{es.idEnfermedad}"/>
                                         </b:selectOneMenu>
                                     </div>
                                     <div class="group-material">
-                                        <b:inputText id="fecha" placeholder="Fecha" value="#{historialClinicoBean.historial.fecha}"  />
+                                        <b:inputText style="font: bold small-caps 120%/200% serif;height: 40px" id="fecha" placeholder="Fecha" value="#{historialClinicoBean.historial.fecha}"  />
                                     </div>
                                     <p class="text-center">
                                         <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{historialClinicoBean.registrar()}"/>

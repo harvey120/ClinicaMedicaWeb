@@ -31,6 +31,8 @@
 
     </h:head>
     <h:body>
+            <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+        
         <f:event type="preRenderView" listener="#{citaBean.listarCita()}"/>
         <f:event type="preRenderView" listener="#{vistaCitaBean.listarCita()}"/>
         <f:event type="preRenderView" listener="#{personaBean.listarPersona()}"/> 
@@ -41,19 +43,19 @@
             <div class="full-reset container-menu-movile custom-scroll-containers">
                 <div class="logo full-reset all-tittles">
                     <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                    sistema bibliotecario
+                    Sistema Clinica Medica
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../resources/imgs/en.png" alt="Enfermera" class="img-responsive center-box" style="width:55%;"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="Enfermera" class="img-responsive center-box img-circle" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Enfermera</p>
+                    <p class="text-center" style="font: bold small-caps 120%/200% serif;padding-top: 15px;"> Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido} </p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a style=" font: bold small-caps 120%/200% serif;padding-top: 15px;" href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
                             <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Permisos <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
@@ -77,10 +79,10 @@
             <nav class="navbar-user-top full-reset">
                 <ul class="list-unstyled full-reset">
                     <figure>
-                        <img src="../resources/imgs/en.png" alt="user-picture" class="img-responsive img-circle center-box"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">Enfermera</span>
+                        <span class="all-tittles">#{controlador.usu.nombre} #{controlador.usu.apellido}</span>
                     </li>
                     <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
@@ -109,7 +111,7 @@
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../resources/imgs/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../resources/imgs/Enfermera/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
                         Bienvenido a la sección donde se encuentra el listado de Citas, puedes modificar o eliminar los datos de Las Citas Existentes en el sistema
