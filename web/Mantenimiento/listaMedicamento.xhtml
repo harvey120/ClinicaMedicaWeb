@@ -40,7 +40,6 @@
   </h:head>
   <h:body>
 
-    <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
     <!-- Esta pagina es la inicial de control de registro de empleados -->
 
@@ -68,10 +67,18 @@
 
             <!-- Menu lateral-->
             <li><a href="../homes/homeMantenimiento.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
-            <li><a href="faces/../RegistroAdmin.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Administrador</a></li>
-            <li><a href="faces/../RegistroNoExistente.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp;Registro nuevo empleado</a></li>
-            <li><a href="faces/../Mantenimiento.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-alert-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personal</a></li>
-            <!-- FIn del Menu lateral -->
+
+            <li><a href="medicamento.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamento </a></li>
+
+            <li><a href="Examen.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes </a></li>
+
+            <li><a href="Ocupacion.xhtml"  ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Ocupacion </a></li>
+
+            <li><a href="Religion.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Religion </a></li>
+
+            <li><a href="Enfermedad.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad </a></li>
+
+            <li><a href="Turno.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Turno </a></li> <!-- FIn del Menu lateral -->
           </ul>
         </div>
       </div>
@@ -143,24 +150,23 @@
 
         <div class="div-table">
           <h:form class="div-table-row div-table-head" id="frmTabla">
-            <div class="title-flat-form title-flat-blue">Lista de Personas</div>
+            <div class="title-flat-form title-flat-blue">Lista de Medicamento</div>
             <b:dataTable value="#{bean_mantenimiento_medicamento.lista}" 
-                         var="men"
+                         var="mene"
                          id="data"
                          excel="true"
                          pdf="true"
                          columnVisibility="true"
                          print="true"
                          class="tabla">
-
-              <b:dataTableColumn class="div-table-cell" value="#{men.nombre}" label="Nombre"/>
-              <b:dataTableColumn class="div-table-cell" value="#{men.idmedicamento}" label="ID"/>
-              <b:dataTableColumn class="div-table-cell" value="#{men.descripcion}" label="Descripcion"/>
-              <b:dataTableColumn class="div-table-cell" value="#{men.provedor}" label="Provedor"/>
-              <b:dataTableColumn class="div-table-cell" value="#{men.fecha}" label="fecha de caducacion"/>
+              <b:dataTableColumn class="div-table-cell" value="#{mene.idmedicamento}" label="ID"/>
+              <b:dataTableColumn class="div-table-cell" value="#{mene.nombre}" label="Nombre"/>
+              <b:dataTableColumn class="div-table-cell" value="#{mene.descripcion}" label="Descripcion"/>
+              <b:dataTableColumn class="div-table-cell" value="#{mene.provedor}" label="Provedor"/>
+              <b:dataTableColumn class="div-table-cell" value="#{mene.fecha}" label="fecha de caducacion"/>
 
               <b:dataTableColumn class="div-table-cell" label="Modificar">
-                <p:commandButton value="Modificar"  actionListener="#{bean_mantenimiento_medicamento.buscar2(me)}"  oncomplete="PF('dlg1').show()" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento" />
+                <p:commandButton value="Modificar"  actionListener="#{bean_mantenimiento_medicamento.buscar2(mene)}"  oncomplete="PF('dlg1').show()" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento" />
               </b:dataTableColumn>
 
             </b:dataTable>
@@ -173,13 +179,12 @@
       <p:dialog header="Datos" widgetVar="dlg1" id="dlg1">
         <h:form>
 
+          <b:inputText placeholder="Id: " value="#{bean_mantenimiento_medicamento.men.idmedicamento}"  />
           <b:inputText placeholder="Nombre:" value="#{bean_mantenimiento_medicamento.men.nombre}"/>
           <b:inputText placeholder="Descripcion: " value="#{bean_mantenimiento_medicamento.men.descripcion}"  />
-          <b:inputText placeholder="Fecha de caducacion: " value="#{bean_mantenimiento_medicamento.men.fecha}"  />
-          <b:inputText placeholder="Id: " value="#{bean_mantenimiento_medicamento.men.idmedicamento}"  />
           <b:inputText placeholder="Provedor: " value="#{bean_mantenimiento_medicamento.men.provedor}"  />
-
-
+          <b:inputText placeholder="Fecha de caducacion: " value="#{bean_mantenimiento_medicamento.men.fecha}"  />
+          
           <b:commandButton class="btn btn-primary tooltips-general" icon="cloud" value="Modificar" actionListener="#{bean_mantenimiento_medicamento.modificar()}"  oncomplete="PF('dlg1').hide();"  update=":frmTabla:data"/>
           <b:commandButton class="btn btn-danger tooltips-general" icon="lock" value="Cancelar" immediate="true"  oncomplete="PF('dlg1').hide();" />
 

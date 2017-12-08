@@ -35,8 +35,8 @@ public class bean_examen {
             dao = new dao_matenimiento();
             dao.insertarExamen(exe);
             this.listar();
-        } catch (Exception e) {
-            System.out.println("error de insertar bn");
+        } catch (Exception ex) {
+            System.out.println("error de insertar bn:  " +ex);
         }
         System.out.println("ha ingresado a insertar examen bn");
 

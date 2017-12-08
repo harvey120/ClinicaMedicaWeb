@@ -5,7 +5,7 @@
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
   <h:head>
-    <title>Panel de Control</title>
+    <title>Mantenimiento</title>
     <!-- Esta pagina representa el panel de control principal de el administrador -->
 
     <meta charset="UTF-8"/>
@@ -40,6 +40,8 @@
 
   </h:head>
   <h:body>
+
+    <f:event listener="#{categoriaEnfermedadBean.listar()}" type="preRenderView"/>
     <!-- NavBar lateral de la pagina -->
     <div class="navbar-lateral full-reset">
       <div class="visible-xs font-movile-menu mobile-menu-button"></div>
@@ -52,7 +54,7 @@
           <figure>
             <img src="../resources/imgs/imagenes_mantenimiento/worker.png" class="img-responsive center-box" style="width:55%;"/>
           </figure>
-          <p class="text-center" style="padding-top: 15px;">Sistema de Mantenimiento</p>
+          <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Usuario #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
         </div>
 
 
@@ -62,22 +64,20 @@
 
 
             <li><a href="../homes/homeMantenimiento.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
-
-            <li>
-              <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
-              <ul class="list-unstyled">
-                <li><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
-              </ul>
-            </li>
-
-
-            <li>
-              <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
-              <ul class="list-unstyled">
-                <li><a href="faces/vistaCruds/PersonaAPaciente.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personas</a></li>
-              </ul>
-            </li>
             
+            <li><a href="medicamento.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamento </a></li>
+
+            <li><a href="Examen.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes </a></li>
+
+            <li><a href="Ocupacion.xhtml"  ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Ocupacion </a></li>
+
+            <li><a href="Religion.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Religion </a></li>
+
+            <li><a href="Enfermedad.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad </a></li>
+
+            <li><a href="Turno.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Turno </a></li>
+            
+
 
           </ul>
         </div>
@@ -98,7 +98,7 @@
             <img src="../resources/imgs/imagenes_mantenimiento/builder.png" alt="user-picture" class="img-responsive img-circle center-box"/>
           </figure>
           <li style="color:#fff; cursor:default;">
-            <span class="all-tittles">Admin Name</span>
+            <span class="all-tittles"> #{controlador.usu.nombre} #{controlador.usu.apellido} </span>
           </li>
           <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
             <i class="zmdi zmdi-power"></i>
@@ -113,7 +113,7 @@
       </nav>
       <div class="container">
         <div class="page-header">
-          <h1 class="all-tittles">Sistema Clinicamedica <small>Administración de pacientes</small></h1>
+          <h1 class="all-tittles">Mantenimiento Sistema Clinicamedica <small>Mantenimiento enfermedad</small></h1>
         </div>
       </div>
 
@@ -123,7 +123,7 @@
             <img src="../resources/imgs/imagenes_mantenimiento/builder.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
           </div>
           <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-            Bienvenido a la sección mantenimiento de medicamento
+            Bienvenido a la sección mantenimiento de enfermedad
           </div>
         </div>
       </div>
@@ -137,9 +137,9 @@
           </div>
         </div>
       </div>
-     <!--uste-->
+      <!--uste-->
 
-  
+
 
       <div class="container-fluid">
         <div class="container-flat-form">
@@ -164,7 +164,7 @@
 
       <div class="container-fluid">
         <div class="container-flat-form">
-          <div class="title-flat-form title-flat-blue">Registrar una nuevo Turno</div>
+          <div class="title-flat-form title-flat-blue">Registrar una nueva Emfermedad</div>
           <form autocomplete="off">
             <div class="row">
               <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -177,10 +177,13 @@
                   </div>
 
                   <div class="group-material">
-                    <b:inputText id="Descripcion" style=" font: bold small-caps 120%/200% serif;" placeholder="Categoria: " value="#{bean_enfermedad.enfermedad.idCategoriaEnfermedad}"/>
+                    <span>Categoria</span>
+                    <b:selectOneMenu value="#{bean_enfermedad.enfermedad.idCategoriaEnfermedad}" class="tooltips-general material-control" style=" font: bold small-caps 120%/200% serif; height: 50px;" title="Seleccione Su estado civil">
+                      <f:selectItems value="#{categoriaEnfermedadBean.lstCatEnfermedad}" var="es" itemLabel="#{es.nombreCategoria}" itemValue="#{es.idCategoriaEnfermedad}"/>
+                    </b:selectOneMenu>
                   </div>
                   <p class="text-center">
-                    <b:commandButton class="btn btn-primary" value="Buscar" action="#{bean_turno.insertar()}" />
+                    <b:commandButton class="btn btn-primary" value="Guardar" action="#{bean_enfermedad.insertar()}" />
                   </p> 
                 </h:form>
 
