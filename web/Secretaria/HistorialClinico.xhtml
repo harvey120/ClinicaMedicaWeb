@@ -5,38 +5,47 @@
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+        <title>Panel de Control</title>
+        <!--Esta pagina representa el panel de control principal de el administrador--> 
 
-        <title>Examen</title>
         <meta charset="UTF-8"/>
+
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
-
+        <!--iconos de la pagina-->         
+        <link rel="Shortcut Icon" type="image/x-icon" href="../resources/assets/icons/book.ico" />
+        <!--sweet alert de la pagina--> 
         <script src="../resources/js/sweet-alert.min.js"></script>
-
+        <!--css sweet alert--> 
         <link rel="stylesheet" href="../resources/css/sweet-alert.css"/>
+        <!--css Material desing--> 
         <link rel="stylesheet" href="../resources/css/material-design-iconic-font.min.css"/>
+        <!--css normalize--> 
         <link rel="stylesheet" href="../resources/css/normalize.css"/>
+        <!--css bootstrap--> 
         <link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
-
+        <!--css para el scrow de la pagina--> 
         <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
+        <!--css estilo de la pagina--> 
         <link rel="stylesheet" href="../resources/css/style.css"/>
-        <script src="../resources/js/modernizr.js"></script>
-        <script src="../resources/js/bootstrap.min.js"></script>
-        <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="../resources/js/main.js"></script>
 
+        <script src="../resources/js/jquery-1.11.2.min.js" type="text/javascript"></script>
+        js modernizer 
+        <script src="../resources/js/modernizr.js"></script>
+        js de bootstrap 
+        <script src="../resources/js/bootstrap.min.js"></script>
+        js del scroll de la pagina 
+        <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        js del main
+        <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
+
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
 
         <f:event type="preRenderView" listener="#{pacienteBean.listarPaciente()}"/>
-        <f:event type="preRenderView" listener="#{categoriaExamenBean.listarCategoriaExamen()}"/>
+        <f:event type="preRenderView" listener="#{personaBean.listarPersona()}"/>
         <f:event type="preRenderView" listener="#{referenciaClinicaBean.listarReferenciaClinica()}"/>
         <f:event type="preRenderView" listener="#{enfermedadBean.listarEnfermedad()}"/>
-        <f:event type="preRenderView" listener="#{citaBean.listarCita()}"/>
-        <f:event type="preRenderView" listener="#{empleadoBean.listar()}"/>
-        <f:event type="preRenderView" listener="#{estadoCitaBean.listarEstadoCita()}"/>
-
 
 
         <div class="navbar-lateral full-reset">
@@ -44,30 +53,40 @@
             <div class="full-reset container-menu-movile custom-scroll-containers">
                 <div class="logo full-reset all-tittles">
                     <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                    sistema clinica medica
+                    Secretaria
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
-                        <img src="../resources/imgs/Enfermera/en.png" alt="Enfermera" class="img-responsive center-box img-circle" style="width:55%;"/>
+                        <img src="../imagen/secre2.png" alt="Clinica" class="img-responsive center-box" style="width:55%;"/>
                     </figure>
-                    <p class="text-center" style="font: bold small-caps 120%/200% serif;padding-top: 15px">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                    <p class="text-center" style="padding-top: 15px;">Mantenimiento Secretaria</p>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a style="font: bold small-caps 120%/200% serif" href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a href="Admin.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Permisos <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Paciente<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="../faces/enfermera/HistorialClinico.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw "></i>&nbsp;&nbsp; Hisotriales Clinicos</a></li>
-                                <li><a href="../faces/enfermera/ReferenciaClinica.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
-                                <li><a href="../faces/enfermera/Enfermedad.xhtml"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad</a></li>
-                                <li><a href="../faces/enfermera/RevisionGeneral.xhtml"><i class="zmdi zmdi-male-female zmdi-hc-fw active"></i>&nbsp;&nbsp;Revision General </a></li>
-                                <li><a href="../faces/enfermera/Cita.xhtml"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
-                                <li><a href=""><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Recetas</a></li>
-                                <li><a href="../faces/enfermera/Examen.xhtml"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
+                                <li><a href="homePaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Ingreso Paciente</a></li>
+                                <li><a href="lstPacientes.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Listado de Pacientes</a></li>
+                                <li><a href="HistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
+                                <li><a href="lstHistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Listado Historial Clinico</a></li>
+
+
+
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Empleados <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <ul class="list-unstyled">
+                                <li><a href="Turno.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Turno</a></li>
+                                <li><a href="lstTurno.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Listado de Turno</a></li>
+
                             </ul>
                         </li>
 
@@ -82,12 +101,12 @@
             <nav class="navbar-user-top full-reset">
                 <ul class="list-unstyled full-reset">
                     <figure>
-                        <img src="../resources/imgs/Enfermera/en.png" alt="user-picture" class="img-responsive img-circle center-box"/>
+                        <img src="../imagen/secre.png" alt="user-picture" class="img-responsive img-circle center-box"/>
                     </figure>
                     <li style="color:#fff; cursor:default;">
-                        <span class="all-tittles">#{controlador.usu.nombre} #{controlador.usu.apellido}</span>
+                        <span class="all-tittles">Admin Name</span>
                     </li>
-                    <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
+                    <li  class="tooltips-general exit-system-button" data-href="../faces/index.xhtml" data-placement="bottom" title="Salir del sistema">
                         <i class="zmdi zmdi-power"></i>
                     </li>
                     <li  class="tooltips-general search-persona-button" data-placement="bottom" title="Ayuda">
@@ -100,24 +119,17 @@
             </nav>
             <div class="container">
                 <div class="page-header">
-                    <h1 class="all-tittles">Sistema Clinica medica <small>Examen</small></h1>
+                    <h1 class="all-tittles">Sistema Clinicamedica <small>Administración de Historial Clinico</small></h1>
                 </div>
             </div>
-            <div class="container-fluid">
-                <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
-                    <li role="presentation" class="active"><a href="faces/Examen.xhtml">Examen</a></li>
-                    <li role="presentation"><a href="faces/../ModificarExamen.xhtml">Modificar</a></li>
 
-
-                </ul>
-            </div>
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../resources/imgs/Enfermera/en.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        <img src="../imagen/022-portapapeles-1.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
                     <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                        Bienvenido a la sección para registrar nuevo  Examen al sistema, debes de llenar todos los campos del siguiente formulario para registrar un Examen
+                        Bienvenido a la sección Registro de Historial Paciente 
                     </div>
                 </div>
             </div>
@@ -125,55 +137,77 @@
                 <div class="row">
                     <div class="col-xs-12 lead">
                         <ol class="breadcrumb">
-                            <li class="active">Registro Examen</li>
-                            <li><a href="faces/../ModificarExamen.xhtml">Buscar Examen</a></li>
+                            <li class="active">Regitro Historial Clinico</li>
+                            <li><a href="faces/../lstHistorialClinico.xhtml">Listado Historial Clinico</a></li>
                         </ol>
                     </div>
                 </div>
             </div>
 
 
-
             <div class="container-fluid">
                 <div class="container-flat-form">
-                    <div class="title-flat-form title-flat-blue">Registrar un nuevo Examen</div>
+                    <div class="title-flat-form title-flat-blue">Registrar un nuevo Historial Clinico</div>
                     <form autocomplete="off">
                         <div class="row">
                             <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
                                 <h:form>
+
                                     <div class="group-material">
-                                        <b:inputText style="font: bold small-caps 120%/200% serif" id="idExamen" placeholder="Id Examen" value="#{examenBean.ingreso.idExamen}" />
+                                        <b:inputTextarea id="descripcion" placeholder="Descripcion: " value="#{historialClinicoBean.historial.descripcion}"  />
                                     </div>
+
                                     <div class="group-material">
-                                        <b:inputText style="font: bold small-caps 120%/200% serif" id="nombre" placeholder="Nombre" value="#{examenBean.ingreso.nombre}"  />
-                                    </div>
-                                    <div class="group-material">
-                                        <span>Id Categoria Examen</span>
-                                        <b:selectOneMenu class="tooltips-general material-control" style="font: bold small-caps 120%/200% serif;height: 50px" title="Seleccione Ocupacion" value="#{examenBean.ingreso.idCategoriaExamen}" >
-                                            <f:selectItems value="#{categoriaExamenBean.lstCategoriaExamenDAO}" var="ce" itemLabel="#{ce.nombreCategoria}" itemValue="#{ce.idCategoriaExamen}"/>
+                                        <span>Paciente</span>
+                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Paciente" value="#{historialClinicoBean.historial.idPaciente}">
+                                            <f:selectItems value="#{personaBean.lstPersona}" var="paciente" itemLabel="#{paciente.nombre} #{paciente.apellido}" itemValue="#{paciente.idPersona}"/>
                                         </b:selectOneMenu>
                                     </div>
 
+                                    <div class="group-material">
+                                        <span>Referencia Clinica</span>
+                                        <b:selectOneMenu value="#{historialClinicoBean.historial.idReferenciaClinica}" class="tooltips-general material-control" style="height: 40px;" title="Seleccione Referencia Clinica">
+                                            <f:selectItems value="#{referenciaClinicaBean.lstReferencia}" var="referencia" itemLabel="#{referencia.nombre}" itemValue="#{referencia.idReferenciaClinica}"/>
+                                        </b:selectOneMenu>
+                                    </div>
+
+                                    <div class="group-material">
+                                        <span>Enfermedad</span>
+                                        <b:selectOneMenu class="tooltips-general material-control" style="height: 40px;" title="Seleccione Enfermedad" value="#{historialClinicoBean.historial.idEnfermedad}" >
+                                            <f:selectItems value="#{enfermedadBean.lstEnfermedad}" var="enfermedad" itemLabel="#{enfermedad.nombre}" itemValue="#{enfermedad.idEnfermedad}"/>
+                                        </b:selectOneMenu>
+                                    </div>
+                                    <div class="group-material">    
+                                        <b:dateTimePicker id="Fecha" placeholder="Fecha de registro:" value="#{historialClinicoBean.historial.fecha}" />
+                                    </div>
+
+                                    <div class="group-material">    
+                                        <b:inputText id="empleado" placeholder="idEmpleado: " value="#{historialClinicoBean.historial.idEmpleado}"  />
+                                    </div>
 
                                     <p class="text-center">
-                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{examenBean.insertar()}"/>
-                                    </p>
+                                        <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Guardar" action="#{historialClinicoBean.registrar()}"/>
+                                    </p> 
                                 </h:form>
-
 
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
+
+
+
+
             <footer class="footer full-reset">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6">
                             <h4 class="all-tittles">Acerca de</h4>
                             <p>
-                                Systema basado y desarrollado completamente en java 
+                                Sistema basado y desarrollado completamente en java 
                             </p>
                         </div>
                         <div class="col-xs-12 col-sm-6">
@@ -195,5 +229,4 @@
 
     </h:body>
 </html>
-
 
