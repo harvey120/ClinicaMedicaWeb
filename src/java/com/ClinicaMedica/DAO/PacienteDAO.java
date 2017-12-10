@@ -62,6 +62,35 @@ public class PacienteDAO extends DAO {
         return lista;
     }
 
+    public List<Paciente> rptPacienteMedico(Paciente obejto) throws SQLException {
+        List<Paciente> lista = null;
+        ResultSet rs;
+
+        try {
+            this.Conectar();
+            String sql = "SELECT * FROM rptPacienteMedico WHERE noDocumento = ?";
+            st = this.getCn().prepareCall(sql);
+            st.setString(1, obejto.getNoDocumento());
+            rs = st.executeQuery();
+            lista = new ArrayList();
+            while (rs.next()) {
+                Paciente pac = new Paciente();
+                pac.setNombre(rs.getString("nombrePaciente"));
+                pac.setOcupacion(rs.getString("ocupacion"));
+                pac.setDireccion(rs.getString("direccion"));
+                pac.setContactoEmergencia(rs.getString("contactoEmergencia"));
+                pac.setTelefonoEmergencia(rs.getString("telefonoEmergencia"));
+                lista.add(pac);
+            }
+        } catch (Exception e) {
+            System.out.println("Revisa PacienteDAO");
+            System.out.println("Error al desplegar informacion en PacienteDAO Listar" + e);
+        } finally {
+            this.Cerrar();
+        }
+        return lista;
+    }
+
     public Paciente leerID(Paciente pac) throws Exception {
         Paciente paci = null;
         ResultSet rs;
@@ -125,27 +154,27 @@ public class PacienteDAO extends DAO {
             this.Cerrar();
         }
     }
-    
-    public Paciente listado(Paciente topp) throws SQLException{
-         ResultSet rs;
+
+    public Paciente listado(Paciente topp) throws SQLException {
+        ResultSet rs;
         //clase con los 4 atributos
         Paciente topo = new Paciente();
-        
+
         try {
             System.out.println("ingreso a Paciente Buscar:");
             this.Conectar();
             String sql = "SELECT * FROM Paciente where idPaciente = ?";
             st = this.getCn().prepareStatement(sql);
             st.setInt(1, topp.getIdPaciente());
-            rs = st.executeQuery();            
+            rs = st.executeQuery();
             while (rs.next()) {
-                
+
                 topo.setIdDomicilio(rs.getInt("Domicilio_IdDomicilio"));
                 topo.setContactoPersona(rs.getString("contactoEmergencia"));
                 topo.setTelefonoContacto(rs.getInt("telefonoContacto"));
                 topo.setIdOcupacion(rs.getInt("ocupacion_idOcupacion"));
                 topo.setIdPaciente(rs.getInt("idPaciente"));
-                
+
             }
         } catch (Exception e) {
             System.out.println("error de Buscar Paciente    : " + e);

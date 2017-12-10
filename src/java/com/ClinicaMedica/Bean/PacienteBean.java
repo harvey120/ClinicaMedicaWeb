@@ -38,7 +38,7 @@ public class PacienteBean {
 
     public void registrar() {
         PacienteDAO dao;
- 
+
         try {
             dao = new PacienteDAO();
             dao.registrar(paciente);
@@ -57,7 +57,25 @@ public class PacienteBean {
             System.out.println("No de desplego informacion en PacienteBean" + e);
         }
     }
-    
+
+    public void listaRPTPaciente() {
+        PacienteDAO dao;
+
+        try {
+            dao = new PacienteDAO();
+            lstPaciente = dao.rptPacienteMedico(paciente);
+
+            paciente.setNombre(lstPaciente.get(0).getNombre());
+            paciente.setOcupacion(lstPaciente.get(0).getOcupacion());
+            paciente.setDireccion(lstPaciente.get(0).getDireccion());
+            paciente.setContactoEmergencia(lstPaciente.get(0).getContactoEmergencia());
+            paciente.setTelefonoEmergencia(lstPaciente.get(0).getTelefonoEmergencia());
+
+        } catch (Exception e) {
+            System.out.println("No de desplego informacion en PacienteBean" + e);
+        }
+    }
+
     public void leerID(Paciente per) {
         PacienteDAO dao;
         Paciente temp;
@@ -83,10 +101,10 @@ public class PacienteBean {
             System.out.println("No se pudo Modificar en PacienteBean" + e);
         }
     }
-    
+
     public void eliminar(Paciente per) {
         PacienteDAO dao;
-       
+
         try {
             dao = new PacienteDAO();
             dao.eliminar(per);
@@ -95,8 +113,8 @@ public class PacienteBean {
             System.out.println("No se Eliminar en PacienteBean" + e);
         }
     }
-   
-     public void listar() {
+
+    public void listar() {
         System.out.println("ha ingresado a Buscar Paciente Bean");
         PacienteDAO dao;
         try {

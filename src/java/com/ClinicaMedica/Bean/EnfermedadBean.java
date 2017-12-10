@@ -3,6 +3,7 @@ package com.ClinicaMedica.Bean;
 import com.ClinicaMedica.DAO.EnfermedadDAO;
 import com.ClinicaMedica.Modelo.Enfermedad;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -15,7 +16,7 @@ import javax.faces.bean.ViewScoped;
 public class EnfermedadBean {
 
     private Enfermedad enfermedad = new Enfermedad();
-    private List<Enfermedad> lstEnfermedad;
+    private List<Enfermedad> lstEnfermedad = new ArrayList<>();
 
     public EnfermedadBean() {
     }
@@ -107,6 +108,23 @@ public class EnfermedadBean {
             dao = new EnfermedadDAO();
             enfermedad = dao.listado(enfermedad);
 
+        } catch (Exception e) {
+
+            System.out.println("error listar bn Enfermedad2DAO" + e);
+        }
+    }
+
+    public void RPTEnfermedad() {
+        System.out.println("ha ingresado a lista bn Enfermedad2DAO");
+        EnfermedadDAO dao;
+        try {
+            dao = new EnfermedadDAO();
+            lstEnfermedad = dao.rptEnfermedad(enfermedad);
+            enfermedad.setNombre(lstEnfermedad.get(0).getNombre());
+            enfermedad.setTipoEnfermedad(lstEnfermedad.get(0).getTipoEnfermedad());
+            
+            System.out.println(lstEnfermedad.get(0).getTipoEnfermedad());
+            
         } catch (Exception e) {
 
             System.out.println("error listar bn Enfermedad2DAO" + e);

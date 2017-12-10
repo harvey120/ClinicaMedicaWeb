@@ -172,7 +172,7 @@
 
 
                             <b:dataTableColumn class="div-table-cell" label="Modificar">
-                                <p:commandButton actionListener="#{citaBean.leerID(per)}" oncomplete="PF('wdlgDatos').show()" update=":dlgDatos"  value="Modificar" icon="edit" class="btn btn-info tooltips-general" title="Modificar Historial Clinico" />
+                                <p:commandButton actionListener="#{citaBean.leerID(per)}" oncomplete="PF('wdlgDatos').show()" update=":dlgDatos"  icon="ui-icon-refresh"  class="btn btn-info tooltips-general" title="Modificar Historial Clinico" />
                             </b:dataTableColumn>
 
 
@@ -194,8 +194,8 @@
                     <b:inputText placeholder="Categoria: " value="#{citaBean.ingreso.estadoCita_idEstadoCita}"  />
                     <b:inputText placeholder="Categoria: " value="#{citaBean.ingreso.paciente_idPaciente}"  />
 
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{citaBean.modificar()}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos').hide();" />
+                    <b:commandButton class="btn btn-primary " value="Modificar" actionListener="#{citaBean.modificar()}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
+                    <b:commandButton class="btn btn-danger " value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos').hide();" />
                 </h:form>
             </p:dialog>
 

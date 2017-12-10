@@ -53,6 +53,31 @@ public class EnfermedadDAO extends DAO {
         return lista;
     }
 
+    public List<Enfermedad> rptEnfermedad(Enfermedad objeto) throws SQLException {
+        List<Enfermedad> lista = null;
+        ResultSet rs;
+
+        try {
+            this.Conectar();
+            String sql = "SELECT * FROM rptEnfermedades WHERE nombreEnfermedad = ?";
+            PreparedStatement st = this.getCn().prepareCall(sql);
+            st.setString(1, objeto.getNombre());
+            rs = st.executeQuery();
+            lista = new ArrayList();
+            while (rs.next()) {
+                Enfermedad enfer = new Enfermedad();
+                enfer.setNombre(rs.getString("nombreEnfermedad"));
+                enfer.setTipoEnfermedad(rs.getString("tipoEnfermedad"));
+                lista.add(enfer);
+            }
+        } catch (Exception e) {
+            System.out.println("Error al desplegar informacion en EnfermedadDAO Listar" + e);
+        } finally {
+            this.Cerrar();
+        }
+        return lista;
+    }
+
     public Enfermedad leerID(Enfermedad en) throws SQLException {
         Enfermedad ne = null;
         ResultSet nr;

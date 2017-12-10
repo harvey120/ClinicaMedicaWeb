@@ -9,10 +9,13 @@ public class Enfermedad {
     private String nombre;
     private int idCategoriaEnfermedad;
 
+    private String tipoEnfermedad;
+
     public Enfermedad() {
         this.idEnfermedad = 0;
         this.nombre = "";
         this.idCategoriaEnfermedad = 0;
+        this.tipoEnfermedad = "";
     }
 
     public int getIdEnfermedad() {
@@ -37,6 +40,14 @@ public class Enfermedad {
 
     public void setIdCategoriaEnfermedad(int idCategoriaEnfermedad) {
         this.idCategoriaEnfermedad = idCategoriaEnfermedad;
+    }
+
+    public String getTipoEnfermedad() {
+        return tipoEnfermedad;
+    }
+
+    public void setTipoEnfermedad(String tipoEnfermedad) {
+        this.tipoEnfermedad = tipoEnfermedad;
     }
 
 }

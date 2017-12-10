@@ -31,7 +31,7 @@ public class dao_matenimiento extends DAO {
       pre.setString(2, med.getNombre());
       pre.setString(3, med.getDescripcion());
       pre.setString(4, med.getFecha());
-      pre.setInt(5, med.getProvedor());
+      pre.setInt(5, med.getCodProveedor());
 
       pre.executeUpdate();
     } catch (SQLException ex) {
@@ -135,7 +135,7 @@ public class dao_matenimiento extends DAO {
         men.setNombre(rs.getString("Nombre"));
         men.setDescripcion(rs.getString("Descripcion"));
         men.setFecha(rs.getString("FechaVencimiento"));
-        men.setProvedor(rs.getInt("Proveedor_idProveedor"));
+        men.setCodProveedor(rs.getInt("Proveedor_idProveedor"));
         men.setIdmedicamento(rs.getInt("idMedicamento"));
         me.add(men);
       }
@@ -276,7 +276,7 @@ public class dao_matenimiento extends DAO {
       pre.setString(1, med.getNombre());
       pre.setString(2, med.getDescripcion());
       pre.setString(3, med.getFecha());
-      pre.setInt(4, med.getProvedor());
+      pre.setInt(4, med.getCodProveedor());
 
       pre.setInt(5, med.getIdmedicamento());
       pre.executeUpdate();
@@ -381,7 +381,7 @@ public class dao_matenimiento extends DAO {
         men.setNombre(rs.getString("Nombre"));
         men.setDescripcion(rs.getString("Descripcion"));
         men.setFecha(rs.getString("FechaVencimiento"));
-        men.setProvedor(rs.getInt("Proveedor_idProveedor"));
+        men.setCodProveedor(rs.getInt("Proveedor_idProveedor"));
 
         men.setIdmedicamento(rs.getInt("idMedicamento"));
       }
@@ -407,7 +407,7 @@ public class dao_matenimiento extends DAO {
         pers.setNombre(rs.getString("Nombre"));
         pers.setDescripcion(rs.getString("Descripcion"));
         pers.setFecha(rs.getString("FechaVencimiento"));
-        pers.setProvedor(rs.getInt("Proveedor_idProveedor"));
+        pers.setCodProveedor(rs.getInt("Proveedor_idProveedor"));
       }
     } catch (SQLException ex) {
       System.out.println("ERROOOOOR LEER MEDICAMENTO DAO: " + ex);

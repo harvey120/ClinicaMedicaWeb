@@ -6,24 +6,24 @@ public class Medicamento {
     private String nombre;
     private String descripcion;
     private String fecha;
-    private int provedor;
-    private int idInventario;
+    private String provedor;
+    private int codProveedor;
 
     public Medicamento() {
         this.idmedicamento = 0;
         this.nombre = "";
         this.descripcion = "";
         this.fecha = "";
-        this.provedor = 0;
-        this.idInventario = 0;
+        this.provedor = "";
+        this.codProveedor = 0;
     }
 
-    public int getIdInventario() {
-        return idInventario;
+    public int getCodProveedor() {
+        return codProveedor;
     }
 
-    public void setIdInventario(int idInventario) {
-        this.idInventario = idInventario;
+    public void setCodProveedor(int codProveedor) {
+        this.codProveedor = codProveedor;
     }
 
     public int getIdmedicamento() {
@@ -58,11 +58,11 @@ public class Medicamento {
         this.fecha = fecha;
     }
 
-    public int getProvedor() {
+    public String getProvedor() {
         return provedor;
     }
 
-    public void setProvedor(int provedor) {
+    public void setProvedor(String provedor) {
         this.provedor = provedor;
     }
 

@@ -4,6 +4,7 @@ import com.ClinicaMedica.DAO.MedicamentoDAO;
 import com.ClinicaMedica.Modelo.Medicamento;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -11,14 +12,13 @@ import javax.faces.bean.ViewScoped;
  *
  * @author erick osoy
  */
-
 @ViewScoped
-@ManagedBean     
+@ManagedBean
 public class MedicamentoBean {
 
     Medicamento med = new Medicamento();
-    ArrayList<Medicamento> array = new ArrayList();
-    
+    List<Medicamento> array = new ArrayList<>();
+
     public MedicamentoBean() {
     }
 
@@ -30,28 +30,29 @@ public class MedicamentoBean {
         this.med = med;
     }
 
-    public ArrayList<Medicamento> getArray() {
+    public List<Medicamento> getArray() {
         return array;
     }
 
-    public void setArray(ArrayList<Medicamento> array) {
+    public void setArray(List<Medicamento> array) {
         this.array = array;
     }
-    
-    
-    
-    
+
     public void listar() {
-        System.out.println("ha ingresado a lista bn");
-        MedicamentoDAO dao;
+
+        MedicamentoDAO dao = null;
         try {
-            dao = new MedicamentoDAO() ;
-            med=dao.listado(med);
-            
-        } catch (SQLException e) {
-            
-            System.out.println("error listar bn" + e);
+            dao = new MedicamentoDAO();
+            array = dao.listarMedicamento(med);
+            med.setIdmedicamento(array.get(0).getIdmedicamento());
+            med.setNombre(array.get(0).getNombre());
+            med.setDescripcion(array.get(0).getDescripcion());
+            med.setFecha(array.get(0).getFecha());
+            med.setProvedor(array.get(0).getProvedor());
+        } catch (Exception e) {
+            System.out.println("Hubo error al desplegar informacion en listarMedicamento DAO ");
         }
+
     }
 
 }

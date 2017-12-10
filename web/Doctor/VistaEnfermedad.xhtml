@@ -142,12 +142,12 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style=" font: bold small-caps 120%/200% serif; width: 300px" value="#{enfermedadBean.enfermedad.idEnfermedad}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style=" font: bold small-caps 120%/200% serif; width: 300px" value="#{enfermedadBean.enfermedad.nombre}" />
 
                                                 
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar Enfermedad" action="#{enfermedadBean.listar()}" />
+                                                <b:commandButton class="btn btn-primary " value="Buscar Enfermedad" action="#{enfermedadBean.RPTEnfermedad()}" />
                                                 </p> 
                                         </div>
                                     </h:form> 
@@ -174,14 +174,14 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Codigo :" value="#{enfermedadBean.enfermedad.idEnfermedad}" readonly="true"/>
-                                            </div>
-                                            <div class="group-material">
                                                 <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre :" value="#{enfermedadBean.enfermedad.nombre}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Categoria Enfermedad :" value="#{enfermedadBean.enfermedad.idCategoriaEnfermedad}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Tipo :" value="#{enfermedadBean.enfermedad.tipoEnfermedad}" readonly="true"/>
                                             </div>
+<!--                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Categoria Enfermedad :" value="#{enfermedadBean.enfermedad.idCategoriaEnfermedad}" readonly="true"/>
+                                            </div>-->
                                            
                                         </h:form>
 

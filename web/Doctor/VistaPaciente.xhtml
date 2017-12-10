@@ -25,7 +25,7 @@
         <script src="../resources/js/main.js"></script>
 
     </h:head>
-    
+
     <h:body>
 
         <div class="navbar-lateral full-reset">
@@ -33,7 +33,7 @@
             <div class="full-reset container-menu-movile custom-scroll-containers">
                 <div class="logo full-reset all-tittles">
                     <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                     Doctor
+                    Doctor
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <figure>
@@ -109,8 +109,8 @@
             <div class="container-fluid">
                 <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
                     <li role="presentation" class="active"><a href="">Pacientes</a></li>
-                   
-              
+
+
                 </ul>
             </div>
             <div class="container-fluid"  style="margin: 50px 0;">
@@ -123,10 +123,10 @@
                     </div>
                 </div>
             </div>
-           
 
-              <h2 class="text-center all-tittles">Código de Paciente</h2>
-            
+
+            <h2 class="text-center all-tittles">Código de Paciente</h2>
+
             <div class="container-fluid">
                 <div class="container-flat-form">
                     <form autocomplete="off">
@@ -138,13 +138,13 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{pacienteBean.paciente.idPaciente}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style="width: 300px" value="#{pacienteBean.paciente.noDocumento}" />
 
-                                                
+
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{pacienteBean.listar()}" />
-                                                </p> 
+                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{pacienteBean.listaRPTPaciente()}" />
+                                            </p> 
                                         </div>
                                     </h:form> 
                                 </div>
@@ -170,21 +170,21 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Codigo :" value="#{pacienteBean.paciente.idPaciente}" readonly="true"/>
+                                                <b:inputText  placeholder="Codigo :" value="#{pacienteBean.paciente.nombre}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Domicilio :" value="#{pacienteBean.paciente.idDomicilio}" readonly="true"/>
+                                                <b:inputText  placeholder="Domicilio :" value="#{pacienteBean.paciente.ocupacion}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Contacto Emergencia :" value="#{pacienteBean.paciente.contactoPersona}" readonly="true"/>
+                                                <b:inputText  placeholder="Contacto Emergencia :" value="#{pacienteBean.paciente.direccion}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Telefono Contacto :" value="#{pacienteBean.paciente.telefonoContacto}" readonly="true"/>
+                                                <b:inputText  placeholder="Telefono Contacto :" value="#{pacienteBean.paciente.contactoEmergencia}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText  placeholder="Ocupacion:" value="#{pacienteBean.paciente.idOcupacion}" readonly="true"/>
+                                                <b:inputText  placeholder="Ocupacion:" value="#{pacienteBean.paciente.telefonoEmergencia}" readonly="true"/>
                                             </div>
-                                            
+
                                         </h:form>
 
 
