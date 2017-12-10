@@ -38,17 +38,10 @@ public class controlador implements Serializable {
         }
     }
 
-    public String verificarDireccion() {
-        String a;
-        return a = "../Doctor/Calendario";
-    }
+    
 
     public int Validador() {
-        int respuesta = 2;
-
-        System.out.println("respuesta: " + usu.getIdPuesto());
-        System.out.println("Nombre:" + usu.getNombre());
-        
+        int respuesta = usu.getIdPuesto();
         return respuesta;
     }
 

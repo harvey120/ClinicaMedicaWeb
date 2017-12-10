@@ -129,7 +129,7 @@
 
                     <div class="container-fluid">
                         <div class="container-flat-form">
-                            <div class="title-flat-form title-flat-blue">Registro del Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}  #{controlador.usu.nombre}  </div>
+                            <div class="title-flat-form title-flat-blue">Registro del Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}  </div>
                             <form autocomplete="off">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -172,10 +172,6 @@
                                                 <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Documento de identificacion " value="#{rptHistorialMedicoBean.rptBs.documento}" /> 
                                             </div>
 
-                                            <!--                                            <div class="group-material">
-                                                                                            <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="No. de identificacion " value="#{rptHistorialMedicoBean.rptBs.noDocumento}" /> 
-                                                                                        </div>-->
-
                                             <div class="group-material">
                                                 <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Religion " value="#{rptHistorialMedicoBean.rptBs.religion}" /> 
                                             </div>
@@ -198,47 +194,96 @@
 
                                             <div class="group-material">
                                                 <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Ocupacion del Paciente" value="#{rptHistorialMedicoBean.rptBs.ocupacionPaciente}" /> 
-                                            </div>s
-                                            
+                                            </div>
+
                                             <div class="group-material">
                                                 <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Codigo de Historial" value="#{rptHistorialMedicoBean.rptBs.codigoHistorial}" /> 
                                             </div>
-                                            
-                                            
+
+
                                             <div class="group-material">
                                                 <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Descripcion de Historial" value="#{rptHistorialMedicoBean.rptBs.descripcionHistorial}" /> 
                                             </div>
-                                            
+
                                             <div class="group-material">
                                                 <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Clinica proveniente" value="#{rptHistorialMedicoBean.rptBs.clinicaProveniente}" /> 
-                                            </div>
-                                            
-                                            
-                                            
+                                            </div>  
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre de Enfermedad Padecida" value="#{rptHistorialMedicoBean.rptBs.nombreEnfermedad}" /> 
+                                            </div>  
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="tipo de Enfermedad Padecida" value="#{rptHistorialMedicoBean.rptBs.tipoEnfermedad}" /> 
+                                            </div>  
+
+                                            <div class="group-material">
+                                                <b:inputTextarea  style=" font: bold small-caps 120%/200% serif;" placeholder="motivo de ultima consulta realizaeda" value="#{rptHistorialMedicoBean.rptBs.motivoConsulta}" /> 
+                                            </div>  
+
+                                            <div class="group-material">
+                                                <b:inputTextarea  style=" font: bold small-caps 120%/200% serif;" placeholder="description de la enfermedad" value="#{rptHistorialMedicoBean.rptBs.descripcion}" /> 
+                                            </div>  
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="ultimo Examen diagnositcado" value="#{rptHistorialMedicoBean.rptBs.examenDiagnositcado}" /> 
+                                            </div>  
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de la ultima Consulta" value="#{rptHistorialMedicoBean.rptBs.fechaCita}" /> 
+                                            </div>  
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Hora de la cita realizada" value="#{rptHistorialMedicoBean.rptBs.horaCita}" /> 
+                                            </div>  
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Tipo de cita" value="#{rptHistorialMedicoBean.rptBs.tipoCita}" /> 
+                                            </div>  
+
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="ultima presion diagnosticada" value="#{rptHistorialMedicoBean.rptBs.presionPaciente}" /> 
+                                            </div>  
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="ultima temperatura del paciente" value="#{rptHistorialMedicoBean.rptBs.temperaturaPaciente}" /> 
+                                            </div>  
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="ultimo peso del paciente" value="#{rptHistorialMedicoBean.rptBs.pesoPaciente}" /> 
+                                            </div>  
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="ultima estatura del paciente" value="#{rptHistorialMedicoBean.rptBs.estaturaPaciente}" /> 
+                                            </div>  
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="ultima talla del paciente" value="#{rptHistorialMedicoBean.rptBs.tallaPaciente}" /> 
+                                            </div>  
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre del Empleado que Atendio" value="#{rptHistorialMedicoBean.rptBs.nombreEmpleado}" /> 
+                                            </div>  
+
+
                                             <!-- obciones de conversion -->
                                             <article class="tile">
                                                 <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/pdf.png" width="50" height="50"></img></i></div>
                                                 <div class="tile-num full-reset">
-                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" actionListener="#{reportesBusquedaPacienteBean.exportarPDF()}"/>
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PDF" />
                                                 </div>
                                             </article>
 
                                             <article class="tile">
                                                 <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/doc.png" width="50" height="50"></img></i></div>
                                                 <div class="tile-num full-reset">
-                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" actionListener="#{reportesBusquedaPacienteBean.exportarDOC()}"/>
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar WORD" />
                                                 </div>
                                             </article>
                                             <article class="tile">
                                                 <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/xls.png" width="50" height="50"></img></i></div>
                                                 <div class="tile-num full-reset">
-                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" actionListener="#{reportesBusquedaPacienteBean.exportarExcel()}"/>
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar EXCEL" />
                                                 </div>
                                             </article>
                                             <article class="tile">
                                                 <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Admin/png.png" width="50" height="50"></img></i></div>
                                                 <div class="tile-num full-reset">
-                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" actionListener="#{reportesBusquedaPacienteBean.verPDF()}"/>
+                                                    <h:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Exportar PNG" />
                                                 </div>
                                             </article>  
 

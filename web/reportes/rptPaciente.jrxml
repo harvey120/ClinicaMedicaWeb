@@ -16,34 +16,44 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="176" splitType="Stretch">
+		<band height="110" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="110" backcolor="#1095B3" uuid="15715dfa-b514-45a3-84ce-5c1572a73d45"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
 			<staticText>
-				<reportElement x="218" y="113" width="292" height="20" uuid="33b207a6-0b82-4c62-bd69-c2d3430d414e"/>
+				<reportElement x="238" y="57" width="302" height="31" uuid="33b207a6-0b82-4c62-bd69-c2d3430d414e"/>
 				<textElement textAlignment="Center">
-					<font size="12" isBold="true"/>
+					<font size="20" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Clinca Medica]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="155" y="41" width="422" height="57" uuid="a3ec26a2-67d2-48c0-b567-1d16141262d6"/>
+				<reportElement x="125" y="0" width="519" height="57" uuid="a3ec26a2-67d2-48c0-b567-1d16141262d6"/>
 				<textElement textAlignment="Center">
-					<font size="38" isBold="true"/>
+					<font size="44" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Reporte de Pacientes]]></text>
 			</staticText>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="677" y="21" width="100" height="20" uuid="5bab903e-70ce-4d23-9743-bf0d92f9b468"/>
+				<reportElement x="644" y="21" width="144" height="20" uuid="5bab903e-70ce-4d23-9743-bf0d92f9b468"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="156" width="100" height="20" uuid="bc00647f-8171-47bd-8aa5-3fc2761e5b9e"/>
+				<reportElement x="0" y="88" width="100" height="20" uuid="bc00647f-8171-47bd-8aa5-3fc2761e5b9e"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Impreso por: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="100" y="156" width="100" height="20" uuid="307f5eef-1700-4fe3-93f4-055d9fae389c"/>
+				<reportElement x="100" y="88" width="100" height="20" uuid="307f5eef-1700-4fe3-93f4-055d9fae389c"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -53,8 +63,17 @@
 	</title>
 	<pageHeader>
 		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="27" backcolor="#1095B3" uuid="f4bae3b0-c5c6-4d10-96fa-48cb85bca7a1"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
 			<staticText>
 				<reportElement x="0" y="0" width="100" height="20" uuid="c12b029e-fd5f-4dd6-884b-0f4946f20645"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -62,6 +81,9 @@
 			</staticText>
 			<staticText>
 				<reportElement x="100" y="0" width="100" height="20" uuid="d309f06e-fedb-444f-8a50-5ff855139e93"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -69,6 +91,9 @@
 			</staticText>
 			<staticText>
 				<reportElement x="300" y="0" width="100" height="20" uuid="abba17cc-44e2-4ad1-924b-cc5c87b7cfdc"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -76,6 +101,9 @@
 			</staticText>
 			<staticText>
 				<reportElement x="400" y="0" width="100" height="20" uuid="ad81267a-0cfe-4457-8637-b74bd6786b6d"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -83,6 +111,9 @@
 			</staticText>
 			<staticText>
 				<reportElement x="500" y="0" width="100" height="20" uuid="3ce80eff-b214-491a-b3a7-08576c866cd7"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -90,6 +121,9 @@
 			</staticText>
 			<staticText>
 				<reportElement x="600" y="0" width="100" height="20" uuid="32dae73a-ff74-4c47-a62a-04a37af772ad"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -97,6 +131,9 @@
 			</staticText>
 			<staticText>
 				<reportElement x="702" y="0" width="100" height="20" uuid="77196d6a-b572-449d-861e-96c4597cc990"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -104,6 +141,9 @@
 			</staticText>
 			<staticText>
 				<reportElement x="200" y="0" width="100" height="20" uuid="e59f5949-efba-4bb9-97fb-b3ea0e37c08d"/>
+				<box>
+					<bottomPen lineWidth="1.5" lineColor="#F30909"/>
+				</box>
 				<textElement textAlignment="Center">
 					<font size="12" isBold="true"/>
 				</textElement>
@@ -115,46 +155,114 @@
 		<band splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="30" splitType="Stretch">
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="26" backcolor="#1095B3" uuid="606d52d0-f448-43ca-95e0-d7be531fbfda"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
 			<textField>
 				<reportElement x="0" y="0" width="100" height="20" uuid="7ea7ab5c-e696-4219-afa5-29b0e657711b"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="100" y="0" width="100" height="20" uuid="5861771f-da2e-4b05-8abc-9be202d9924c"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="300" y="0" width="100" height="20" uuid="e683816b-a60a-4a75-8de8-07ad966c5246"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{correo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="400" y="0" width="100" height="20" uuid="236466c6-79fe-4a73-b885-d18a0c8ea815"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="500" y="0" width="100" height="20" uuid="9317816a-639b-4121-b476-0cf34fe31db3"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{civil}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="600" y="0" width="100" height="20" uuid="fc7f5bd3-ed6b-47be-8d62-628b1d57cc2f"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{documento}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="702" y="0" width="100" height="20" uuid="10b337c9-9eb3-41eb-a6b1-b901d2c1f3c3"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{noDocumento}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="200" y="0" width="100" height="20" uuid="76145787-6686-4054-b00b-c8b3d6ca3d45"/>
+				<box>
+					<topPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<leftPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<bottomPen lineWidth="2.0" lineColor="#0B1DE1"/>
+					<rightPen lineWidth="2.0" lineColor="#0B1DE1"/>
+				</box>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="3" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="25" splitType="Stretch">
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="802" height="18" backcolor="#1095B3" uuid="60aabb6c-3601-4865-a1bb-861a9e6b5872"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
 			<textField evaluationTime="Report">
 				<reportElement x="718" y="0" width="54" height="20" uuid="61611a05-61c2-416f-b903-b3c5e825583e"/>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
@@ -166,6 +274,6 @@
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="18" splitType="Stretch"/>
+		<band height="2" splitType="Stretch"/>
 	</summary>
 </jasperReport>

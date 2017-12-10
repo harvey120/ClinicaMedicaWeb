@@ -39,7 +39,38 @@ public class rptHistorialMedico {
     private String nombreEmpleado;
 
     public rptHistorialMedico() {
-        // constructor vacio
+        this.nombrePaciente = "";
+        this.fechaNacimiento = "";
+        this.telefono = "";
+        this.correo = "";
+        this.sexo = "";
+        this.civil = "";
+        this.documento = "";
+        this.noDocumento = "";
+        this.religion = "";
+        this.direccion = "";
+        this.detalleVivienda = "";
+        this.personaEncargada = "";
+        this.contactoDeEmergencia = "";
+        this.ocupacionPaciente = "";
+        this.codigoHistorial = 0;
+        this.descripcionHistorial = "";
+        this.clinicaProveniente = "";
+        this.nombreEnfermedad = "";
+        this.tipoEnfermedad = "";
+        this.motivoConsulta = "";
+        this.descripcion = "";
+        this.examenDiagnositcado = "";
+        this.tipoExamen = "";
+        this.fechaCita = "";
+        this.horaCita = "";
+        this.tipoCita = "";
+        this.presionPaciente = "";
+        this.temperaturaPaciente = "";
+        this.pesoPaciente = "";
+        this.estaturaPaciente = "";
+        this.tallaPaciente = "";
+        this.nombreEmpleado = "";
     }
 
     public String getNombrePaciente() {

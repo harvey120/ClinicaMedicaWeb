@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="91105358-4b74-4d7e-836a-6fa6c70f5e83">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="33"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="txtEmpleado" class="java.lang.String"/>
 	<parameter name="txtUsuario" class="java.lang.String"/>
 	<field name="nombreCompleto" class="java.lang.String"/>
@@ -26,10 +26,13 @@
 	<title>
 		<band height="107" splitType="Stretch">
 			<textField>
-				<reportElement x="232" y="62" width="100" height="20" uuid="3d6d7c86-632b-4e69-ab7b-1ac42ec408d8"/>
+				<reportElement x="197" y="74" width="154" height="21" uuid="3d6d7c86-632b-4e69-ab7b-1ac42ec408d8"/>
 				<box>
 					<bottomPen lineWidth="3.0"/>
 				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{txtEmpleado}]]></textFieldExpression>
 			</textField>
 			<line>
@@ -41,7 +44,7 @@
 					<bottomPen lineWidth="3.0"/>
 				</box>
 				<textElement textAlignment="Center">
-					<font size="34" isBold="true"/>
+					<font size="36" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Historial de Empleado]]></text>
 			</staticText>

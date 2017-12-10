@@ -49,10 +49,23 @@
                     Doctor
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
-                    <figure>
-                        <img src="../resources/imgs/Doctor/doctor.png" class="img-responsive center-box" style="width:55%;"/>
-                    </figure>
-                    <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+
+                    <c:if test="#{controlador.Validador() == 1}">
+                        <figure>
+                            <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
+
+                    <c:if test="#{controlador.Validador() == 2}">
+                        <figure>
+                            <img src="../resources/imgs/Doctor/doctor.png" class="img-responsive center-box" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Doctor #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
+
+
+
                 </div>
 
 
@@ -63,7 +76,12 @@
                         <c:if test="#{controlador.Validador() == 1}">
                             <li><a href="homeAdmin.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
                         </c:if>
-                        
+
+                        <c:if test="#{controlador.Validador() == 2}">
+                            <li><a href="homeDoctor.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
+                        </c:if>
+
+
                         <li>
                             <div class="dropdown-menu-button" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-lamp zmdi-hc-fw"></i>&nbsp;&nbsp; Registros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
@@ -144,9 +162,9 @@
                     </a>
                 </article>
 
-                
-                
-<!--                <article class="tile">
+
+
+                <article class="tile">
                     <a href="../Doctor/VistaMedicamento.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Doctor/pills.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Medicamentos</div>
@@ -158,7 +176,7 @@
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/search-engine.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Pacientes</div>
                     </a>
-                </article>-->
+                </article>
 
                 <article class="tile">
                     <a href="../Doctor/VistaHistorialClinico.xhtml">
@@ -166,8 +184,8 @@
                         <div class="tile-num full-reset">Historial Medico</div>
                     </a>
                 </article>
-                
-                
+
+
                 <article class="tile">
                     <a href="../Doctor/IngresoEnfermedad.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi zmdi"><img class="title-icon" src="../resources/imgs/Doctor/folder.png" width="50" height="50"></img></i></div>
@@ -175,9 +193,9 @@
                     </a>
                 </article>
 
-                
 
-<!--                <article class="tile">
+
+                <article class="tile">
                     <a href="../Doctor/VistaExamen.xhtml">
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/microscope.png" width="60" height="60"></img></i></div>
                         <div class="tile-num full-reset">Buscar Examen</div>
@@ -205,7 +223,7 @@
                         <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/xray.png" width="60" height="60"></img></i></div>
                         <div class="tile-num full-reset">Revisión</div>
                     </a>
-                </article>-->
+                </article>
 
 
                 <article class="tile">
@@ -214,13 +232,13 @@
                         <div class="tile-num full-reset">Modificar Citas</div>
                     </a>
                 </article>
-                
-<!--                <article class="tile">
-                    <a href="../Doctor/BuscarCita.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/calendar.png" width="60" height="60"></img></i></div>
-                        <div class="tile-num full-reset">Buscar Citas</div>
-                    </a>
-                </article>-->
+
+                <!--                <article class="tile">
+                                    <a href="../Doctor/BuscarCita.xhtml">
+                                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/calendar.png" width="60" height="60"></img></i></div>
+                                        <div class="tile-num full-reset">Buscar Citas</div>
+                                    </a>
+                                </article>-->
 
             </section>
 
