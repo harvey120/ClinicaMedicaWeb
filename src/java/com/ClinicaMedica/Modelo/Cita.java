@@ -9,6 +9,11 @@ public class Cita {
     private int EstadoCita_idEstadoCita;
     private int Paciente_idPaciente;
 
+    private String nombreEmpleado;
+    private String tipo;
+    private String nombrePaciente;
+    private String noDocumento;
+
     public int getIdCita() {
         return idCita;
     }
@@ -55,6 +60,38 @@ public class Cita {
 
     public void setPaciente_idPaciente(int Paciente_idPaciente) {
         this.Paciente_idPaciente = Paciente_idPaciente;
+    }
+
+    public String getNombreEmpleado() {
+        return nombreEmpleado;
+    }
+
+    public void setNombreEmpleado(String nombreEmpleado) {
+        this.nombreEmpleado = nombreEmpleado;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getNombrePaciente() {
+        return nombrePaciente;
+    }
+
+    public void setNombrePaciente(String nombrePaciente) {
+        this.nombrePaciente = nombrePaciente;
+    }
+
+    public String getNoDocumento() {
+        return noDocumento;
+    }
+
+    public void setNoDocumento(String noDocumento) {
+        this.noDocumento = noDocumento;
     }
 
 }

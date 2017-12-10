@@ -81,8 +81,6 @@
                         </li>
 
 
-
-
                     </ul>
                 </div>
             </div>
@@ -145,12 +143,12 @@
                                         <div class="col-lg-2">                   
 
                                             <div class="group-material">
-                                                <b:inputText id="Buscar" placeholder="Buscar :" style=" font: bold small-caps 120%/200% serif; width: 300px" value="#{buscarCitaBean.cita.idCita}" />
+                                                <b:inputText id="Buscar" placeholder="Buscar :" style=" font: bold small-caps 120%/200% serif; width: 300px" value="#{buscarCitaBean.cita.noDocumento}" />
 
                                                 
                                             </div>
                                             <p class="text-center">
-                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{buscarCitaBean.listar()}" />
+                                                <b:commandButton class="btn btn-primary " value="Buscar" action="#{buscarCitaBean.listarDocumentos()}" />
                                                 </p> 
                                         </div>
                                     </h:form> 
@@ -177,23 +175,23 @@
                                     <div class="col-lg-10">
                                         <h:form>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Codigo :" value="#{buscarCitaBean.cita.idCita}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre de Empleado :" value="#{buscarCitaBean.cita.nombreEmpleado}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre :" value="#{buscarCitaBean.cita.fecha}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha de consulta :" value="#{buscarCitaBean.cita.fecha}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Descripcion :" value="#{buscarCitaBean.cita.horario}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Horario de consulta :" value="#{buscarCitaBean.cita.horario}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha :" value="#{buscarCitaBean.cita.empleado_idEmpleado}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Tipo de consulta :" value="#{buscarCitaBean.cita.tipo}" readonly="true"/>
                                             </div>
                                             <div class="group-material">
-                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Proveefor:" value="#{buscarCitaBean.cita.estadoCita_idEstadoCita}" readonly="true"/>
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="nombre de Paciente" value="#{buscarCitaBean.cita.nombrePaciente}" readonly="true"/>
                                             </div>
-                                            <div class="group-material">
+<!--                                            <div class="group-material">
                                                 <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Inventario :" value="#{buscarCitaBean.cita.paciente_idPaciente}" readonly="true"/>
-                                            </div>
+                                            </div>-->
                                         </h:form>
 
 

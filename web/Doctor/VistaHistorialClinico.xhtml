@@ -39,17 +39,26 @@
                     Doctor
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
-                    <figure>
-                        <img src="../resources/imgs/Doctor/doctor.png" alt="ClinicaMedica" class="img-responsive center-box" style="width:55%;"/>
-                    </figure>
+                    <c:if test="#{controlador.Validador() == 1}">
+                        <figure>
+                            <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
 
-                    <p class="text-center" style=" font: bold small-caps 120%/200% serif;padding-top: 15px;">Doctor #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                    <c:if test="#{controlador.Validador() == 2}">
+                        <figure>
+                            <img src="../resources/imgs/Doctor/doctor.png" class="img-responsive center-box" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Doctor #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
+
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
 
 
-                        <li><a href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a style="font: bold small-caps 120%/200% serif;" href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
                             <div class="dropdown-menu-button" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-lamp zmdi-hc-fw"></i>&nbsp;&nbsp; Registros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>

@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Calendario</title>
         <meta charset="UTF-8"/>
@@ -46,11 +47,21 @@
                     Doctor
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
-                    <figure>
-                        <img src="../resources/imgs/Doctor/doctor.png" alt="Biblioteca" class="img-responsive center-box" style="width:55%;"/>
-                    </figure>
+                      <c:if test="#{controlador.Validador() == 1}">
+                        <figure>
+                            <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
 
-                    <p class="text-center" style="padding-top: 15px;">Sistema Administrativo Doctor</p>
+                    <c:if test="#{controlador.Validador() == 2}">
+                        <figure>
+                            <img src="../resources/imgs/Doctor/doctor.png" class="img-responsive center-box" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Doctor #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
+
+                    
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">

@@ -4,6 +4,7 @@ import com.ClinicaMedica.DAO.BuscarCitaDAO;
 import com.ClinicaMedica.Modelo.Cita;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -16,7 +17,7 @@ import javax.faces.bean.ViewScoped;
 public class BuscarCitaBean {
 
     Cita cita = new Cita();
-    ArrayList<Cita> array = new ArrayList();
+    List<Cita> array = new ArrayList();
 
     public BuscarCitaBean() {
     }
@@ -29,11 +30,11 @@ public class BuscarCitaBean {
         this.cita = cita;
     }
 
-    public ArrayList<Cita> getArray() {
+    public List<Cita> getArray() {
         return array;
     }
 
-    public void setArray(ArrayList<Cita> array) {
+    public void setArray(List<Cita> array) {
         this.array = array;
     }
 
@@ -48,8 +49,27 @@ public class BuscarCitaBean {
             System.out.println("Error Buscar Cita bn" + e);
         }
     }
-    
-    public void limpiar(){
+
+    public void listarDocumentos() {
+        BuscarCitaDAO dao;
+
+        try {
+            dao = new BuscarCitaDAO();
+            System.out.println("");
+            array = dao.listarReporte(cita);
+
+            cita.setIdCita(array.get(0).getIdCita());
+            cita.setNombreEmpleado(array.get(0).getNombreEmpleado());
+            cita.setFecha(array.get(0).getFecha());
+            cita.setHorario(array.get(0).getHorario());
+            cita.setTipo(array.get(0).getTipo());
+            cita.setNombrePaciente(array.get(0).getNombrePaciente());
+        } catch (Exception e) {
+            System.out.println("Error Buscar Cita bn" + e);
+        }
+    }
+
+    public void limpiar() {
         cita.setIdCita(0);
     }
 }
