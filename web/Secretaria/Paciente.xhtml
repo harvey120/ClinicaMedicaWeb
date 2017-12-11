@@ -11,8 +11,8 @@
         <meta charset="UTF-8"/>
 
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        
-       
+
+
 
         <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
 
@@ -28,12 +28,12 @@
         <script src="../resources/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
         <script src="../resources/js/main.js" type="text/javascript"></script>
-        
-        
+
+
     </h:head>
     <h:body>
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
-        
+
         <f:event type="preRenderView" listener="#{generoBean.listarGenero()}"/>
         <f:event type="preRenderView" listener="#{estadoCivilBean.listarReligion()}"/>
         <f:event type="preRenderView" listener="#{documentoIdentificacionBean.listarDocumentos()}"/>
@@ -66,30 +66,14 @@
                     <ul class="list-unstyled">
 
 
-                      <li><a style="font: bold small-caps 120%/200% serif;" href="../homes/homeSecretaria.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
+                        <li><a style="font: bold small-caps 120%/200% serif;" href="../homes/homeSecretaria.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
-                        <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Paciente<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
-                            <ul class="list-unstyled">
-                                <li><a href="homePaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Ingreso Paciente</a></li>
-                                <li><a href="lstPacientes.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Listado de Pacientes</a></li>
-                                <li><a href="HistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
-                                <li><a href="lstHistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Listado Historial Clinico</a></li>
-                           
-                            
-                            
-                            </ul>
-                        </li>
+                        <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Secretaria/Paciente.xhtml"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo paciente</a></li>
+                        <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Secretaria/Calendario.xhtml"><i class="zmdi zmdi-lamp zmdi-hc-fw"></i>&nbsp;&nbsp; Calendario</a></li>
+                        <!--                        <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Secretaria/Busqueda.xhtml"><i class="zmdi zmdi-search  zmdi-hc-fw"></i>&nbsp;&nbsp; Buscar Paciente</a></li>-->
+                        <li><a href="../faces/Administrador/rptBusquedaEmpleado.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-search zmdi-hc-fw"></i>&nbsp;&nbsp; Busqueda Historial Empleados</a></li>
+                        <li><a href="../faces/Administrador/rptBusquedaPaciente.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-search zmdi-hc-fw"></i>&nbsp;&nbsp; Busqueda Historial Paciente</a></li>
 
-
-                        <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Empleados <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
-                            <ul class="list-unstyled">
-                                <li><a href="Turno.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Turno</a></li>
-                                <li><a href="lstTurno.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Listado de Turno</a></li>
-                           
-                            </ul>
-                        </li>
 
                     </ul>
                 </div>
@@ -135,28 +119,28 @@
 
             <section class="full-reset text-center" style="padding: 40px 0;">
 
-                   <div class="container-fluid"  style="margin: 50px 0;">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-3">
-                        <img src="../resources/imgs/Secretaria/personas2.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
-                    </div>
-                    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
-                        Bienvenido a la sección para registrar nuevos Pacientes al sistema, debes de llenar todos los campos del siguiente formulario para registrar una persona
+                <div class="container-fluid"  style="margin: 50px 0;">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <img src="../resources/imgs/Secretaria/personas2.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
+                        </div>
+                        <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead">
+                            Bienvenido a la sección para registrar nuevos Pacientes al sistema, debes de llenar todos los campos del siguiente formulario para registrar una persona
+                        </div>
                     </div>
                 </div>
-            </div>
-                
-                
-                
 
-            <div class="container-fluid">
-                <div class="container-flat-form">
-                    <div class="title-flat-form title-flat-blue">Nuevo Registro Clinico</div>
-                       <form autocomplete="off">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
-                               <h:form >                                   <!-- |personas -->
+
+
+                <div class="container-fluid">
+                    <div class="container-flat-form">
+                        <div class="title-flat-form title-flat-blue">Nuevo Registro Clinico</div>
+                        <form autocomplete="off">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+                                    <h:form >                                   <!-- |personas -->
 
                                         <h4 class="all-tittles title-flat-form title-flat-blue">Personas</h4>
 
@@ -262,45 +246,45 @@
                                     </h:form>
 
 
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </section>
 
