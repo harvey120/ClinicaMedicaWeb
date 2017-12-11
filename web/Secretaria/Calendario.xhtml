@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Calendario</title>
         <meta charset="UTF-8"/>
@@ -38,7 +39,7 @@
     </h:head>
 
     <h:body>
-
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>
             <div class="full-reset container-menu-movile custom-scroll-containers">
@@ -47,7 +48,7 @@
                     Doctor
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
-                      <c:if test="#{controlador.Validador() == 1}">
+                    <c:if test="#{controlador.Validador() == 1}">
                         <figure>
                             <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                             <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
@@ -61,7 +62,7 @@
                         </figure>
                     </c:if>
 
-                    
+
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
@@ -80,14 +81,14 @@
                         <li>
                             <div style="font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-search zmdi-hc-fw"></i>&nbsp;&nbsp; Busquedas <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-<!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaMedicamento.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamentos</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaPaciente.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Pacientes</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaHistorialClinico.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaEnfermedad.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedades</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarCita.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>-->
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaMedicamento.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamentos</a></li>
+                                                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaPaciente.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Pacientes</a></li>
+                                                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaHistorialClinico.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
+                                                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
+                                                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
+                                                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaEnfermedad.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedades</a></li>
+                                                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>
+                                                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarCita.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>-->
                             </ul>
                         </li>
 
@@ -133,7 +134,7 @@
 
                 </ul>
             </div>
-           
+
             <div class="container-fluid">
                 <div class="container-flat-form">
                     <form autocomplete="off">
@@ -156,7 +157,7 @@
 
                                             </p:schedule>
                                         </h:panelGrid>
-                                        
+
 
 
                                         <p:dialog widgetVar="caixaDialog" header="Evento" showEffect="scale" hideEffect="scale">

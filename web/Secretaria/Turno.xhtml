@@ -2,8 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:b="http://bootsfaces.net/ui">
-     <h:head>
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
         <title>Lista de Historial Clinico</title>
 
         <meta charset="UTF-8"/>
@@ -24,75 +25,12 @@
         <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="../js/main.js"></script>
 
-        <title>Historiales Clinicos</title>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/book.ico" />
 
-        <script src="../js/sweet-alert.min.js"></script>
 
-        <link rel="stylesheet" href="../css/sweet-alert.css"/>
-        <link rel="stylesheet" href="../css/material-design-iconic-font.min.css"/>
-        <link rel="stylesheet" href="../css/normalize.css"/>
-        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-
-        <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css"/>
-        <link rel="stylesheet" href="../css/style.css"/>
-        <script src="../js/modernizr.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="../js/main.js"></script>
-    <title>Personal Empleado </title>
-        <meta charset="UTF-8"/>
-    <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="Shortcut Icon" type="image/x-icon" href="../assets/icons/book.ico" />
-
-        <script src="../js/sweet-alert.min.js"></script>
-
-        <link rel="stylesheet" href="../css/sweet-alert.css"/>
-        <link rel="stylesheet" href="../css/material-design-iconic-font.min.css"/>
-        <link rel="stylesheet" href="../css/normalize.css"/>
-        <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-
-        <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css"/>
-        <link rel="stylesheet" href="../css/style.css"/>
-        <script src="../js/modernizr.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="../js/main.js"></script>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <!-- iconos de la pagina -->        
-        <link rel="Shortcut Icon" type="image/x-icon" href="../resources/assets/icons/book.ico" />
-        <!-- sweet alert de la pagina -->
-        <script src="../resources/js/sweet-alert.min.js"></script>
-        <!-- css sweet alert-->
-        <link rel="stylesheet" href="../resources/css/sweet-alert.css"/>
-        <!-- css Material desing -->
-        <link rel="stylesheet" href="../resources/css/material-design-iconic-font.min.css"/>
-        <!-- css normalize -->
-        <link rel="stylesheet" href="../resources/css/normalize.css"/>
-        <!-- css bootstrap -->
-        <link rel="stylesheet" href="../resources/css/bootstrap.min.css"/>
-        <!-- css para el scrow de la pagina -->
-        <link rel="stylesheet" href="../resources/css/jquery.mCustomScrollbar.css"/>
-        <!-- css estilo de la pagina -->
-        <link rel="stylesheet" href="../resources/css/style.css"/>
-
-        <script src="../resources/js/jquery-1.11.2.min.js" type="text/javascript"></script>
-        <!-- js modernizer -->
-        <script src="../resources/js/modernizr.js"></script>
-        <!-- js de bootstrap -->
-        <script src="../resources/js/bootstrap.min.js"></script>
-        <!-- js del scroll de la pagina -->
-        <script src="../resources/js/jquery.mCustomScrollbar.concat.min.js"></script>
-        <!-- js del main-->
-        <script src="../resources/js/main.js"></script>
     </h:head>
     <h:body>
-
-         <!-- NavBar lateral de la pagina -->
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+        <!-- NavBar lateral de la pagina -->
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>
             <div class="full-reset container-menu-movile custom-scroll-containers">
@@ -122,9 +60,9 @@
                                 <li><a href="lstPacientes.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Listado de Pacientes</a></li>
                                 <li><a href="HistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
                                 <li><a href="lstHistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Listado Historial Clinico</a></li>
-                           
-                            
-                            
+
+
+
                             </ul>
                         </li>
 
@@ -134,7 +72,7 @@
                             <ul class="list-unstyled">
                                 <li><a href="Turno.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Turno</a></li>
                                 <li><a href="lstTurno.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Listado de Turno</a></li>
-                           
+
                             </ul>
                         </li>
 
@@ -149,7 +87,7 @@
 
 
         <div class="content-page-container full-reset custom-scroll-containers">
-           <nav class="navbar-user-top full-reset">     
+            <nav class="navbar-user-top full-reset">     
                 <ul class="list-unstyled full-reset">
                     <figure>
                         <img src="../imagen/secre.png" alt="user-picture" class="img-responsive img-circle center-box"/>
@@ -176,7 +114,7 @@
                     <h1 class="all-tittles">Sistema Clinicamedica <small>Administración de Turnos</small></h1>
                 </div>
             </div>
-           
+
             <div class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
@@ -213,11 +151,11 @@
                                     <div class="group-material">
                                         <b:inputText id="idTurno" placeholder="Id Turno" value="#{turnoBean.nuevo.idturno}" maxlength="11"/>
                                     </div>
-                                    
+
                                     <div class="group-material">    
                                         <b:dateTimePicker id="FechaE" placeholder="Horario Entrada" value="#{turnoBean.nuevo.horarioEntrada}"/>
                                     </div>
-                                    
+
                                     <div class="group-material">    
                                         <b:dateTimePicker id="FechaS"  placeholder="Horario Salida" value="#{turnoBean.nuevo.horarioSalida}"/>
                                     </div>

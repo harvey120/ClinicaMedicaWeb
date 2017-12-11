@@ -32,6 +32,7 @@
 
     </h:head>
     <h:body>
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
         <f:event type="preRenderView" listener="#{examenBean.listarExamen()}"/>
         <f:event type="preRenderView" listener="#{examenBean.listarExamen()}"/>
         <f:event type="preRenderView" listener="#{categoriaExamenBean.listarCategoriaExamen()}"/>
