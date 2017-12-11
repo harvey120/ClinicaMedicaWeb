@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:head>
         <title>Panel de Control</title>
         <!-- Esta pagina representa el panel de control principal de el administrador -->
@@ -78,7 +79,7 @@
 
 
                         <c:if test="#{controlador.Validador() == 1}">
-                            <li><a href="homeAdmin.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
+                            <li><a href="../homes/homeSecretaria.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
                         </c:if>
 
                         <c:if test="#{controlador.Validador() == 4}">
@@ -142,26 +143,75 @@
             </div>
 
             <section class="full-reset text-center" style="padding: 40px 0;">
-                <article class="tile">
-                    <a href="../Secretaria/Calendario.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Secretaria/calendar.png" width="50" height="50"></img></i></div>
-                        <div class="tile-num full-reset">Citas</div>
-                    </a>
-                </article>
+                <h:form>
 
-                <article class="tile">
-                    <a href="../Secretaria/Paciente.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Secretaria/personas1.png" width="50" height="50"></img></i></div>
-                        <div class="tile-num full-reset">Nuevo Paciente</div>
-                    </a>
-                </article>
+                    <!-- Opciones de la vista -->
+                    <div class="container">
+                        <div class="page-header">
+                            <h1 class="all-tittles">Informacion a buscar: </h1>
+                        </div>
+                    </div>
 
-                <article class="tile">
-                    <a href="../Secretaria/Busqueda.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Secretaria/Empleados.png" width="50" height="50"></img></i></div>
-                        <div class="tile-num full-reset">Buscar</div>
-                    </a>
-                </article>
+                    <!-- Informacion a Buscar --> 
+
+                    <div class="container-fluid">
+                        <div class="container-flat-form">
+                            <div class="title-flat-form title-flat-blue">Busqueda</div>
+                            <form autocomplete="off">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                                        <h:form class="textoAmp">
+
+                                            <div class="group-material">
+                                                <b:inputText id="correo" style=" font: bold small-caps 120%/200% serif; width: 415px;" value="#{busquedaPacienteSecreBean.nb.noDocumento}" placeholder="Ingrese numero de Identificacion: "/>
+                                                <b:commandButton class="btn btn-primary zmdi zmdi-search-for" value="Buscar" action="#{busquedaPacienteSecreBean.Busqueda(busquedaPacienteSecreBean.nb.noDocumento)}" />
+
+                                            </div>
+
+                                            <!-- contenido del formulario de persona -->
+                                            <div class="title-flat-form title-flat-blue">Historial del Empleado</div>
+
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Nombre" value="#{busquedaPacienteSecreBean.nb.nombre}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Apellido" value="#{busquedaPacienteSecreBean.nb.apellido}" /> 
+                                            </div>
+
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="FechaNacimiento" value="#{busquedaPacienteSecreBean.nb.fechaNac}" /> 
+                                            </div>
+
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Correo Electronico" value="#{busquedaPacienteSecreBean.nb.correo}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="No. de Docuento " value="#{busquedaPacienteSecreBean.nb.noDocumento}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Contacto Emergencia" value="#{busquedaPacienteSecreBean.nb.contactoEmergencia}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Telefono del Contacto" value="#{busquedaPacienteSecreBean.nb.telefono}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText  style=" font: bold small-caps 120%/200% serif;" placeholder="Fecha Historial Clinico" value="#{busquedaPacienteSecreBean.nb.fechaHistorial}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Referencia Clinica" value="#{busquedaPacienteSecreBean.nb.referenciaClinica}" /> 
+                                            </div>
+                                            <div class="group-material">
+                                                <b:inputText style=" font: bold small-caps 120%/200% serif;" placeholder="Enfermedad" value="#{busquedaPacienteSecreBean.nb.enfermedad}" /> 
+                                            </div>
+                                        </h:form>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </h:form>
             </section>
 
             <!-- Pie de pagina-->
@@ -194,4 +244,3 @@
         <!--Fin del contenido de la pagina -->
     </h:body>
 </html>
-
