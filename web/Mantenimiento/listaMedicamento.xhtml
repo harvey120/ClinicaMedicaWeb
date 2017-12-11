@@ -156,7 +156,7 @@
                             <b:dataTableColumn class="div-table-cell" value="#{mene.fecha}" label="fecha de caducacion"/>
 
                             <b:dataTableColumn class="div-table-cell" label="Modificar">
-                                <p:commandButton value="Modificar"  actionListener="#{bean_mantenimiento_medicamento.buscar2(mene)}"  oncomplete="PF('dlg1').show()" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento" />
+                              <p:commandButton value="Modificar"  actionListener="#{bean_mantenimiento_medicamento.buscar2(mene)}"  oncomplete="PF('dlg1').show()" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento"  update=":dlg1"/>
                             </b:dataTableColumn>
 
                         </b:dataTable>
@@ -167,7 +167,7 @@
 
 
             <p:dialog header="Datos" widgetVar="dlg1" id="dlg1">
-                <h:form>
+                <h:form id="formdatos">
 
                     <b:inputText placeholder="Id: " value="#{bean_mantenimiento_medicamento.men.idmedicamento}"  />
 <!--                    <b:inputText placeholder="Nombre:" value="#{bean_mantenimiento_medicamento.men.nombre}"/>

@@ -166,7 +166,7 @@
               <b:dataTableColumn class="div-table-cell" value="#{men.idCategoriaEnfermedad}" label="Categoria"/>
               
               <b:dataTableColumn class="div-table-cell" label="Modificar">
-                <p:commandButton value="Modificar"  actionListener="#{bean_enfermedad.buscar2(men)}"  oncomplete="PF('dlg1').show()" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento" />
+                <p:commandButton value="Modificar"  actionListener="#{bean_enfermedad.buscar2(men)}"  oncomplete="PF('dlg1').show()" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento"  update=":dlg1"/>
               </b:dataTableColumn>
 
             </b:dataTable>

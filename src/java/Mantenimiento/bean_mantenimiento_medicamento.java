@@ -111,9 +111,11 @@ public class bean_mantenimiento_medicamento {
     System.out.println("ha ingresado a lista bn");
     dao_matenimiento dao;
     Medicamento temp;
+    
     try {
       dao = new dao_matenimiento();
       temp = dao.LeerID(men);
+      System.out.println("Esto es una prueba: " + temp.getNombre());
       if (temp != null) {
                 this.men = temp;
             }

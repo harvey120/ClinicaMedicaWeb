@@ -53,17 +53,12 @@
 
                     <c:if test="#{controlador.Validador() == 1}">
                         <figure>
-                            <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
+                            <img src="../resources/imgs/imagenes_mantenimiento/worker.png" class="img-responsive center-box" style="width:55%;"/>
                             <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                         </figure>
                     </c:if>
 
-                    <c:if test="#{controlador.Validador() == 5}">
-                        <figure>
-                            <img src="../resources/imgs/imagenes_mantenimiento/worker.png" class="img-responsive center-box" style="width:55%;"/>
-                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Mantenimiento #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
-                        </figure> 
-                    </c:if>
+                   
 
                     
                 </div>
