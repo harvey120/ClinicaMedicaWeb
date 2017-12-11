@@ -29,15 +29,15 @@
     </h:head>
 
     <h:body>
-        
+
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
-        
+
         <div class="navbar-lateral full-reset">
             <div class="visible-xs font-movile-menu mobile-menu-button"></div>
             <div class="full-reset container-menu-movile custom-scroll-containers">
                 <div class="logo full-reset all-tittles">
                     <i class="visible-xs zmdi zmdi-close pull-left mobile-menu-button" style="line-height: 55px; cursor: pointer; padding: 0 10px; margin-left: 7px;"></i> 
-                     Doctor
+                    Doctor
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
                     <c:if test="#{controlador.Validador() == 1}">
@@ -61,7 +61,7 @@
 
                         <li><a style="font: bold small-caps 120%/200% serif;" href="../homes/homeDoctor.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Menú Principal</a></li>
 
-                       <li>
+                        <li>
                             <div class="dropdown-menu-button" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-lamp zmdi-hc-fw"></i>&nbsp;&nbsp; Registros <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/IngresoEnfermedad.xhtml"><i class="zmdi zmdi-archive zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Examen</a></li>
@@ -75,10 +75,10 @@
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaMedicamento.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamentos</a></li>
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaPaciente.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Pacientes</a></li>
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaHistorialClinico.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>-->
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>-->
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaEnfermedad.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedades</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>-->
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarCita.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
                             </ul>
                         </li>
@@ -122,8 +122,8 @@
             <div class="container-fluid">
                 <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
                     <li role="presentation" class="active"><a href="">Referencia Clinica</a></li>
-                   
-              
+
+
                 </ul>
             </div>
             <div class="container-fluid"  style="margin: 50px 0;">
@@ -136,10 +136,10 @@
                     </div>
                 </div>
             </div>
-           
 
-              <h2 class="text-center all-tittles">Código de Referencia Clinica</h2>
-            
+
+            <h2 class="text-center all-tittles">Código de Referencia Clinica</h2>
+
             <div class="container-fluid">
                 <div class="container-flat-form">
                     <form autocomplete="off">
@@ -153,11 +153,11 @@
                                             <div class="group-material">
                                                 <b:inputText id="Buscar" placeholder="Buscar :" style="font: bold small-caps 120%/200% serif; width: 300px" value="#{referenciaClinicaBean.referenciaclinica.idReferenciaClinica}" />
 
-                                                
+
                                             </div>
                                             <p class="text-center">
                                                 <b:commandButton class="btn btn-primary " value="Buscar Referencia" action="#{referenciaClinicaBean.listar()}" />
-                                                </p> 
+                                            </p> 
                                         </div>
                                     </h:form> 
                                 </div>
@@ -188,7 +188,7 @@
                                             <div class="group-material">
                                                 <b:inputText style="font: bold small-caps 120%/200% serif;" placeholder="Nombre :" value="#{referenciaClinicaBean.referenciaclinica.nombre}" readonly="true"/>
                                             </div>
-                                            
+
                                         </h:form>
 
 

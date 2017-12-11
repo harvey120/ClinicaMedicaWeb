@@ -16,10 +16,14 @@ import javax.faces.context.FacesContext;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRExporterParameter;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperRunManager;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.engine.export.ooxml.JRDocxExporter;
 
 /**
  * @author Harvey
@@ -129,5 +133,69 @@ public class rptHistorialMedicoBean {
         stream.close();
         FacesContext.getCurrentInstance().responseComplete();
     }
+    
+    public void exportarExcel() throws JRException, IOException, SQLException {
+
+        Map<String, Object> parametros = new HashMap<String, Object>();
+
+        parametros.put("txtUsuario", objeto.getUsu().getNombre());
+        parametros.put("txtPaciente", rptBs.getNombrePaciente());
+
+        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptHistorialMedico.jasper"));
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(), parametros, new JRBeanCollectionDataSource(dao.listarReporte(rptBs)));
+
+        HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+        response.addHeader("Content-disposition", "attachment; filename=HistorialMedico.xls");
+        ServletOutputStream stream = response.getOutputStream();
+
+        JRXlsExporter exporter = new JRXlsExporter();
+        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
+        exporter.setParameter(JRExporterParameter.OUTPUT_STREAM, stream);
+        exporter.exportReport();
+
+        stream.flush();
+        stream.close();
+        FacesContext.getCurrentInstance().responseComplete();
+    }
+
+    public void exportarDOC() throws JRException, IOException, SQLException {
+
+        Map<String, Object> parametros = new HashMap<String, Object>();
+
+        parametros.put("txtUsuario", objeto.getUsu().getNombre());
+        parametros.put("txtPaciente", rptBs.getNombrePaciente());
+
+        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptHistorialMedico.jasper"));
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasper.getPath(), parametros, new JRBeanCollectionDataSource(dao.listarReporte(rptBs)));
+
+        HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+        response.addHeader("Content-disposition", "attachment; filename=HistorialMedico.doc");
+        ServletOutputStream stream = response.getOutputStream();
+
+        JRDocxExporter exporter = new JRDocxExporter();
+        exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
+        exporter.setParameter(JRExporterParameter.OUTPUT_STREAM, stream);
+        exporter.exportReport();
+
+        stream.flush();
+        stream.close();
+        FacesContext.getCurrentInstance().responseComplete();
+    }
+
+    public void verPDF() throws Exception {
+        File jasper = new File(FacesContext.getCurrentInstance().getExternalContext().getRealPath("reportes/rptHistorialMedico.jasper"));
+
+        byte[] bytes = JasperRunManager.runReportToPdf(jasper.getPath(), null, new JRBeanCollectionDataSource(dao.listarReporte(rptBs)));
+        HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
+        response.setContentType("application/pdf");
+        response.setContentLength(bytes.length);
+        ServletOutputStream outStream = response.getOutputStream();
+        outStream.write(bytes, 0, bytes.length);
+        outStream.flush();
+        outStream.close();
+
+        FacesContext.getCurrentInstance().responseComplete();
+    }
+
 
 }

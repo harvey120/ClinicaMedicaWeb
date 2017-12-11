@@ -58,19 +58,19 @@
                     <c:if test="#{controlador.Validador() == 1}">
                         <figure>
                             <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
-                             <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                         </figure>
                     </c:if>
 
                     <c:if test="#{controlador.Validador() == 3}">
                         <figure>
                             <img src="../resources/imgs/Enfermera/en.png" alt="ClincaMedica" class="img-responsive center-box img-circle" style="width:55%;"/>
-                             <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
                         </figure>
                     </c:if>
 
 
-                   
+
                 </div>
 
 
@@ -87,18 +87,29 @@
                         <c:if test="#{controlador.Validador() == 3}">
                             <li><a href="homeEnfermera.xhtml" style="font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio </a></li>
                         </c:if>
+
+                        <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/Enfermedad.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
+
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div style="font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="faces/vistaCompleta/nuevoIngresoPaciente.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Usuario</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/Enfermedad.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Enfermedad</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/Examen.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Examen</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ReferenciaClinica.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Referencia Clinica</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/RevisionGeneral.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Revision General</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/HistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Historial Clinico</a></li>
+
                             </ul>
                         </li>
 
-
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div style="font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-search "></i>&nbsp;&nbsp; busquedas <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="faces/vistaCruds/PersonaAPaciente.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Mantenimiento Personas</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarEnfermedad.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarExamen.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Examen</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarReferenciaClinica.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarRevisionGeneral.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Revision General</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarHistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>         
                             </ul>
                         </li>
 
@@ -145,55 +156,57 @@
                 </div>
             </div>
 
+
+
             <section class="full-reset text-center" style="padding: 40px 0;">
+
                 <article class="tile">
                     <a href="../faces/Enfermera/ReferenciaClinica.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-face"> </i></div>
-                        <div class="tile-num full-reset">Ref. Clinica</div>
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Enfermera/refe.png" width="50" height="50"></img></i></div>
+                        <div class="tile-num full-reset">ReferenciaClinica</div>
                     </a>
                 </article>
 
                 <article class="tile">
                     <a href="../faces/Enfermera/RevisionGeneral.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-accounts"></i></div>
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Enfermera/revision.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Revision General</div>
                     </a>
                 </article>
 
                 <article class="tile">
                     <a href="../faces/Enfermera/HistorialClinico.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-male-alt"></i></div>
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Enfermera/histo.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Hist. clinicos</div>
                     </a>
                 </article>
 
                 <article class="tile">
                     <a href="../faces/Enfermera/Enfermedad.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-male-female"></i></div>
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Enfermera/enfermedad.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Enfermedad</div>
                     </a>
                 </article>
 
                 <article class="tile">
-                    <a href="../faces/Enfermera/Cita.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-truck"></i></div>
-                        <div class="tile-num full-reset">Citas</div>
+                    <a href="../Doctor/BuscarCita.xhtml">
+                        <div class="tile-icon full-reset"><i class="zmdi"><img class="title-icon" src="../resources/imgs/Doctor/calendar.png" width="60" height="60"></img></i></div>
+                        <div class="tile-num full-reset">Buscar Citas</div>
                     </a>
                 </article>
+
+
                 <article class="tile">
                     <a href="../faces/Enfermera/Examen.xhtml">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-truck"></i></div>
+                        <div class="tile-icon full-reset"><i class="zmdi"> <img class="title-icon" src="../resources/imgs/Enfermera/enfermedad.png" width="50" height="50"></img></i></div>
                         <div class="tile-num full-reset">Examenes</div>
                     </a>
                 </article>
-                <article class="tile">
-                    <a href="">
-                        <div class="tile-icon full-reset"><i class="zmdi zmdi-truck"></i></div>
-                        <div class="tile-num full-reset">Recetas</div>
-                    </a>
-                </article>
-            </section>
 
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+            </section>
 
 
             <!-- Pie de pagina-->

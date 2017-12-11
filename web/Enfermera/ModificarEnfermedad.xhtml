@@ -5,7 +5,8 @@
       xmlns:b="http://bootsfaces.net/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui"
-      >
+
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Lista de Documento</title>
 
@@ -33,7 +34,9 @@
     <h:body>
         <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
         <f:event type="preRenderView" listener="#{enfermedadBean.listarEnfermedad()}"/>
-        
+        <f:event type="preRenderView" listener="#{controlador.verificarSesion()}"/>
+
+        <f:event type="preRenderView" listener="#{categoriaEnfermedadBean.listar()}"/>
 
 
         <div class="navbar-lateral full-reset">
@@ -44,10 +47,19 @@
                     sistema bibliotecario
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
-                    <figure>
-                        <img src="../resources/imgs/Enfermera/en.png" alt="Enfermera" class="img-responsive center-box img-circle" style="width:55%;"/>
-                    </figure>
-                    <p class="text-center" style="font: bold small-caps 120%/200% serif;padding-top: 15px">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                    <c:if test="#{controlador.Validador() == 1}">
+                        <figure>
+                            <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
+
+                    <c:if test="#{controlador.Validador() == 3}">
+                        <figure>
+                            <img src="../resources/imgs/Enfermera/en.png" alt="ClincaMedica" class="img-responsive center-box img-circle" style="width:55%;"/>
+                            <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Enfermera #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
+                        </figure>
+                    </c:if>
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
@@ -56,21 +68,31 @@
                         <li><a style="font: bold small-caps 120%/120% serif;" href="../faces/homes/homeEnfermera.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
                         <li>
-                            <div class="dropdown-menu-button"><i class="zmdi zmdi-account-add zmdi-hc-fw"></i>&nbsp;&nbsp; Permisos <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <div style="font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-accounts zmdi-hc-fw"></i>&nbsp;&nbsp;Registros<i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
                             <ul class="list-unstyled">
-                                <li><a href="../faces/enfermera/HistorialClinico.xhtml"><i class="zmdi zmdi-face zmdi-hc-fw"></i>&nbsp;&nbsp; Hisotriales Clinicos</a></li>
-                                <li><a href="../faces/enfermera/ReferenciaClinica.xhtml"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
-                                <li><a href="../faces/enfermera/Enfermedad.xhtml"><i class="zmdi zmdi-accounts zmdi-hc-fw active"></i>&nbsp;&nbsp; Enfermedad</a></li>
-                                <li><a href="../faces/enfermera/RevisionGeneral.xhtml"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp;Revision General </a></li>
-                                <li><a href="../faces/enfermera/Cita.xhtml"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
-                                <li><a href=""><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Recetas</a></li>
-                                <li><a href="../faces/enfermera/Examen.xhtml"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/Enfermedad.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Enfermedad</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/Examen.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Examen</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ReferenciaClinica.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Referencia Clinica</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/RevisionGeneral.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Revision General</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/HistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Nuevo Historial Clinico</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <div style="font: bold small-caps 120%/200% serif;" class="dropdown-menu-button"><i class="zmdi zmdi-search "></i>&nbsp;&nbsp; busquedas <i class="zmdi zmdi-chevron-down pull-right zmdi-hc-fw"></i></div>
+                            <ul class="list-unstyled">
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarEnfermedad.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarExamen.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Examen</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarReferenciaClinica.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarRevisionGeneral.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Revision General</a></li>
+                                <li><a style="font: bold small-caps 120%/200% serif;" href="faces/../../Enfermera/ModificarHistorialClinico.xhtml"><i class="zmdi zmdi-account-box zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>         
                             </ul>
                         </li>
 
 
                     </ul>
-                </div>
+                </div> 
             </div>
         </div>
         <div class="content-page-container full-reset custom-scroll-containers" style="">
@@ -103,7 +125,7 @@
             <div class="container-fluid">
                 <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
                     <li role="presentation" class="active"><a href="">Modificar</a></li>
-                     <li role="presentation"><a href="faces/../Enfermedad.xhtml">Ingresar Enfermedad</a></li>
+                    <li role="presentation"><a href="faces/../Enfermedad.xhtml">Ingresar Enfermedad</a></li>
                 </ul>
             </div>
             <div class="container-fluid"  style="margin: 50px 0;">
@@ -145,19 +167,19 @@
                             <b:dataTableColumn class="div-table-cell" value="#{enf.idEnfermedad}" label="Código"/>
 
                             <b:dataTableColumn class="div-table-cell" value="#{enf.nombre}" label="Nombre"/>
-                            
-                            <b:dataTableColumn class="div-table-cell" value="#{enf.idCategoriaEnfermedad}" label="Categoria de Enfermedad"/>
-                            
-                          
-                            
-                            
 
-                             <b:dataTableColumn class="div-table-cell" label="Modificar">
-                                 <p:commandButton actionListener="#{enfermedadBean.leerID(enf)}" oncomplete="PF('wdlgDatos').show()" update=":dlgDatos"  value="Modificar" icon="edit" class="btn btn-info tooltips-general" title="Modificar Enfermedad" />
+                            <b:dataTableColumn class="div-table-cell" value="#{enf.idCategoriaEnfermedad}" label="Categoria de Enfermedad"/>
+
+
+
+
+
+                            <b:dataTableColumn class="div-table-cell" label="Modificar">
+                                <p:commandButton actionListener="#{enfermedadBean.leerID(enf)}" oncomplete="PF('wdlgDatos').show()" update=":dlgDatos"  icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar Enfermedad" />
                             </b:dataTableColumn>
 
                             <b:dataTableColumn class="div-table-cell" label="Eliminar">
-                                <b:commandButton actionListener="#{enfermedadBean.eliminar(enf)}"  value="Eliminar" icon="edit" class="btn btn-info tooltips-general" title="eliminar Enfermedad"  />
+                                <b:commandButton actionListener="#{enfermedadBean.eliminar(enf)}"  icon="trash" class="btn btn-danger tooltips-general" title="eliminar Enfermedad"  />
                             </b:dataTableColumn>
 
                         </b:dataTable>
@@ -166,22 +188,29 @@
             </div>
 
 
-            
+
             <p:dialog header="Datos" widgetVar="wdlgDatos" id="dlgDatos">
                 <h:form>
-                    
+
                     <b:inputText placeholder="Código: " value="#{enfermedadBean.enfermedad.idEnfermedad}"/>
-                    <b:inputText placeholder="Nombre: " value="#{enfermedadBean.enfermedad.nombre}"  />
-                    <b:inputText placeholder="Categoria: " value="#{enfermedadBean.enfermedad.idCategoriaEnfermedad}"  />
-                   
-                    
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Modificar" actionListener="#{enfermedadBean.modificar()}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
-                    <b:commandButton class="btn btn-primary zmdi zmdi-floppy" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos').hide();" />
+<!--                    <b:inputText placeholder="Nombre: " value="#{enfermedadBean.enfermedad.nombre}"  />
+                    <b:inputText placeholder="Categoria: " value="#{enfermedadBean.enfermedad.idCategoriaEnfermedad}"  />-->
+
+                    <b:inputText style="font: bold small-caps 120%/200% serif;" id="nombre" placeholder="Nombre de la Enfermedad" value="#{enfermedadBean.enfermedad.nombre}"  />
+
+                    <span style="font: bold small-caps 120%/200% serif;">Id Categoria De Enfemedad</span>
+                    <b:selectOneMenu class="tooltips-general material-control" style="font: bold small-caps 120%/200% serif;height: 60px" title="Seleccione Ocupacion" value="#{enfermedadBean.enfermedad.idCategoriaEnfermedad}" >
+                        <f:selectItems value="#{categoriaEnfermedadBean.lstCatEnfermedad}" var="categoria" itemLabel="#{categoria.nombreCategoria}" itemValue="#{categoria.idCategoriaEnfermedad}"/>
+                    </b:selectOneMenu>
+
+
+                    <b:commandButton class="btn btn-primary" value="Modificar" actionListener="#{enfermedadBean.modificar()}"  oncomplete="PF('wdlgDatos').hide();"  update=":frmTabla:data"/>
+                    <b:commandButton class="btn btn-danger" value="Cancelar" immediate="true"  oncomplete="PF('wdlgDatos').hide();" />
                 </h:form>
             </p:dialog>
 
-            
-            
+
+
 
             <footer class="footer full-reset">
                 <div class="container-fluid">

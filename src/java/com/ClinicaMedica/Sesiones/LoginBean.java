@@ -75,6 +75,15 @@ public class LoginBean implements Serializable {
                 } else {
                     System.out.println("no tiene acceso a esa");
                 }
+                
+                if (UsuarioSesion.getIdPuesto() == 3 && UsuarioSesion.getIdEstadoUsuario() == 1) {
+                    FacesContext context = FacesContext.getCurrentInstance();
+                    FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("session", UsuarioSesion);
+                    context.getExternalContext().redirect("faces/homes/homeEnfermera.xhtml");
+
+                } else {
+                    System.out.println("no tiene acceso a esa");
+                }
 
                 // aqui termina la validacion de sesiones 
             }

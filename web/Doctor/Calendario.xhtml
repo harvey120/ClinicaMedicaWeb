@@ -47,7 +47,7 @@
                     Doctor
                 </div>
                 <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
-                      <c:if test="#{controlador.Validador() == 1}">
+                    <c:if test="#{controlador.Validador() == 1}">
                         <figure>
                             <img src="../resources/imgs/Admin/boss.png" class="img-responsive center-box" style="width:55%;"/>
                             <p class="text-center" style="padding-top: 15px; font: bold small-caps 120%/200% serif;">Administrador #{controlador.usu.nombre} #{controlador.usu.apellido}</p>
@@ -61,7 +61,7 @@
                         </figure>
                     </c:if>
 
-                    
+
                 </div>
                 <div class="full-reset nav-lateral-list-menu">
                     <ul class="list-unstyled">
@@ -83,10 +83,10 @@
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaMedicamento.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamentos</a></li>
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaPaciente.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Pacientes</a></li>
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaHistorialClinico.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>-->
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>-->
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaEnfermedad.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedades</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>-->
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarCita.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
                             </ul>
                         </li>
@@ -133,18 +133,18 @@
 
                 </ul>
             </div>
-           
+
             <div class="container-fluid">
                 <div class="container-flat-form">
                     <form autocomplete="off">
                         <div class="row">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-
+                                    <br/><br/>
                                     <h:form>   
                                         <p:growl id="msgGrowl" showDetail="true" />
                                         <h:panelGrid columnClasses="value">
-                                            <h3 style="margin-top: 0">Editable Schedule</h3>
+
                                             <p:schedule id="schedule" value="#{eventoBean.eventMode1}" widgetVar="myschedule" timeZone="GMT-6" locale="es">
 
                                                 <p:ajax event="eventSelect" listener="#{eventoBean.cuandoSeleccionado}" update="eventDialog" oncomplete="PF('caixaDialog').show();"></p:ajax>
@@ -156,7 +156,7 @@
 
                                             </p:schedule>
                                         </h:panelGrid>
-                                        
+
 
 
                                         <p:dialog widgetVar="caixaDialog" header="Evento" showEffect="scale" hideEffect="scale">

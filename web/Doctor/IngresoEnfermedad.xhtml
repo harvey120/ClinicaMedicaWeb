@@ -76,10 +76,10 @@
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaMedicamento.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamentos</a></li>
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaPaciente.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Pacientes</a></li>
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaHistorialClinico.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Historial Clinico</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaExamen.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes</a></li>-->
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaReferenciaClinica.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Referencia Clinica</a></li>-->
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/VistaEnfermedad.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedades</a></li>
-                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>
+                                <!--                                <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarRevisionGeneral.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Revisión General</a></li>-->
                                 <li style="font: bold small-caps 120%/200% serif;"><a href="../faces/Doctor/BuscarCita.xhtml"><i class="zmdi zmdi-hc-fw"></i>&nbsp;&nbsp; Citas</a></li>
                             </ul>
                         </li>
@@ -122,20 +122,16 @@
             </nav>
             <div class="container">
                 <div class="page-header">
-                    <h1 class="all-tittles">Sistema Clinicamedica <small>Administración de  Examenes    </small></h1>
+                    <h1 class="all-tittles">Sistema Clinicamedica <small>Administración ingreso de Examenes    </small></h1>
                 </div>
             </div>
-            <div class="container-fluid">
-                <ul class="nav nav-tabs nav-justified"  style="font-size: 17px;">
-                    <li role="presentation"  class="active"><a href="">Ingreso de Examenes</a></li>
-                </ul>
-            </div>
-            <div class="container-fluid"  style="margin: 50px 0;">
+
+            <div  class="container-fluid"  style="margin: 50px 0;">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-3">
                         <img src="../resources/imgs/Doctor/brain.png" alt="user" class="img-responsive center-box" style="max-width: 110px;"/>
                     </div>
-                    <div class="col-xs-12 col-sm-8 col-md-8 text-justify lead" >
+                    <div style="font: bold small-caps 120%/200% serif;" class="col-xs-12 col-sm-8 col-md-8 text-justify lead" >
                         Bienvenido a la sección Ingreso de Examenes del sistema, debes de llenar todos los campos del siguiente formulario para registrar un nuevo Examen
                     </div>
                 </div>
@@ -153,7 +149,7 @@
 
 
 
-            <div class="container-fluid">
+            <div  class="container-fluid">
                 <div class="container-flat-form">
                     <div class="title-flat-form title-flat-blue">Registrar un nuevo Examen</div>
                     <form autocomplete="off">
@@ -163,9 +159,9 @@
 
 
                                 <h:form>
-<!--                                    <div class="group-material">
-                                        <b:inputText id="idExamen" style="font: bold small-caps 120%/200% serif;" placeholder="Código" value="#{examenBean.ingreso.idExamen}" />
-                                    </div>-->
+                                    <!--                                    <div class="group-material">
+                                                                            <b:inputText id="idExamen" style="font: bold small-caps 120%/200% serif;" placeholder="Código" value="#{examenBean.ingreso.idExamen}" />
+                                                                        </div>-->
                                     <div class="group-material">
                                         <b:inputText id="nombre" style="font: bold small-caps 120%/200% serif;" placeholder="Nombre" value="#{examenBean.ingreso.nombre}"  />
                                     </div>
