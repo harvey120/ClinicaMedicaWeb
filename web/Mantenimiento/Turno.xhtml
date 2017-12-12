@@ -63,18 +63,18 @@
 
             <li><a href="../homes/homeMantenimiento.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
 
-            <li><a href="medicamento.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamento </a></li>
+            <li><a href="medicamento.xhtml" ><i class="zmdi zmdi-close-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamento </a></li>
 
-            <li><a href="Examen.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes </a></li>
+            <li><a href="Examen.xhtml" ><i class="zmdi zmdi-developer-board zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes </a></li>
 
-            <li><a href="Ocupacion.xhtml"  ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Ocupacion </a></li>
+            <li><a href="Ocupacion.xhtml"  ><i class="zmdi zmdi-file-plus zmdi-hc-fw"></i>&nbsp;&nbsp; Ocupacion </a></li>
 
-            <li><a href="Religion.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Religion </a></li>
+            <li><a href="Religion.xhtml" ><i class="zmdi zmdi-loupe zmdi-hc-fw"></i>&nbsp;&nbsp; Religion </a></li>
 
-            <li><a href="Enfermedad.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad </a></li>
+            <li><a href="Enfermedad.xhtml"><i class="zmdi zmdi-adb zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad </a></li>
 
-            <li><a href="Turno.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Turno </a></li>
-            
+            <li><a href="Turno.xhtml" ><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp; Turno </a></li>
+
           </ul>
         </div>
         <!-- fin Opciones de Menu laterales -->
@@ -113,6 +113,7 @@
         </div>
       </div>
 
+
       <div class="container-fluid"  style="margin: 50px 0;">
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-md-3">
@@ -127,35 +128,12 @@
         <div class="row">
           <div class="col-xs-12 lead">
             <ol class="breadcrumb">
-              <li class="active">Regitro Turnos</li>
-              <li><a href="listaTurno.xhtml">Listado de Turnos</a></li>
+              <li class="active">Regitro de turnos</li>
+              <li><a href="listaTurno.xhtml">Listado de turnos</a></li>
             </ol>
           </div>
         </div>
       </div>
-
-  
-
-      <div class="container-fluid">
-        <div class="container-flat-form">
-          <div class="title-flat-form title-flat-blue">Busqueda de turno</div>
-          <form autocomplete="off">
-            <div class="row">
-              <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-                <h:form>
-                  <div class="group-material">
-                    <b:inputText id="id"  style=" font: bold small-caps 120%/200% serif;" placeholder="Consulta: "  value="#{bean_turno.turno.idturno}" />
-                  </div>
-                  <p class="text-center">
-                    <b:commandButton class="btn btn-primary" value="Buscar" action="#{bean_turno.buscar()}" />
-                  </p> 
-                </h:form>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
 
       <div class="container-fluid">
         <div class="container-flat-form">

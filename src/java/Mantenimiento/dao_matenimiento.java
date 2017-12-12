@@ -396,6 +396,8 @@ public class dao_matenimiento extends DAO {
   public Medicamento LeerID(Medicamento men) throws SQLException {
     Medicamento pers = null;
     try {
+      
+     
       this.Conectar();
       sql = "SELECT * FROM medicamento WHERE idMedicamento=?";
       this.pre = this.getCn().prepareStatement(sql);
@@ -414,6 +416,7 @@ public class dao_matenimiento extends DAO {
     } finally {
       this.Cerrar();
     }
+   
     return pers;
   }
   /*------------------------------------------------------------------------*--*/
