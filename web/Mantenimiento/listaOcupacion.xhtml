@@ -40,7 +40,7 @@
   </h:head>
   <h:body>
 
-    
+
 
     <!-- Esta pagina es la inicial de control de registro de empleados -->
 
@@ -68,18 +68,18 @@
 
             <!-- Menu lateral-->
             <li><a href="../homes/homeMantenimiento.xhtml" style=" font: bold small-caps 120%/200% serif;"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Inicio</a></li>
-            
-            <li><a href="medicamento.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamento </a></li>
 
-            <li><a href="Examen.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes </a></li>
+            <li><a href="medicamento.xhtml" ><i class="zmdi zmdi-close-circle zmdi-hc-fw"></i>&nbsp;&nbsp; Medicamento </a></li>
 
-            <li><a href="Ocupacion.xhtml"  ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Ocupacion </a></li>
+            <li><a href="Examen.xhtml" ><i class="zmdi zmdi-developer-board zmdi-hc-fw"></i>&nbsp;&nbsp; Examenes </a></li>
 
-            <li><a href="Religion.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Religion </a></li>
+            <li><a href="Ocupacion.xhtml"  ><i class="zmdi zmdi-file-plus zmdi-hc-fw"></i>&nbsp;&nbsp; Ocupacion </a></li>
 
-            <li><a href="Enfermedad.xhtml"><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad </a></li>
+            <li><a href="Religion.xhtml" ><i class="zmdi zmdi-loupe zmdi-hc-fw"></i>&nbsp;&nbsp; Religion </a></li>
 
-            <li><a href="Turno.xhtml" ><i class="zmdi zmdi-home zmdi-hc-fw"></i>&nbsp;&nbsp; Turno </a></li><!-- FIn del Menu lateral -->
+            <li><a href="Enfermedad.xhtml"><i class="zmdi zmdi-adb zmdi-hc-fw"></i>&nbsp;&nbsp; Enfermedad </a></li>
+
+            <li><a href="Turno.xhtml" ><i class="zmdi zmdi-assignment zmdi-hc-fw"></i>&nbsp;&nbsp; Turno </a></li>
           </ul>
         </div>
       </div>
@@ -163,7 +163,7 @@
 
               <b:dataTableColumn class="div-table-cell" value="#{men.idOcupacion}" label="Id"/>
               <b:dataTableColumn class="div-table-cell" value="#{men.nombre}" label="Nombre"/>
-              
+
               <b:dataTableColumn class="div-table-cell" label="Modificar">
                 <p:commandButton value="Modificar"  actionListener="#{bean_ocupacion.buscar2(men)}"  oncomplete="PF('dlg1').show()" icon="ui-icon-refresh" class="btn btn-info tooltips-general" title="Modificar medicamento"  update=":dlg1"/>
               </b:dataTableColumn>
