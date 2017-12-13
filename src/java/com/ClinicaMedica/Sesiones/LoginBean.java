@@ -6,6 +6,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import org.primefaces.context.RequestContext;
 
 /**
  * @author Harvey
@@ -32,8 +33,6 @@ public class LoginBean implements Serializable {
     public void setUsuarioSesion(loginModelo UsuarioSesion) {
         this.UsuarioSesion = UsuarioSesion;
     }
-
-    
 
     // creo mi metodo para logear una seseion
     public void logig() {
@@ -64,7 +63,13 @@ public class LoginBean implements Serializable {
                     context.getExternalContext().redirect("faces/homes/homeAdmin.xhtml");
 
                 } else {
-
+                    RequestContext.getCurrentInstance().execute("swal({\n"
+                            + "  position: 'top-right',\n"
+                            + "  type: 'error',\n"
+                            + "  title: 'Usuario Incorrecto',\n"
+                            + "  showConfirmButton: false,\n"
+                            + "  timer: 1500\n"
+                            + "})");
                 }
 
                 if (UsuarioSesion.getIdPuesto() == 2 && UsuarioSesion.getIdEstadoUsuario() == 1) {
@@ -74,8 +79,15 @@ public class LoginBean implements Serializable {
 
                 } else {
                     System.out.println("no tiene acceso a esa");
+                    RequestContext.getCurrentInstance().execute("swal({\n"
+                            + "  position: 'top-right',\n"
+                            + "  type: 'error',\n"
+                            + "  title: 'Usuario Incorrecto',\n"
+                            + "  showConfirmButton: false,\n"
+                            + "  timer: 1500\n"
+                            + "})");
                 }
-                
+
                 if (UsuarioSesion.getIdPuesto() == 3 && UsuarioSesion.getIdEstadoUsuario() == 1) {
                     FacesContext context = FacesContext.getCurrentInstance();
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("session", UsuarioSesion);
@@ -83,9 +95,15 @@ public class LoginBean implements Serializable {
 
                 } else {
                     System.out.println("no tiene acceso a esa");
+                    RequestContext.getCurrentInstance().execute("swal({\n"
+                            + "  position: 'top-right',\n"
+                            + "  type: 'error',\n"
+                            + "  title: 'Usuario Incorrecto',\n"
+                            + "  showConfirmButton: false,\n"
+                            + "  timer: 1500\n"
+                            + "})");
                 }
-                
-                
+
                 if (UsuarioSesion.getIdPuesto() == 4 && UsuarioSesion.getIdEstadoUsuario() == 1) {
                     FacesContext context = FacesContext.getCurrentInstance();
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("session", UsuarioSesion);
@@ -93,8 +111,15 @@ public class LoginBean implements Serializable {
 
                 } else {
                     System.out.println("no tiene acceso a esa");
+                    RequestContext.getCurrentInstance().execute("swal({\n"
+                            + "  position: 'top-right',\n"
+                            + "  type: 'error',\n"
+                            + "  title: 'Usuario Incorrecto',\n"
+                            + "  showConfirmButton: false,\n"
+                            + "  timer: 1500\n"
+                            + "})");
                 }
-                
+
                 if (UsuarioSesion.getIdPuesto() == 5 && UsuarioSesion.getIdEstadoUsuario() == 1) {
                     FacesContext context = FacesContext.getCurrentInstance();
                     FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("session", UsuarioSesion);
@@ -102,6 +127,13 @@ public class LoginBean implements Serializable {
 
                 } else {
                     System.out.println("no tiene acceso a esa");
+                    RequestContext.getCurrentInstance().execute("swal({\n"
+                            + "  position: 'top-right',\n"
+                            + "  type: 'error',\n"
+                            + "  title: 'Usuario Incorrecto',\n"
+                            + "  showConfirmButton: false,\n"
+                            + "  timer: 1500\n"
+                            + "})");
                 }
                 // aqui termina la validacion de sesiones 
             }
