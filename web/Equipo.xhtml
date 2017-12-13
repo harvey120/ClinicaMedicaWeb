@@ -3,259 +3,285 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-    <head>
-        <title> Equipo </title>
+  <head>
+    <title> Equipo </title>
 
-        <style>
-            body {
-                background: url(resourcesFronted/img/dos.png);
-                background-position:0 0 ;
-                background-attachment: fixed;
-            }
-            #particles-js{
-                width: 100%;
-                height: 100%;
-                position: fixed;
-            }
+    <style>
+      body {
+        background: url(resourcesFronted/img/dos.png);
+        background-position:0 0 ;
+        background-attachment: fixed;
+      }
+      #particles-js{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
 
-        </style>
-        <link href="resourcesFronted/booststrpa-4.0.0-zip/css/animate.css" rel="stylesheet" type="text/css"/>
-        <script src="resourcesFronted/booststrpa-4.0.0-zip/jquery-latest.js" type="text/javascript"></script>
-        <script src="resourcesFronted/booststrpa-4.0.0-zip/mainparalax.js" type="text/javascript"></script>
-        <link href="resourcesFronted/booststrpa-4.0.0-zip/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="resourcesFronted/booststrpa-4.0.0-zip/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="resourcesFronted/booststrpa-4.0.0-zip/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="resourcesFronted/js/scroll.js" type="text/javascript"></script>
-        <script src="resourcesFronted/js/eskju.jquery.scrollflow.min.js" type="text/javascript"></script>
-        <link href="resourcesFronted/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
-        <script src="resourcesFronted/js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
-        
-    </head>
-    <body>
-       
-        <!--=============Menu principal==================-->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="faces/index.xhtml">Inicio</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-           <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="Valores.xhtml">Valores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Instalaciones.xhtml">Instalaciones</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="Equipo.xhtml">Equipos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="personal.xhtml">Personal<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Localicacion.xhtml">Localizanos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Contactanos.jsp">Contactanos</a>
-                    </li>
-                </ul>
-                <form class="form-inline mt-2 mt-md-0">
-                    <a class="btn btn-outline-info" href="faces/login.xhtml" role="button"> Inicio de Sesion </a>
-                </form>
+    </style>
+    <link href="resourcesFronted/booststrpa-4.0.0-zip/css/animate.css" rel="stylesheet" type="text/css"/>
+    <script src="resourcesFronted/booststrpa-4.0.0-zip/jquery-latest.js" type="text/javascript"></script>
+    <script src="resourcesFronted/booststrpa-4.0.0-zip/mainparalax.js" type="text/javascript"></script>
+    <link href="resourcesFronted/booststrpa-4.0.0-zip/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="resourcesFronted/booststrpa-4.0.0-zip/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="resourcesFronted/booststrpa-4.0.0-zip/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="resourcesFronted/js/scroll.js" type="text/javascript"></script>
+    <script src="resourcesFronted/js/eskju.jquery.scrollflow.min.js" type="text/javascript"></script>
+    <link href="resourcesFronted/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
+    <script src="resourcesFronted/js/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+
+    <!--=============Menu principal==================-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="faces/index.xhtml">Inicio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Valores.xhtml">Valores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Instalaciones.xhtml">Instalaciones</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="Equipo.xhtml">Equipos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="personal.xhtml">Personal<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Localicacion.xhtml">Localizanos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Contactanos.jsp">Contactanos</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <a class="btn btn-outline-info" href="faces/login.xhtml" role="button"> Inicio de Sesion </a>
+        </form>
+      </div>
+    </nav>
+    <!--========================Menu principal==================================-->
+
+    <!--========================Carusel==================================-->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" ></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+      </ol>
+      <div class="carousel-inner" >
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="resourcesFronted/img/seis.jpg" alt="First slide" width="100%" height="800px"/>
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-left">
+              <h1 class="text-warning">Examenes Completos</h1>
+              <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
+
             </div>
-        </nav>
-        <!--========================Menu principal==================================-->
-
-        <!--========================Carusel==================================-->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1" ></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-                <li data-target="#myCarousel" data-slide-to="4"></li>
-            </ol>
-            <div class="carousel-inner" >
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="resourcesFronted/img/seis.jpg" alt="First slide" width="100%" height="800px"/>
-                    <div class="container">
-                        <div class="carousel-caption d-none d-md-block text-left">
-                            <h1 class="text-warning">Examenes Completos</h1>
-                            <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="resourcesFronted/img/cuatro.jpg" alt="Second slide" width="100%" height="800px"/>
-                    <div class="container">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h1 class="text-warning">Examenes Completos</h1>
-                            <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="resourcesFronted/img/equipo2.jpg" alt="Third slide" width="100%" height="800px"/>
-                    <div class="container">
-                        <div class="carousel-caption d-none d-md-block text-right">
-                            <h1 class="text-warning">Examenes Completos</h1>
-                            <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="resourcesFronted/img/ocho.jpg" alt="Fourth slide" width="100%" height="800px"/>
-                    <div class="container">
-                        <div class="carousel-caption d-none d-md-block text-right">
-                            <h1 class="text-warning">Examenes Completos</h1>
-                            <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="resourcesFronted/img/siete.png" alt="Fifth slide" width="100%" height="800px"/>
-                    <div class="container">
-                        <div class="carousel-caption d-none d-md-block text-right">
-                            <h1 class="text-warning">Examenes Completos</h1>
-                            <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+          </div>
         </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="resourcesFronted/img/cuatro.jpg" alt="Second slide" width="100%" height="800px"/>
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block">
+              <h1 class="text-warning">Examenes Completos</h1>
+              <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="resourcesFronted/img/equipo2.jpg" alt="Third slide" width="100%" height="800px"/>
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-right">
+              <h1 class="text-warning">Examenes Completos</h1>
+              <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="resourcesFronted/img/ocho.jpg" alt="Fourth slide" width="100%" height="800px"/>
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-right">
+              <h1 class="text-warning">Examenes Completos</h1>
+              <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="resourcesFronted/img/siete.png" alt="Fifth slide" width="100%" height="800px"/>
+          <div class="container">
+            <div class="carousel-caption d-none d-md-block text-right">
+              <h1 class="text-warning">Examenes Completos</h1>
+              <p class="text-warning">Los mejores Equipo  para sus consultas, terapia, examenes, operaciones, etc</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 
 
-        <!--========================Final de Carusel==================================-->
+    <!--========================Final de Carusel==================================-->
 
 
-        <!--========================Contenido de la pagina==================================-->
-        <br/><br/><br/><br/><br/><br/>
+    <!--========================Contenido de la pagina==================================-->
+    <br/><br/><br/><br/><br/><br/>
 
-        <div class="jumbotron jumbotron-fluid bg-dark">
-            <div class="container">
-                <h1 class="display-3 text-white">Servicios</h1>
-                <hr class="my-4"/>
-                <h3 class="text-white">Laboratorios, Clinicas, Consultas, Maternidad, Urgencias</h3>
+    <div class="jumbotron jumbotron-fluid bg-dark">
+      <div class="container">
+        <h1 class="display-3 text-white">Servicios</h1>
+        <hr class="my-4"/>
+        <h3 class="text-white">Laboratorios, Clinicas, Consultas, Maternidad, Urgencias</h3>
+        <br/>
+        <h3 class="lead text-white">Hablamos de servicio hospitalario cuando designamos un conjunto de servicios médicos especializados reagrupados en un hospital.
+          Un conjunto de servicios hospitalarios constituye un polo hospitalario y éste último reagrupa, por ejemplo, un servicio de gastroenterología, de nefrología, etc.
+          Existen polos específicos, por ejemplo el polo quirúrgico que reagrupa varios servicios hospitalarios especializados en cirugía.
+          Estos servicios están dirigidos por los jefes de servicio hospitalario o coordinados por un jefe de polo hospitalario de actividad.</h3>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+          <div>
+            <img src="resourcesFronted/img/equipo3.jpg"  width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+            <div class="card-body">
+              <h1 class="card-title text-white">Laboratirio</h1>
+
+              <h4 class="card-text text-white">cuenta con servicios de laboratorio clínico especializado
+                con servicio las 24 horas del día atendiendo una 
+                amplia variedad de análisis disponibles.</h4>>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/><br/><br/><br/><br/>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+          <div>
+            <img src="resourcesFronted/img/equipo6.jpg"  width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+            <div class="card-body">
+              <h1 class="card-title text-white">Banco de sangre</h1>
+              <h4 class="card-text text-white">Contamos con Banco de Sangre las 24 horas en Centro Hospitalario La Paz Zona 14 Si usted desea ser donante de sangre:
                 <br/>
-                <h3 class="lead text-white">Hablamos de servicio hospitalario cuando designamos un conjunto de servicios médicos especializados reagrupados en un hospital.
-                    Un conjunto de servicios hospitalarios constituye un polo hospitalario y éste último reagrupa, por ejemplo, un servicio de gastroenterología, de nefrología, etc.
-                    Existen polos específicos, por ejemplo el polo quirúrgico que reagrupa varios servicios hospitalarios especializados en cirugía.
-                    Estos servicios están dirigidos por los jefes de servicio hospitalario o coordinados por un jefe de polo hospitalario de actividad.</h3>
+                .Debe tener de 18 a 55 años de edad
+                <br/>
+                .Pesar un mínimo 115 libras
+                <br/>
+                .No padecer de enfermedades crónicas
+                <br/>
+                .Estar tomando antibióticos
+                <br/>
+                .No es necesario presentarse en ayunas</h4>
             </div>
+          </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <div>
-                        <img src="resourcesFronted/img/equipo3.jpg"  width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
-                        <div class="card-body">
-                            <h4 class="card-title text-white">Card title</h4>
-                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
-                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </div>
+    <br/><br/><br/><br/><br/>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+          <div>
+            <img src="resourcesFronted/img/equipo4.jpg" width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+            <div class="card-body">
+              <h1 class="card-title text-white">Emergencia</h1>
+              <h4 class="card-text text-white">Cada una de nuestras emergencias está equipada con tecnología de última
+                generación y nuestros colaboradores están capacitados no solo en áreas técnicas sino también en relaciones 
+                humanas e interpersonales, que garantizan resultados de calidad, proveídos con rapidez y en un ambiente 
+                cómodo, seguro y moderno. </h4>
             </div>
+          </div>
         </div>
-        <br/><br/><br/><br/><br/>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <div>
-                        <img src="resourcesFronted/img/equipo6.jpg"  width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
-                        <div class="card-body">
-                            <h4 class="card-title text-white">Card title</h4>
-                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
-                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </div>
+    <br/><br/><br/><br/><br/>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+          <div>
+            <img src="resourcesFronted/img/equipo9.jpg" width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card bg-dark" style="width: 50rem; height: 25rem;">
+            <div class="card-body">
+              <h1 class="card-title text-white">Medicina nuclear</h1>
+             
+              <h4 class="card-text text-white">Los exámenes de Medicina Nuclear (Centellogramas) evalúan el funcionamiento de un órgano,
+                son de utilidad para el diagnóstico y seguimiento de pacientes con cáncer, problemas de tiroides, del corazón y muchos otros padecimientos más.
+                <br/>
+                Las imágenes proporcionadas por nuestro moderno equipo (Gammacamara) son únicas y específicas para determinar el mejor tratamiento.
+                <br/>
+                Centellogramas tiroideos
+                <br/>
+                Centellogramas cardíacos
+                <br/>
+                Centellogramas óseos
+                <br/>
+                Centellogramas pulmonares
+                <br/>
+                Centellogramas cerebrales y muchos otros más</h4>>
             </div>
+          </div>
         </div>
-        <br/><br/><br/><br/><br/>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <div>
-                        <img src="resourcesFronted/img/equipo4.jpg" width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
-                        <div class="card-body">
-                            <h4 class="card-title text-white">Card title</h4>
-                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
-                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br/><br/><br/><br/><br/>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <div>
-                        <img src="resourcesFronted/img/equipo9.jpg" width="600px" height="400px" alt="Generic placeholder thumbnail"/> 
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="card bg-dark" style="width: 50rem; height: 25rem;">
-                        <div class="card-body">
-                            <h4 class="card-title text-white">Card title</h4>
-                            <h6 class="card-subtitle mb-2 text-muted text-white">Card subtitle</h6>
-                            <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br/><br/><br/><br/><br/>
+      </div>
+    </div>
+    <br/><br/><br/><br/><br/>
 
 
-        <!--=======================Fin Relleno======================================-->
+    <!--=======================Fin Relleno======================================-->
 
-        <!--===============-->
+    <!--===============-->
 
-        <div class="card-footer bg-dark mb-2">
-            <footer>
-                <p>DEHECK 2017</p>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            </footer>
-        </div>
+    <div class="card-footer bg-dark mb-2">
+      <footer>
+        <p>DEHECK 2017</p>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      </footer>
+    </div>
 
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="resourcesFronted/booststrpa-4.0.0-zip/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="resourcesFronted/particles.js"></script>
-        <script src="resourcesFronted/app.js"></script>
-        <script src="resourcesFronted/booststrpa-4.0.0-zip/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
-        <script src="resourcesFronted/booststrpa-4.0.0-zip/bootstrap.min.js" type="text/javascript"></script>
-        <script src="resourcesFronted/booststrpa-4.0.0-zip/popper.min.js" type="text/javascript"></script>
-    </body>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="resourcesFronted/booststrpa-4.0.0-zip/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="resourcesFronted/particles.js"></script>
+    <script src="resourcesFronted/app.js"></script>
+    <script src="resourcesFronted/booststrpa-4.0.0-zip/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+    <script src="resourcesFronted/booststrpa-4.0.0-zip/bootstrap.min.js" type="text/javascript"></script>
+    <script src="resourcesFronted/booststrpa-4.0.0-zip/popper.min.js" type="text/javascript"></script>
+  </body>
 </html>
 
 
